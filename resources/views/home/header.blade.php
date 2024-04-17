@@ -151,7 +151,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    &copy; Copyright 2023 SpectraZ Techlabs
+                    &copy; Copyright 2023 <a href="https://spectraztechlabs.tech/" > SpectraZ Techlabs</a>
                 </div>
             </div>
         </div>

@@ -177,10 +177,10 @@
                         <div class="team-text">
                             <h4 class="mb-0">Gayathra Dilshan</h4>
                             <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i
+                                <a class="btn btn-square rounded-circle mx-1" href="https://www.facebook.com/gayathra.dilshan.77/"><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                        class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square rounded-circle mx-1" href="https://lk.linkedin.com/in/gayathra-dilshan-347775238"><i
+                                        class="fab fa-linkedin"></i></a>
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i
                                         class="fab fa-instagram"></i></a>
                             </div>
