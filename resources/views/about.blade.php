@@ -177,9 +177,9 @@
                         <div class="team-text">
                             <h4 class="mb-0">Gayathra Dilshan</h4>
                             <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle mx-1" href="https://www.facebook.com/gayathra.dilshan.77/"><i
+                                <a class="btn btn-square rounded-circle mx-1" href="https://www.facebook.com/gayathra.dilshan.77/" target="_blank"><i
                                         class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href="https://lk.linkedin.com/in/gayathra-dilshan-347775238"><i
+                                <a class="btn btn-square rounded-circle mx-1" href="https://lk.linkedin.com/in/gayathra-dilshan-347775238" target="_blank"><i
                                         class="fab fa-linkedin"></i></a>
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i
                                         class="fab fa-instagram"></i></a>
@@ -187,6 +187,7 @@
                         </div>
                     </div>
                 </div>
+
                 {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
                         <img class="img-fluid rounded" src="../assets/img/team-1.jpg" alt="">
