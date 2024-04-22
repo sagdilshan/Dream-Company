@@ -24,11 +24,11 @@
         </a>
       </li>
 
-      <li class="nav-item">
-        {{-- <a class="nav-link"  href="{{route('admin.logout')}}" role="button">
+      {{-- <li class="nav-item">
+        <a class="nav-link"  href="{{route('admin.logout')}}" role="button">
           <i class="nav-icon fa fa-power-off"></i>
-        </a> --}}
-      </li>
+        </a>
+      </li> --}}
 
     </ul>
   </nav>
