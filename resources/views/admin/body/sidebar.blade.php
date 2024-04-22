@@ -169,15 +169,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.profile') }}"
-                        class="nav-link {{ Route::is('admin.profile') ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-user-circle"></i>
-                        <p>
-                            Profile
-                        </p>
-                    </a>
-                </li>
+               
                 <li class="nav-item">
                     <a href="{{ route('admin.logout') }}" class="nav-link">
                         <i class="nav-icon fa fa-power-off"></i>
