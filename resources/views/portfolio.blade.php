@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    <!-- Projects End -->
+    <!-- Project End -->
 
 
 
