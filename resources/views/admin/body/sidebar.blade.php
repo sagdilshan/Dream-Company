@@ -160,7 +160,7 @@
 
 
 
-                <li class="nav-header mt-3 mb-2">ACTIONS</li>
+                <li class="nav-header  d mt-3 mb-2">ACTIONS</li>
                 <li class="nav-item">
                     <a href="{{ route('database.export') }}" class="nav-link ">
                         <i class="nav-icon fa fa-database"></i>
@@ -169,7 +169,7 @@
                         </p>
                     </a>
                 </li>
-               
+
                 <li class="nav-item">
                     <a href="{{ route('admin.logout') }}" class="nav-link">
                         <i class="nav-icon fa fa-power-off"></i>
