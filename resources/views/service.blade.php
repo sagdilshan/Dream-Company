@@ -175,7 +175,7 @@
             </div>
         </div>
     </div>
-    <!-- Calback End -->
+    <!-- Callback End -->
 
 
 @endsection
