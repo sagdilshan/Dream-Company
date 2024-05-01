@@ -208,7 +208,7 @@
                     <div class="team-item">
                         <img class="img-fluid rounded" src="../assets/img/team-1.jpg" alt="">
                         <div class="team-text">
-                            <h4 class="mb-0">S Satheesh</h4>
+                            <h4 class="mb-0">S Satheeshg</h4>
                             <div class="team-social d-flex">
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i
                                         class="fab fa-facebook-f"></i></a>
