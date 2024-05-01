@@ -15,7 +15,7 @@
         </nav>
     </div>
 </div>
-<!-- Page Heade End -->
+<!-- Page Head End -->
 
 
     <!-- Contact Start -->
