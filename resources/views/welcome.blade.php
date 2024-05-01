@@ -186,7 +186,7 @@
 
 
 
-<!-- Features Start -->
+<!-- Feature Start -->
 <div class="container-xxl feature py-5">
     <div class="container">
         <div class="row g-5 align-items-center">
