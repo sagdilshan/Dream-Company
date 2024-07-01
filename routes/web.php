@@ -35,3 +35,5 @@ Route::view('/contact-us','contact')->name('contact');
 Route::view('/service','service')->name('service');
 Route::view('/about-us','about')->name('about');
 Route::view('/portfolio','portfolio')->name('portfolio');
+Route::view('/login','login')->name('login');
+
