@@ -83,17 +83,15 @@
                     <a href="{{ route('service') }}" class="nav-item nav-link {{ Route::is('service') ? 'active' : '' }}">Services</a>
                     <a href="{{ route('portfolio') }}" class="nav-item nav-link {{ Route::is('portfolio') ? 'active' : '' }}">Portfolio</a>
                     <a href="{{ route('contact') }}" class="nav-item nav-link {{ Route::is('contact') ? 'active' : '' }}" >Contact</a>
+
+                    <a href="{{ route('login') }}" class="nav-item d-lg-none d-block nav-link {{ Route::is('login') ? 'active' : '' }}" >Login</a>
+
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-                        <small class="fab fa-facebook-f" style="color:rgb(255, 0, 0);"></small>
+                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="{{route('login')}}">
+                        <small class="fa fa-power-off" style="color:rgb(255, 0, 0);"></small>
                     </a>
-                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-                        <small class="fab fa-twitter" style="color:rgb(255, 0, 0);"></small>
-                    </a>
-                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-                        <small class="fab fa-linkedin-in" style="color:rgb(255, 0, 0);"></small>
-                    </a>
+
                 </div>
             </div>
         </nav>
