@@ -37,3 +37,7 @@ Route::view('/about-us','about')->name('about');
 Route::view('/portfolio','portfolio')->name('portfolio');
 Route::view('/login','login')->name('login');
 
+
+Route::view('/admin-index','admin.index')->name('admin.index');
+
+
