@@ -97,11 +97,11 @@
                     <a href="{{ route('admin.inquire') }}" class="nav-item nav-link {{ Route::is('admin.inquire') ? 'active' : '' }}" >Inquires</a>
                     <a href="{{ route('admin.profile') }}" class="nav-item nav-link {{ Route::is('admin.profile') ? 'active' : '' }}" >Profile</a>
 
-                    <a href="{{ route('login') }}" class="nav-item d-lg-none d-block nav-link {{ Route::is('login') ? 'active' : '' }}" >Log Out</a>
+                    <a href="{{ route('admin.logout') }}" class="nav-item d-lg-none d-block nav-link {{ Route::is('admin.logout') ? 'active' : '' }}" >Log Out</a>
 
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="{{route('login')}}" >
+                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="{{route('admin.logout')}}" >
                         <small class="fa fa-power-off" style="color:rgb(255, 0, 0);" ></small>
                     </a>
 
