@@ -5144,7 +5144,7 @@ fieldset:disabled .btn {
 .page-link {
     position: relative;
     display: block;
-    color: #355EFC;
+    color: #ff0000;
     background-color: #fff;
     border: 1px solid #dee2e6;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
@@ -5178,8 +5178,8 @@ fieldset:disabled .btn {
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #355EFC;
-    border-color: #355EFC
+    background-color: #fc3535;
+    border-color: #fc3535
 }
 
 .page-item.disabled .page-link {
