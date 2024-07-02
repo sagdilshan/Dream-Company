@@ -109,7 +109,7 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="" class="form-horizontal">
+                                        <form method="POST" action="{{ route('admin.feedback.store') }}" enctype="multipart/form-data">
                                             @csrf
 
 
@@ -117,7 +117,7 @@
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Customer
                                                     Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name= "c_name"
+                                                    <input type="text" class="form-control" name= "cus_name"
                                                         placeholder="Enter customer name" required>
 
 
@@ -130,7 +130,7 @@
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Image</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="image" accept="image/*">
+                                                    <input type="file" class="form-control" name="photo" accept="image/*" id="image">
                                                 </div>
                                             </div>
 
@@ -138,11 +138,10 @@
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Feedback</label>
                                                 <div class="col-sm-10">
-                                                    <textarea rows="4" class="form-control" name="feeback" placeholder="Feedback" required></textarea>
+                                                    <textarea rows="4" class="form-control" name="feedback" placeholder="Feedback" required></textarea>
 
                                                 </div>
                                             </div>
-
 
 
 

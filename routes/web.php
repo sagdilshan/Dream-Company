@@ -36,18 +36,11 @@ Route::view('/contact-us', 'contact')->name('contact');
 Route::view('/service', 'service')->name('service');
 Route::view('/about-us', 'about')->name('about');
 Route::view('/portfolio', 'portfolio')->name('portfolio');
+
+
 // Route::view('/login','login')->name('login');
-
-
 // Route::view('/admin-index','admin.index')->name('admin.index');
-Route::view('/admin-projects', 'admin.project.all-project')->name('admin.project');
-Route::view('/admin-feedbacks', 'admin.feedback.all-feedback')->name('admin.feedback');
-Route::view('/admin-staffs', 'admin.staff.all-staff')->name('admin.staff');
-Route::view('/admin-clients', 'admin.client.all-client')->name('admin.client');
-Route::view('/admin-inquires', 'admin.inquire.all-inquire')->name('admin.inquire');
-Route::view('/admin-all', 'admin.all-admin.all-admin')->name('admin.all');
 
-Route::view('/admin-profile', 'admin.profile')->name('admin.profile');
 
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
@@ -57,7 +50,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/admin-index', 'AdminDashboard')->name('admin.index');
         Route::get('/admin/logout', 'AdminLogout')->name('admin.logout');
         Route::post('/admin/update/password', 'AdminUpdatePassword')->name('admin.update.password');
-
+        Route::get('/admin-projects', 'AdminProject')->name('admin.project');
+        Route::get('/admin-feedbacks', 'AdminFeedback')->name('admin.feedback');
+        Route::get('/admin-staffs', 'AdminStaff')->name('admin.staff');
+        Route::get('/admin-clients', 'AdminClient')->name('admin.client');
+        Route::get('/admin-inquires', 'AdminInquire')->name('admin.inquire');
+        Route::get('/admin-all', 'AdminAll')->name('admin.all');
+        Route::get('/admin-profile', 'AdminProfile')->name('admin.profile');
+        Route::post('/admin/profile/store', 'AdminProfileStore')->name('admin.profile.store');
+        Route::post('/admin/client/store', 'AdminClientStore')->name('admin.client.store');
+        Route::post('/admin/feedback/store', 'AdminFeedbackStore')->name('admin.feedback.store');
+        Route::post('/admin/staff/store', 'AdminStaffStore')->name('admin.staff.store');
 
     });
 

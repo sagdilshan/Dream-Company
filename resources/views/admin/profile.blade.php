@@ -28,7 +28,7 @@
                                     <br>
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="" class="form-horizontal">
+                                        <form method="POST" action="{{ route('admin.profile.store') }}" class="form-horizontal">
                                             @csrf
 
 
@@ -36,8 +36,17 @@
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Admin
                                                     Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control text-capitalize" name= "c_name"
+                                                    <input type="text" class="form-control text-capitalize" name= "name"
                                                         placeholder="Enter admin name" value="{{ Auth::user()->name }}" required>
+
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Username</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control " name= "username"
+                                                        placeholder="Enter username" value="{{ Auth::user()->username }}" required>
 
 
                                                 </div>

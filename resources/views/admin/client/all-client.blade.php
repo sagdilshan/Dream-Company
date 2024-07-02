@@ -109,15 +109,14 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="" class="form-horizontal">
+                                        <form method="post" action="{{ route('admin.client.store') }}">
                                             @csrf
-
 
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Customer
                                                     Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name= "c_name"
+                                                    <input type="text" class="form-control" name= "cus_name"
                                                         placeholder="Enter customer name" required>
 
 
@@ -125,44 +124,37 @@
                                             </div>
 
 
-
-
-                                            {{-- <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Employee Image</label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="image" accept="image/*">
-                                                </div>
-                                            </div> --}}
-
-
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Email</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Email</label>
                                                 <div class="col-sm-10">
                                                     <input type="email" class="form-control" name="email"
-                                                    placeholder="Enter email" required>
+                                                        placeholder="Enter email" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Address</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Address</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="address"
-                                                    placeholder="Enter address" required>
+                                                        placeholder="Enter address" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Phone</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Phone</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="linkedin"
-                                                    placeholder="Enter contact number" required>
+                                                    <input type="text" class="form-control" name="phone"
+                                                        placeholder="Enter contact number" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">NIC</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="nic"
-                                                    placeholder="Enter NIC number" required>
+                                                        placeholder="Enter NIC number" required>
                                                 </div>
                                             </div>
 

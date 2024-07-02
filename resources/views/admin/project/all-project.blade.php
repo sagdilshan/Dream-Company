@@ -198,7 +198,6 @@
                                                     <input type="text" class="form-control" name="p_name"
                                                         placeholder="Enter project name" required>
 
-
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
@@ -206,7 +205,7 @@
                                                     Name</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="s_name"
-                                                        placeholder="Enter sub name" >
+                                                        placeholder="Enter sub name (optional)" >
 
 
                                                 </div>

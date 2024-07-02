@@ -109,7 +109,7 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="" class="form-horizontal">
+                                        <form method="POST" action="{{ route('admin.staff.store') }}" class="form-horizontal" enctype="multipart/form-data">
                                             @csrf
 
 
@@ -130,7 +130,7 @@
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Employee Image</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="image" accept="image/*">
+                                                    <input type="file" class="form-control" name="photo" accept="image/*">
                                                 </div>
                                             </div>
 
