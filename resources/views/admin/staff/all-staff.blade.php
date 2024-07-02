@@ -1,0 +1,190 @@
+@extends('home.dash-header')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Staff')
+@section('content')
+
+
+
+    <!-- Page Head End -->
+    <br><br><br><br>
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <h2 style="font-family: Open Sans;">All Staff</h2>
+
+                            <br>
+                            <table id="example3" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Item Name</th>
+                                        <th>Sale Price</th>
+                                        <th>Category</th>
+                                        <th>Stocks</th>
+                                        <th>Status</th>
+
+                                        <th>Action</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+
+                                    {{-- @foreach ($alldisapprove as $key => $item) --}}
+                                    <tr>
+                                        <td>4re</td>
+
+
+                                        <td>feg</td>
+                                        <td>erg</td>
+                                        <td>htht</td>
+                                        <td>htht</td>
+                                        <td>htht</td>
+
+
+                                        <td>
+                                            <a href=" " class="btn btn-outline-info">Edit</a>
+
+                                        </td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>dv</td>
+
+
+                                        <td>feg</td>
+                                        <td>erg</td>
+                                        <td>htht</td>
+                                        <td>333</td>
+                                        <td>htht</td>
+
+
+                                        <td>
+                                            <a href=" " class="btn btn-outline-info">Ced</a>
+
+                                        </td>
+
+                                    </tr>
+
+                                    {{-- @endforeach --}}
+
+
+                                    </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+
+
+
+        <br>
+
+
+        <section class="content ">
+            <div class="container-fluid ">
+                <div class="row">
+
+                    <!-- /.col -->
+                    <div class="col-lg-12">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <div class="tab-content">
+
+
+
+                                    <div class="active tab-pane" id="settings">
+                                        <form method="POST" action="" class="form-horizontal">
+                                            @csrf
+
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Employee
+                                                    Name</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name= "e_name"
+                                                        placeholder="Enter employee name" required>
+
+
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Employee Image</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" class="form-control" name="image" accept="image/*">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Facebook Link</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="fb"
+                                                    placeholder="Enter facebook link" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Instagram Link</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="insta"
+                                                    placeholder="Enter instagram link" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">LinkedIn Link</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="linkedin"
+                                                    placeholder="Enter linkedIn link" required>
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                            <div class="form-group row mt-3">
+                                                <div class="offset-sm-2 col-sm-10 d-flex  justify-content-end">
+                                                    <button type="submit" class="btn btn-danger">Save Changes</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <!-- /.tab-content -->
+                            </div><!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
+    </div>
+    <!-- Contact End -->
+
+
+@endsection
