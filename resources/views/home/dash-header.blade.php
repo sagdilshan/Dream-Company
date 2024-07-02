@@ -43,6 +43,16 @@
 
     <!-- Template Stylesheet -->
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/mystyle.css" rel="stylesheet">
+    <link rel="stylesheet"
+    href="{{ asset('../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
+    <link rel="stylesheet" href="{{ asset('../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+
     @stack('stylesheets')
 </head>
 
@@ -78,11 +88,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="{{ route('about') }}" class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}">Projects</a>
-                    <a href="{{ route('service') }}" class="nav-item nav-link {{ Route::is('service') ? 'active' : '' }}">Feedbacks</a>
-                    <a href="{{ route('portfolio') }}" class="nav-item nav-link {{ Route::is('portfolio') ? 'active' : '' }}">Staff</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link {{ Route::is('contact') ? 'active' : '' }}" >Clients</a>
-                    <a href="{{ route('contact') }}" class="nav-item nav-link {{ Route::is('contact') ? 'active' : '' }}" >Inquires</a>
+                    <a href="{{ route('admin.index') }}" class="nav-item nav-link {{ Route::is('admin.index') ? 'active' : '' }}">Dashboard</a>
+
+                    <a href="{{ route('admin.project') }}" class="nav-item nav-link {{ Route::is('admin.project') ? 'active' : '' }}">Projects</a>
+                    <a href="{{ route('admin.feedback') }}" class="nav-item nav-link {{ Route::is('admin.feedback') ? 'active' : '' }}">Feedbacks</a>
+                    <a href="{{ route('admin.staff') }}" class="nav-item nav-link {{ Route::is('admin.staff') ? 'active' : '' }}">Staff</a>
+                    <a href="{{ route('admin.client') }}" class="nav-item nav-link {{ Route::is('admin.client') ? 'active' : '' }}" >Customers</a>
+                    <a href="{{ route('admin.inquire') }}" class="nav-item nav-link {{ Route::is('admin.inquire') ? 'active' : '' }}" >Inquires</a>
+                    <a href="{{ route('admin.profile') }}" class="nav-item nav-link {{ Route::is('admin.profile') ? 'active' : '' }}" >Profile</a>
+
                     <a href="{{ route('login') }}" class="nav-item d-lg-none d-block nav-link {{ Route::is('login') ? 'active' : '' }}" >Log Out</a>
 
                 </div>
@@ -119,18 +133,24 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Services</h4>
-                    <a class="btn btn-link">Financial Planning</a>
-                    <a class="btn btn-link">Cash Investment</a>
-                    <a class="btn btn-link">Financial Consultancy</a>
-                    <a class="btn btn-link">Business Loans</a>
-                    <a class="btn btn-link">Business Analysis</a>
+                    <a class="btn btn-link">Web Development</a>
+                    <a class="btn btn-link">Software Consulting</a>
+                    <a class="btn btn-link">Software Development</a>
+                    <a class="btn btn-link">Maintenance and Support</a>
+                    <a class="btn btn-link">Quality Assurance and Testing</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <a class="btn btn-link" href="{{ url('/') }}">SpectraZ Techlabs</a>
-                        <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
-                        <a class="btn btn-link" href="{{ route('contact') }}">Contact Us</a>
-                        <a class="btn btn-link" href="{{ route('portfolio') }}">Our Portfolio</a>
-                        <a class="btn btn-link" href="{{ route('service') }}">Our Services</a>
+                    <h4 class="text-white mb-4">Pages</h4>
+                    <a class="btn btn-link" href="{{ route('admin.staff') }}">Staff</a>
+
+
+                        <a class="btn btn-link" href="{{ route('admin.client') }}">Clients</a>
+                        <a class="btn btn-link" href="{{ route('admin.inquire') }}">Inquires</a>
+
+                        <a class="btn btn-link" href="{{ route('admin.project') }}">Projects</a>
+
+                        <a class="btn btn-link" href="{{ route('admin.feedback') }}">Feedbacks</a>
+
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Our Vision</h4>
@@ -168,6 +188,47 @@
     <script src="../assets/lib/waypoints/waypoints.min.js"></script>
     <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="../assets/lib/counterup/counterup.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+    <script src="{{ asset('../assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('../assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        $(function() {
+            $("#example2").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["excel", "pdf", "print"]
+            }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+
+        });
+
+        $(function() {
+            $("#example3").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["excel", "pdf", "print"]
+            }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
+
+        });
+    </script>
 
     <!-- Template Javascript -->
     <script src="../assets/js/main.js"></script>
