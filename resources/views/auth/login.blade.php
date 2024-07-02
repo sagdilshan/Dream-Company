@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -8,8 +8,8 @@
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            <x-text-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('login')" class="mt-2" />
         </div>
 
         <!-- Password -->
@@ -44,4 +44,96 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+</x-guest-layout> --}}
+
+
+@extends('home.header')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Login Page')
+@section('content')
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <h1 class="display-3 mb-4 animated slideInDown">Login</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a class="text-danger" href="{{ url('/') }}">Home</a></li>
+
+                    <li class="breadcrumb-item active" aria-current="page">Login</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Head End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <p class="fs-5 fw-medium text-danger">Login</p>
+                    <h1 class="display-5 mb-4">Welcome Back!</h1>
+                    <p class="mb-4">Please enter your credentials to log in.</p>
+
+                    <form method="post" action="{{ route('login') }}">
+                        @csrf
+
+
+                        <div class="row g-3">
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="login" id="login"
+                                        placeholder="Enter email" :value="old('login')" required autofocus
+                                        autocomplete="username">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password"
+                                        required autocomplete="current-password">
+                                    <label for="password">Password</label>
+                                </div>
+                                <x-input-error :messages="$errors->get('login')" class="mt-2 text-danger text-bold" />
+
+                            </div>
+
+
+                            <div class="col-md-12 mt-5">
+                                {{-- <button class="btn btn-danger py-3 px-5" type="submit">Login</button> --}}
+                                <input type="submit" class="btn btn-danger py-3 px-5" value="Sign In">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style=" object-fit: cover;">
+                    <div class="position-relative rounded overflow-hidden h-100 ">
+                        <img class="position-relative w-100 h-100" src="../assets/img/service-4.jpg"
+                            style=" border:0; object-fit: cover; max-height: 26rem;" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+@endsection
+
+{{-- <form method="POST" action="{{ route('login') }}">
+    @csrf
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="text" class="form-control" id="login" name="login" :value="old('login')" required
+            autofocus autocomplete="username" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> --}}
