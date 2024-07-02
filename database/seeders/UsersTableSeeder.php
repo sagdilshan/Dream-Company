@@ -26,8 +26,6 @@ class UsersTableSeeder extends Seeder
                 'status' => 'active',
             ],
 
-
-
         ]);
     }
 }
