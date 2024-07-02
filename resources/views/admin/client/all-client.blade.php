@@ -105,6 +105,7 @@
                             <div class="card-body">
                                 <div class="tab-content">
 
+                                    <h2 class="mb-4" style="font-family: Open Sans;color: red;">Add Customers</h2>
 
 
                                     <div class="active tab-pane" id="settings">

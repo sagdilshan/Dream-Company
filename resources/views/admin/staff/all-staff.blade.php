@@ -104,6 +104,7 @@
 
                             <div class="card-body">
                                 <div class="tab-content">
+                                    <h2 class="mb-4" style="font-family: Open Sans;color: red;">Add Employee</h2>
 
 
 
@@ -135,26 +136,40 @@
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Facebook Link</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Job Role</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="fb"
-                                                    placeholder="Enter facebook link" required>
+                                                    <input type="text" class="form-control" name="job_role"
+                                                    placeholder="Enter Job Role" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">NIC</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="nic"
+                                                    placeholder="Enter NIC number" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Phone</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="phone"
+                                                    placeholder="Enter phone number" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Instagram Link</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Email</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="insta"
-                                                    placeholder="Enter instagram link" required>
+                                                    <input type="email" class="form-control" name="email"
+                                                    placeholder="Enter email address" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">LinkedIn Link</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Address</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="linkedin"
-                                                    placeholder="Enter linkedIn link" required>
+                                                    <input type="text" class="form-control" name="address"
+                                                    placeholder="Enter address" required>
                                                 </div>
                                             </div>
 

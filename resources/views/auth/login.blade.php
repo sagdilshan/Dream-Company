@@ -85,9 +85,9 @@
                             <div class="col-md-12">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" name="login" id="login"
-                                        placeholder="Enter email" :value="old('login')" required autofocus
+                                        placeholder="Enter username / phone / email" :value="old('login')" required autofocus
                                         autocomplete="username">
-                                    <label for="email">Email</label>
+                                    <label for="login">Username / Phone / Email</label>
                                 </div>
                             </div>
 

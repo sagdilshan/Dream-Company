@@ -176,14 +176,14 @@
                         <img class="img-fluid rounded" src="../assets/img/gayathra.jpg" alt="gayathra dilshan">
                         <div class="team-text">
                             <h4 class="mb-0">Gayathra Dilshan</h4>
+
                             <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle mx-1" href="https://www.facebook.com/gayathra.dilshan.77/" target="_blank"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href="https://lk.linkedin.com/in/gayathra-dilshan-347775238" target="_blank"><i
-                                        class="fab fa-linkedin"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
+
+                                {{-- <h5 class="mb-0" style="color: rgb(111, 0, 255);">Software Engineer</h5> --}}
+                                <h5 class="mb-0" style="color: rgb(250, 0, 0); text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;">Software Engineer</h5>
+
                             </div>
+
                         </div>
                     </div>
                 </div>

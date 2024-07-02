@@ -207,7 +207,28 @@
     <script src="{{ asset('../assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
 
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
     <script>
         $(function() {
             $("#example2").DataTable({

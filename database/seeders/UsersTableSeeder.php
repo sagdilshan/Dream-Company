@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Gayathra Dilshan',
                 'username' => 'gayathra',
                 'email' => 'gayathradilshan1@gmail.com',
-                'password' => Hash::make('Dilshan2002@!@'),
+                'password' => Hash::make('119'),
                 'role' => 'admin',
                 'status' => 'active',
             ],
