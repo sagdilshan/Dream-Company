@@ -39,5 +39,19 @@ Route::view('/login','login')->name('login');
 
 
 Route::view('/admin-index','admin.index')->name('admin.index');
+Route::view('/admin-projects','admin.project.all-project')->name('admin.project');
+Route::view('/admin-feedbacks','admin.feedback.all-feedback')->name('admin.feedback');
+Route::view('/admin-staffs','admin.staff.all-staff')->name('admin.staff');
+Route::view('/admin-clients','admin.client.all-client')->name('admin.client');
+Route::view('/admin-inquires','admin.inquire.all-inquire')->name('admin.inquire');
+Route::view('/admin-all','admin.all-admin.all-admin')->name('admin.all');
+
+Route::view('/admin-profile','admin.profile')->name('admin.profile');
+
+
+
+
+
+
 
 
