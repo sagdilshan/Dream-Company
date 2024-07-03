@@ -25,11 +25,10 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Item Name</th>
-                                        <th>Sale Price</th>
-                                        <th>Category</th>
-                                        <th>Stocks</th>
-                                        <th>Status</th>
+                                        <th>Customer Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Address</th>
 
                                         <th>Action</th>
                                     </tr>
@@ -37,44 +36,24 @@
                                 </thead>
                                 <tbody>
 
-                                    {{-- @foreach ($alldisapprove as $key => $item) --}}
-                                    <tr>
-                                        <td>4re</td>
+
+                                    @foreach ($allclient as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+
+                                            <td>{{ $item->cus_name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->address }}</td>
+
+                                            <td>
+                                                <a href="" class="btn btn-outline-success">Edit</a>
+                                            </td>
 
 
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
 
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Edit</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>dv</td>
-
-
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>333</td>
-                                        <td>htht</td>
-
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Ced</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    {{-- @endforeach --}}
+                                        </tr>
+                                    @endforeach
 
 
                                     </tfoot>
