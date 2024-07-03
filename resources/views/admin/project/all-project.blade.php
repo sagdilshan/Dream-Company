@@ -24,10 +24,10 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Item Name</th>
-                                        <th>Sale Price</th>
-                                        <th>Category</th>
-                                        <th>Stocks</th>
+                                        <th>Project Name</th>
+                                        <th>Association</th>
+                                        <th>Price</th>
+                                        <th>Start Month</th>
                                         <th>Status</th>
 
                                         <th>Action</th>
@@ -36,44 +36,36 @@
                                 </thead>
                                 <tbody>
 
-                                    {{-- @foreach ($alldisapprove as $key => $item) --}}
-                                    <tr>
-                                        <td>4re</td>
+
+                                    @foreach ($pending_project as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
 
 
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
+                                            <td>{{ $item->p_name }}</td>
+                                            <td>{{ $item->association }}</td>
+                                            <td>{{ $item->p_fee }}</td>
+                                            <td>{{ $item->s_month }}</td>
 
+                                            <td>
+                                                @if ($item->project_status == 'completed')
+                                                    <span class="badge badge-success text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(42, 253, 0);">Completed</span>
+                                                @elseif ($item->project_status == 'pending')
+                                                    <span class="badge badge-danger text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 18, 18);">Pending</span>
+                                                @else
+                                                    <span class="badge badge-warning text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 144, 18);">Canceled</span>
+                                                @endif
+                                            </td>
+                                            {{-- {{ route('manage.edit.products', $item->id) }} --}}
+                                            <td>
+                                                <a href="" class="btn btn-outline-success">Edit</a>
+                                            </td>
 
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Edit</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>dv</td>
-
-
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>333</td>
-                                        <td>htht</td>
-
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Ced</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    {{-- @endforeach --}}
+                                        </tr>
+                                    @endforeach
 
 
                                     </tfoot>
@@ -103,56 +95,47 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Item Name</th>
-                                        <th>Sale Price</th>
-                                        <th>Category</th>
-                                        <th>Stocks</th>
+                                        <th>Project Name</th>
+                                        <th>Association</th>
+                                        <th>Price</th>
+                                        <th>Start Month</th>
+                                        <th>Finished Month</th>
                                         <th>Status</th>
 
-                                        <th>Action</th>
                                     </tr>
 
                                 </thead>
                                 <tbody>
 
-                                    {{-- @foreach ($alldisapprove as $key => $item) --}}
-                                    <tr>
-                                        <td>4re</td>
+
+                                    @foreach ($completed_project as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
 
 
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
+                                            <td>{{ $item->p_name }}</td>
+                                            <td>{{ $item->association }}</td>
+                                            <td>{{ $item->p_fee }}</td>
+                                            <td>{{ $item->s_month }}</td>
+                                            <td>{{ $item->f_month }}</td>
 
 
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Edit</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>dv</td>
-
-
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>333</td>
-                                        <td>htht</td>
+                                            <td>
+                                                @if ($item->project_status == 'completed')
+                                                    <span class="badge badge-success text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(42, 253, 0);">Completed</span>
+                                                @elseif ($item->project_status == 'pending')
+                                                    <span class="badge badge-danger text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 18, 18);">Pending</span>
+                                                @else
+                                                    <span class="badge badge-warning text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 144, 18);">Canceled</span>
+                                                @endif
+                                            </td>
 
 
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Ced</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    {{-- @endforeach --}}
+                                        </tr>
+                                    @endforeach
 
 
                                     </tfoot>
@@ -187,7 +170,8 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="" class="form-horizontal">
+                                        <form method="POST" action="{{ route('admin.project.store') }}"
+                                            class="form-horizontal" enctype="multipart/form-data">
                                             @csrf
 
 
@@ -205,7 +189,7 @@
                                                     Name</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="s_name"
-                                                        placeholder="Enter sub name (optional)" >
+                                                        placeholder="Enter sub name (optional)">
 
 
                                                 </div>
@@ -221,7 +205,8 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Association</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Association</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="association"
                                                         placeholder="Enter association name" required>
@@ -231,16 +216,22 @@
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Assign Customer</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Assign
+                                                    Customer</label>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control"  name="assign_customer" required>
+                                                    <select class="form-control" name="assign_customer" required>
 
-                                                        <option value="normal">Customer 1
+                                                        {{-- <option value="1">Customer 1
                                                         </option>
-                                                        <option value="sale">Customer 2
+                                                        <option value="2">Customer 2
                                                         </option>
-                                                        <option value="sale">ll 2
-                                                        </option>
+                                                        <option value="3">ll 2
+                                                        </option> --}}
+
+                                                        @foreach ($customers as $customer)
+                                                            <option value="{{ $customer->id }}">{{ $customer->cus_name }}
+                                                            </option>
+                                                        @endforeach
 
 
                                                     </select>
@@ -248,11 +239,15 @@
                                                 </div>
                                             </div>
 
+
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Project Fee</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Project
+                                                    Fee</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control" name="p_fee"
                                                         placeholder="Enter project fee" required min="10000">
+                                                    <small id="emailHelp" class="form-text text-muted">Minimum value
+                                                        10000</small>
 
 
                                                 </div>
@@ -273,25 +268,51 @@
                                                     Month</label>
                                                 <div class="col-sm-10">
                                                     <input type="month" class="form-control" name="f_month">
+                                                    <small id="emailHelp" class="form-text text-muted">Project not
+                                                        finished... Don't fill this...</small>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Thumbnail</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Project
+                                                    Status</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="thumb" accept="image/*">
+                                                    <select class="form-control" name="project_status" required>
+
+                                                        <option value="pending">Pending Project
+                                                        </option>
+                                                        <option value="completed">Completed Project
+                                                        </option>
+
+
+
+
+                                                    </select>
+
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Images</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Thumbnail</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control"  multiple accept="image/*">
+                                                    <input type="file" class="form-control" name="thumb"
+                                                        accept="image/*">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Description</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Images</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" class="form-control" name="photo[]" multiple
+                                                        accept="image/*">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Description</label>
                                                 <div class="col-sm-10">
                                                     <textarea rows="4" class="form-control" name="description" placeholder="Description" required></textarea>
 
