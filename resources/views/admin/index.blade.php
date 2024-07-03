@@ -76,7 +76,7 @@
                         <div class="icon">
                             <i class="fas fa-user-shield"></i>
                         </div>
-                        <a href="{{route('admin.all')}}" class="small-box-footer">
+                        <a href="{{ route('admin.all') }}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -93,7 +93,7 @@
                         <div class="icon">
                             <i class="fas fa-archive"></i>
                         </div>
-                        <a  class="small-box-footer">
+                        <a class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -110,7 +110,7 @@
                         <div class="icon">
                             <i class="fa fa-users"></i>
                         </div>
-                        <a href="{{route('admin.staff')}}" class="small-box-footer">
+                        <a href="{{ route('admin.staff') }}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -126,7 +126,7 @@
                         <div class="icon">
                             <i class="fas fa-user-tie"></i>
                         </div>
-                        <a href="{{route('admin.feedback')}}" class="small-box-footer">
+                        <a href="{{ route('admin.feedback') }}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -142,7 +142,7 @@
                         <div class="icon">
                             <i class="fas fa-user-shield"></i>
                         </div>
-                        <a href="{{route('admin.inquire')}}" class="small-box-footer">
+                        <a href="{{ route('admin.inquire') }}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>

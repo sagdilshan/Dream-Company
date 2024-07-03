@@ -46,10 +46,11 @@
                                             <td>
                                                 @if (!empty($item->photo) && file_exists(public_path('upload/staff_images/' . $item->photo)))
                                                     <img src="{{ url('upload/staff_images/' . $item->photo) }}"
-                                                        class=" mr-2" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                                        class=" mr-2"
+                                                        style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
                                                 @else
-                                                    <img src="{{ url('upload/no_image.png') }}"
-                                                        class="mr-2"  style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                                    <img src="{{ url('upload/no_image.png') }}" class="mr-2"
+                                                        style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
                                                 @endif
                                             </td>
                                             <td>{{ $item->e_name }}</td>
@@ -100,7 +101,8 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{ route('admin.staff.store') }}" class="form-horizontal" enctype="multipart/form-data">
+                                        <form method="POST" action="{{ route('admin.staff.store') }}"
+                                            class="form-horizontal" enctype="multipart/form-data">
                                             @csrf
 
 
@@ -119,48 +121,54 @@
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Employee Image</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Employee
+                                                    Image</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="photo" accept="image/*">
+                                                    <input type="file" class="form-control" name="photo"
+                                                        accept="image/*">
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Job Role</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Job
+                                                    Role</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="job_role"
-                                                    placeholder="Enter Job Role" required>
+                                                        placeholder="Enter Job Role" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">NIC</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="nic"
-                                                    placeholder="Enter NIC number" required>
+                                                        placeholder="Enter NIC number" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Phone</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Phone</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="phone"
-                                                    placeholder="Enter phone number" required>
+                                                        placeholder="Enter phone number" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Email</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Email</label>
                                                 <div class="col-sm-10">
                                                     <input type="email" class="form-control" name="email"
-                                                    placeholder="Enter email address" required>
+                                                        placeholder="Enter email address" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Address</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Address</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="address"
-                                                    placeholder="Enter address" required>
+                                                        placeholder="Enter address" required>
                                                 </div>
                                             </div>
 

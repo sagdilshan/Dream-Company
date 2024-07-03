@@ -45,8 +45,8 @@
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/mystyle.css" rel="stylesheet">
     <link rel="stylesheet"
-    href="{{ asset('../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{ asset('../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+        href="{{ asset('../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
@@ -69,13 +69,18 @@
     <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
-                <small><a href="https://www.google.com/maps/place/6.696325,79.935113"  class="text-dark" target="_blank"><i class="fa fa-map-marker-alt me-2" style="color:rgb(255, 0, 0);"></i>265 2/A, Madupitiya, Panadura.</a></small>
-                <small class="ms-4 text-dark"><i class="fa fa-clock me-2" style="color:rgb(255, 0, 0);"></i>09.00 AM - 06.00 PM</small>
+                <small><a href="https://www.google.com/maps/place/6.696325,79.935113" class="text-dark"
+                        target="_blank"><i class="fa fa-map-marker-alt me-2" style="color:rgb(255, 0, 0);"></i>265 2/A,
+                        Madupitiya, Panadura.</a></small>
+                <small class="ms-4 text-dark"><i class="fa fa-clock me-2" style="color:rgb(255, 0, 0);"></i>09.00 AM -
+                    06.00 PM</small>
             </div>
             <div class="col-lg-6 px-5 text-end">
-                <small><i class="fa fa-envelope me-2" style="color:rgb(255, 0, 0);"></i><a href="mailto:spectraztechlabs@gmail.com" class="text-dark">spectraztechlabs@gmail.com</a></small>
-                <small class="ms-4"><i class="fa fa-phone-alt me-2" style="color:rgb(255, 0, 0);"></i><a href="tel:+94779919634"
-                    target="_blank" class="text-dark">+94 77 99 19 634</a></small>
+                <small><i class="fa fa-envelope me-2" style="color:rgb(255, 0, 0);"></i><a
+                        href="mailto:spectraztechlabs@gmail.com"
+                        class="text-dark">spectraztechlabs@gmail.com</a></small>
+                <small class="ms-4"><i class="fa fa-phone-alt me-2" style="color:rgb(255, 0, 0);"></i><a
+                        href="tel:+94779919634" target="_blank" class="text-dark">+94 77 99 19 634</a></small>
             </div>
         </div>
 
@@ -83,26 +88,36 @@
             <a href="{{ url('/') }}" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="display-5 m-0" style="color:rgb(255, 0, 0);">SpectraZ Techlabs</h1>
             </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="{{ route('admin.index') }}" class="nav-item nav-link {{ Route::is('admin.index') ? 'active' : '' }}">Dashboard</a>
+                    <a href="{{ route('admin.index') }}"
+                        class="nav-item nav-link {{ Route::is('admin.index') ? 'active' : '' }}">Dashboard</a>
 
-                    <a href="{{ route('admin.project') }}" class="nav-item nav-link {{ Route::is('admin.project') ? 'active' : '' }}">Projects</a>
-                    <a href="{{ route('admin.feedback') }}" class="nav-item nav-link {{ Route::is('admin.feedback') ? 'active' : '' }}">Feedbacks</a>
-                    <a href="{{ route('admin.staff') }}" class="nav-item nav-link {{ Route::is('admin.staff') ? 'active' : '' }}">Staff</a>
-                    <a href="{{ route('admin.client') }}" class="nav-item nav-link {{ Route::is('admin.client') ? 'active' : '' }}" >Customers</a>
-                    <a href="{{ route('admin.inquire') }}" class="nav-item nav-link {{ Route::is('admin.inquire') ? 'active' : '' }}" >Inquires</a>
-                    <a href="{{ route('admin.profile') }}" class="nav-item nav-link {{ Route::is('admin.profile') ? 'active' : '' }}" >Profile</a>
+                    <a href="{{ route('admin.project') }}"
+                        class="nav-item nav-link {{ Route::is('admin.project') ? 'active' : '' }}">Projects</a>
+                    <a href="{{ route('admin.feedback') }}"
+                        class="nav-item nav-link {{ Route::is('admin.feedback') ? 'active' : '' }}">Feedbacks</a>
+                    <a href="{{ route('admin.staff') }}"
+                        class="nav-item nav-link {{ Route::is('admin.staff') ? 'active' : '' }}">Staff</a>
+                    <a href="{{ route('admin.client') }}"
+                        class="nav-item nav-link {{ Route::is('admin.client') ? 'active' : '' }}">Customers</a>
+                    <a href="{{ route('admin.inquire') }}"
+                        class="nav-item nav-link {{ Route::is('admin.inquire') ? 'active' : '' }}">Inquires</a>
+                    <a href="{{ route('admin.profile') }}"
+                        class="nav-item nav-link {{ Route::is('admin.profile') ? 'active' : '' }}">Profile</a>
 
-                    <a href="{{ route('admin.logout') }}" class="nav-item d-lg-none d-block nav-link {{ Route::is('admin.logout') ? 'active' : '' }}" >Log Out</a>
+                    <a href="{{ route('admin.logout') }}"
+                        class="nav-item d-lg-none d-block nav-link {{ Route::is('admin.logout') ? 'active' : '' }}">Log
+                        Out</a>
 
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="{{route('admin.logout')}}" >
-                        <small class="fa fa-power-off" style="color:rgb(255, 0, 0);" ></small>
+                    <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="{{ route('admin.logout') }}">
+                        <small class="fa fa-power-off" style="color:rgb(255, 0, 0);"></small>
                     </a>
 
                 </div>
@@ -114,21 +129,29 @@
     @yield('content')
 
 
-     <!-- Footer Start -->
-     <div class="container-fluid text-light footer mt-5 py-5 wow fadeIn" style="background-color:rgb(0, 0, 0);" data-wow-delay="0.1s">
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer mt-5 py-5 wow fadeIn" style="background-color:rgb(0, 0, 0);"
+        data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Our Office</h4>
-                   <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><a href="https://www.google.com/maps/place/6.696325,79.935113"  class="text-light" target="_blank"> 265 2/A, Madupitiya, Panadura.</a></p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+94779919634"
-                        target="_blank" class="text-light">+94779919634</a></p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a href="mailto:spectraztechlabs@gmail.com" class="text-light">spectraztechlabs@gmail.com</a></p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i><a
+                            href="https://www.google.com/maps/place/6.696325,79.935113" class="text-light"
+                            target="_blank"> 265 2/A, Madupitiya, Panadura.</a></p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+94779919634" target="_blank"
+                            class="text-light">+94779919634</a></p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a href="mailto:spectraztechlabs@gmail.com"
+                            class="text-light">spectraztechlabs@gmail.com</a></p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -144,17 +167,17 @@
                     <a class="btn btn-link" href="{{ route('admin.staff') }}">Staff</a>
 
 
-                        <a class="btn btn-link" href="{{ route('admin.client') }}">Clients</a>
-                        <a class="btn btn-link" href="{{ route('admin.inquire') }}">Inquires</a>
+                    <a class="btn btn-link" href="{{ route('admin.client') }}">Clients</a>
+                    <a class="btn btn-link" href="{{ route('admin.inquire') }}">Inquires</a>
 
-                        <a class="btn btn-link" href="{{ route('admin.project') }}">Projects</a>
+                    <a class="btn btn-link" href="{{ route('admin.project') }}">Projects</a>
 
-                        <a class="btn btn-link" href="{{ route('admin.feedback') }}">Feedbacks</a>
+                    <a class="btn btn-link" href="{{ route('admin.feedback') }}">Feedbacks</a>
 
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Our Vision</h4>
-                        <p>Transforming Visions into Digital Spectrums.</p>
+                    <p>Transforming Visions into Digital Spectrums.</p>
 
                 </div>
             </div>
@@ -168,7 +191,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    &copy; Copyright 2023 <a href="https://spectraztechlabs.tech/" > SpectraZ Techlabs</a>
+                    &copy; Copyright 2023 <a href="https://spectraztechlabs.tech/"> SpectraZ Techlabs</a>
                 </div>
             </div>
         </div>

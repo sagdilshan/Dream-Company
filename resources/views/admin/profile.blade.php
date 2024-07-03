@@ -28,7 +28,8 @@
                                     <br>
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{ route('admin.profile.store') }}" class="form-horizontal">
+                                        <form method="POST" action="{{ route('admin.profile.store') }}"
+                                            class="form-horizontal">
                                             @csrf
 
 
@@ -36,17 +37,20 @@
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Admin
                                                     Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control text-capitalize" name= "name"
-                                                        placeholder="Enter admin name" value="{{ Auth::user()->name }}" required>
+                                                    <input type="text" class="form-control text-capitalize"
+                                                        name= "name" placeholder="Enter admin name"
+                                                        value="{{ Auth::user()->name }}" required>
 
 
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Username</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Username</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control " name= "username"
-                                                        placeholder="Enter username" value="{{ Auth::user()->username }}" required>
+                                                        placeholder="Enter username" value="{{ Auth::user()->username }}"
+                                                        required>
 
 
                                                 </div>
@@ -59,33 +63,40 @@
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Email</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Email</label>
                                                 <div class="col-sm-10">
                                                     <input type="email" class="form-control" name="email"
-                                                    placeholder="Enter email" value="{{ Auth::user()->email }}" required>
+                                                        placeholder="Enter email" value="{{ Auth::user()->email }}"
+                                                        required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Address</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Address</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control text-capitalize" name="address" value="{{ Auth::user()->address }}"
-                                                    placeholder="Enter address" required>
+                                                    <input type="text" class="form-control text-capitalize"
+                                                        name="address" value="{{ Auth::user()->address }}"
+                                                        placeholder="Enter address" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Phone</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Phone</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="phone"
-                                                    placeholder="Enter contact number" value="{{ Auth::user()->phone }}" required>
+                                                        placeholder="Enter contact number" value="{{ Auth::user()->phone }}"
+                                                        required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">NIC</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="nic" value="{{ Auth::user()->nic }}"
-                                                    placeholder="Enter NIC number" required>
+                                                    <input type="text" class="form-control" name="nic"
+                                                        value="{{ Auth::user()->nic }}" placeholder="Enter NIC number"
+                                                        required>
                                                 </div>
                                             </div>
 
@@ -128,7 +139,7 @@
 
                                     <h2 style="font-family: Open Sans;color: red;">Update Password </h2>
 
-<br>
+                                    <br>
                                     <div class="active tab-pane" id="settings">
                                         <form method="POST" action="{{ route('admin.update.password') }}"
                                             class="form-horizontal" enctype="multipart/form-data">
@@ -136,11 +147,14 @@
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Old Password</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Old
+                                                    Password</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" class="form-control @error('old_password') is-invalid @enderror" name= "old_password" id="old_password"
+                                                    <input type="password"
+                                                        class="form-control @error('old_password') is-invalid @enderror"
+                                                        name= "old_password" id="old_password"
                                                         placeholder="Enter old password" required>
-                                                        @error('old_password')
+                                                    @error('old_password')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
 
@@ -153,10 +167,13 @@
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">New Password</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">New
+                                                    Password</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" class="form-control @error('new_password') is-invalid @enderror" name="new_password" id="new_password"
-                                                    placeholder="Enter new password" required>
+                                                    <input type="password"
+                                                        class="form-control @error('new_password') is-invalid @enderror"
+                                                        name="new_password" id="new_password"
+                                                        placeholder="Enter new password" required>
                                                     @error('new_password')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
@@ -164,10 +181,12 @@
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Confirm Password</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Confirm
+                                                    Password</label>
                                                 <div class="col-sm-10">
-                                                    <input type="password" class="form-control" name="new_password_confirmation" id="new_password_confirmation"
-                                                    placeholder="Confirm password" required>
+                                                    <input type="password" class="form-control"
+                                                        name="new_password_confirmation" id="new_password_confirmation"
+                                                        placeholder="Confirm password" required>
                                                 </div>
                                             </div>
 

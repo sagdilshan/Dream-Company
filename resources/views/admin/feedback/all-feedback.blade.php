@@ -44,10 +44,11 @@
                                             <td>
                                                 @if (!empty($item->photo) && file_exists(public_path('upload/feedback_images/' . $item->photo)))
                                                     <img src="{{ url('upload/feedback_images/' . $item->photo) }}"
-                                                        class=" mr-2" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                                        class=" mr-2"
+                                                        style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
                                                 @else
-                                                    <img src="{{ url('upload/no_image.png') }}"
-                                                        class="mr-2"  style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                                    <img src="{{ url('upload/no_image.png') }}" class="mr-2"
+                                                        style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
                                                 @endif
                                             </td>
                                             <td>{{ $item->cus_name }}</td>
@@ -95,7 +96,8 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{ route('admin.feedback.store') }}" enctype="multipart/form-data">
+                                        <form method="POST" action="{{ route('admin.feedback.store') }}"
+                                            enctype="multipart/form-data">
                                             @csrf
 
 
@@ -114,15 +116,18 @@
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Customer Image</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Customer
+                                                    Image</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="photo" accept="image/*" id="image">
+                                                    <input type="file" class="form-control" name="photo"
+                                                        accept="image/*" id="image">
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Feedback</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Feedback</label>
                                                 <div class="col-sm-10">
                                                     <textarea rows="4" class="form-control" name="feedback" placeholder="Feedback" required></textarea>
 

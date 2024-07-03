@@ -88,8 +88,8 @@ class AdminController extends Controller
     public function AdminFeedback()
     {
         $feedbacks = FeedbackModel::orderBy('created_at', 'desc')
-        // ->where('status', 'show')
-        ->get();
+            // ->where('status', 'show')
+            ->get();
 
         return view('admin.feedback.all-feedback', compact('feedbacks'));
     }
@@ -97,23 +97,23 @@ class AdminController extends Controller
     public function AdminStaff()
     {
         $allstaff = StaffModel::orderBy('created_at', 'desc')
-        // ->where('status', 'show')
-        ->get();
+            // ->where('status', 'show')
+            ->get();
         return view('admin.staff.all-staff', compact('allstaff'));
     }
 
     public function AdminClient()
     {
         $allclient = CustomerModel::orderBy('created_at', 'desc')
-        ->get();
+            ->get();
         return view('admin.client.all-client', compact('allclient'));
     }
 
     public function AdminInquire()
     {
         $allinquir = InquireModel::orderBy('created_at', 'desc')
-        ->where('status', 'new')
-        ->get();
+            ->where('status', 'new')
+            ->get();
         return view('admin.inquire.all-inquire', compact('allinquir'));
     }
     public function AdminAll()

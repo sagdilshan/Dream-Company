@@ -43,7 +43,8 @@
                                             <td>{{ $key + 1 }}</td>
 
                                             <td>{{ $item->name }}</td>
-                                            <td><a style="color: red;" href="{{ $item->email }}">{{ $item->email }}</a></td>
+                                            <td><a style="color: red;" href="{{ $item->email }}">{{ $item->email }}</a>
+                                            </td>
                                             <td>{{ $item->mobile }}</td>
                                             <td>{{ $item->subject }}</td>
                                             <td>{{ $item->message }}</td>
@@ -56,7 +57,8 @@
                                                         action="{{ route('admin.inquire.status', $item->id) }}">
                                                         @csrf
                                                         @method('PUT')
-                                                        <button type="submit" class="btn btn-outline-danger">Replied</button>
+                                                        <button type="submit"
+                                                            class="btn btn-outline-danger">Replied</button>
                                                     </form>
                                                 @endif
                                             </td>

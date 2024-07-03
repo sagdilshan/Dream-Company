@@ -180,7 +180,9 @@
                             <div class="team-social d-flex">
 
                                 {{-- <h5 class="mb-0" style="color: rgb(111, 0, 255);">Software Engineer</h5> --}}
-                                <h5 class="mb-0" style="color: rgb(250, 0, 0); text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;">Software Engineer</h5>
+                                <h5 class="mb-0"
+                                    style="color: rgb(250, 0, 0); text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;">
+                                    Software Engineer</h5>
 
                             </div>
 
