@@ -25,11 +25,11 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Item Name</th>
-                                        <th>Sale Price</th>
-                                        <th>Category</th>
-                                        <th>Stocks</th>
-                                        <th>Status</th>
+                                        <th>Customer Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Subject</th>
+                                        <th>Message</th>
 
                                         <th>Action</th>
                                     </tr>
@@ -37,44 +37,34 @@
                                 </thead>
                                 <tbody>
 
-                                    {{-- @foreach ($alldisapprove as $key => $item) --}}
-                                    <tr>
-                                        <td>4re</td>
+
+                                    @foreach ($allinquir as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+
+                                            <td>{{ $item->name }}</td>
+                                            <td><a style="color: red;" href="{{ $item->email }}">{{ $item->email }}</a></td>
+                                            <td>{{ $item->mobile }}</td>
+                                            <td>{{ $item->subject }}</td>
+                                            <td>{{ $item->message }}</td>
 
 
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
+                                            <td>
+
+                                                @if ($item->status == 'new')
+                                                    <form method="POST"
+                                                        action="{{ route('admin.inquire.status', $item->id) }}">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <button type="submit" class="btn btn-outline-danger">Replied</button>
+                                                    </form>
+                                                @endif
+                                            </td>
 
 
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Edit</a>
 
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>dv</td>
-
-
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>333</td>
-                                        <td>htht</td>
-
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Ced</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    {{-- @endforeach --}}
+                                        </tr>
+                                    @endforeach
 
 
                                     </tfoot>
