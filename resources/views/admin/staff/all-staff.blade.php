@@ -25,11 +25,12 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Item Name</th>
-                                        <th>Sale Price</th>
-                                        <th>Category</th>
-                                        <th>Stocks</th>
-                                        <th>Status</th>
+                                        <th>Employee Image</th>
+                                        <th>Employee Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Job</th>
+                                        <th>Address</th>
 
                                         <th>Action</th>
                                     </tr>
@@ -37,44 +38,34 @@
                                 </thead>
                                 <tbody>
 
-                                    {{-- @foreach ($alldisapprove as $key => $item) --}}
-                                    <tr>
-                                        <td>4re</td>
+
+                                    @foreach ($allstaff as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+
+                                            <td>
+                                                @if (!empty($item->photo) && file_exists(public_path('upload/staff_images/' . $item->photo)))
+                                                    <img src="{{ url('upload/staff_images/' . $item->photo) }}"
+                                                        class=" mr-2" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                                @else
+                                                    <img src="{{ url('upload/no_image.png') }}"
+                                                        class="mr-2"  style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                                @endif
+                                            </td>
+                                            <td>{{ $item->e_name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->job_role }}</td>
+                                            <td>{{ $item->address }}</td>
+
+                                            <td>
+                                                <a href="" class="btn btn-outline-success">Edit</a>
+                                            </td>
 
 
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
 
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Edit</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>dv</td>
-
-
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>333</td>
-                                        <td>htht</td>
-
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Ced</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    {{-- @endforeach --}}
+                                        </tr>
+                                    @endforeach
 
 
                                     </tfoot>
