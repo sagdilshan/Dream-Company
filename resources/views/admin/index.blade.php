@@ -167,10 +167,10 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Item Name</th>
-                                        <th>Sale Price</th>
-                                        <th>Category</th>
-                                        <th>Stocks</th>
+                                        <th>Project Name</th>
+                                        <th>Association</th>
+                                        <th>Price</th>
+                                        <th>Start Month</th>
                                         <th>Status</th>
 
                                         <th>Action</th>
@@ -179,44 +179,36 @@
                                 </thead>
                                 <tbody>
 
-                                    {{-- @foreach ($alldisapprove as $key => $item) --}}
-                                    <tr>
-                                        <td>4re</td>
+
+                                    @foreach ($pending_project as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
 
 
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
+                                            <td>{{ $item->p_name }}</td>
+                                            <td>{{ $item->association }}</td>
+                                            <td>{{ $item->p_fee }}</td>
+                                            <td>{{ $item->s_month }}</td>
 
+                                            <td>
+                                                @if ($item->project_status == 'completed')
+                                                    <span class="badge badge-success text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(42, 253, 0);">Completed</span>
+                                                @elseif ($item->project_status == 'pending')
+                                                    <span class="badge badge-danger text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 18, 18);">Pending</span>
+                                                @else
+                                                    <span class="badge badge-warning text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 144, 18);">Canceled</span>
+                                                @endif
+                                            </td>
+                                            {{-- {{ route('manage.edit.products', $item->id) }} --}}
+                                            <td>
+                                                <a href="" class="btn btn-outline-success">Edit</a>
+                                            </td>
 
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Edit</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>dv</td>
-
-
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>333</td>
-                                        <td>htht</td>
-
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Ced</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    {{-- @endforeach --}}
+                                        </tr>
+                                    @endforeach
 
 
                                     </tfoot>
