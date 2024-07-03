@@ -25,11 +25,10 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Item Name</th>
-                                        <th>Sale Price</th>
-                                        <th>Category</th>
-                                        <th>Stocks</th>
-                                        <th>Status</th>
+                                        <th>Customer Image</th>
+                                        <th>Customer Name</th>
+                                        <th>Feedback</th>
+
 
                                         <th>Action</th>
                                     </tr>
@@ -37,44 +36,31 @@
                                 </thead>
                                 <tbody>
 
-                                    {{-- @foreach ($alldisapprove as $key => $item) --}}
-                                    <tr>
-                                        <td>4re</td>
+
+                                    @foreach ($feedbacks as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+
+                                            <td>
+                                                @if (!empty($item->photo) && file_exists(public_path('upload/feedback_images/' . $item->photo)))
+                                                    <img src="{{ url('upload/feedback_images/' . $item->photo) }}"
+                                                        class=" mr-2" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                                @else
+                                                    <img src="{{ url('upload/no_image.png') }}"
+                                                        class="mr-2"  style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                                                @endif
+                                            </td>
+                                            <td>{{ $item->cus_name }}</td>
+                                            <td>{{ $item->feedback }}</td>
+
+                                            <td>
+                                                <a href="" class="btn btn-outline-danger">Delete</a>
+                                            </td>
 
 
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
 
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Edit</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>dv</td>
-
-
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>333</td>
-                                        <td>htht</td>
-
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Ced</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    {{-- @endforeach --}}
+                                        </tr>
+                                    @endforeach
 
 
                                     </tfoot>
@@ -128,7 +114,7 @@
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Image</label>
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Customer Image</label>
                                                 <div class="col-sm-10">
                                                     <input type="file" class="form-control" name="photo" accept="image/*" id="image">
                                                 </div>
