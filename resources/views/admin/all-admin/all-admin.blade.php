@@ -25,10 +25,10 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Item Name</th>
-                                        <th>Sale Price</th>
-                                        <th>Category</th>
-                                        <th>Stocks</th>
+                                        <th>Admin Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Address</th>
                                         <th>Status</th>
 
                                         <th>Action</th>
@@ -37,44 +37,36 @@
                                 </thead>
                                 <tbody>
 
-                                    {{-- @foreach ($alldisapprove as $key => $item) --}}
-                                    <tr>
-                                        <td>4re</td>
+                                    @foreach ($alladmins as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
 
 
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
-                                        <td>htht</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->address }}</td>
 
+                                            <td>
+                                                @if ($item->status == 'active')
+                                                    <span class="badge badge-success text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(42, 253, 0);">Active</span>
+                                                @elseif ($item->status == 'deactive')
+                                                    <span class="badge badge-danger text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 18, 18);">Deactive</span>
+                                                @else
+                                                    <span class="badge badge-warning text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 144, 18);">{{ $item->status }}</span>
+                                                @endif
+                                            </td>
+                                            {{-- {{ route('manage.edit.products', $item->id) }} --}}
+                                            <td>
+                                                <a href="" class="btn btn-outline-success">Edit</a>
+                                                <a href="" class="btn btn-outline-danger">Delete</a>
+                                            </td>
 
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Edit</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-                                        <td>dv</td>
-
-
-                                        <td>feg</td>
-                                        <td>erg</td>
-                                        <td>htht</td>
-                                        <td>333</td>
-                                        <td>htht</td>
-
-
-                                        <td>
-                                            <a href=" " class="btn btn-outline-info">Ced</a>
-
-                                        </td>
-
-                                    </tr>
-
-                                    {{-- @endforeach --}}
+                                        </tr>
+                                    @endforeach
 
 
                                     </tfoot>
@@ -109,7 +101,7 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="" class="form-horizontal">
+                                        <form method="POST" action="{{ route('admin.store') }}" class="form-horizontal">
                                             @csrf
 
 
@@ -117,8 +109,8 @@
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Admin
                                                     Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name= "c_name"
-                                                        placeholder="Enter admin name" required>
+                                                    <input type="text" class="form-control text-capitalize"
+                                                        name= "name" placeholder="Enter admin name" required>
 
 
                                                 </div>
@@ -136,33 +128,54 @@
 
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Email</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Email</label>
                                                 <div class="col-sm-10">
                                                     <input type="email" class="form-control" name="email"
-                                                    placeholder="Enter email" required>
+                                                        placeholder="Enter email" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Address</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Username</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="username"
+                                                        placeholder="Enter username" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Address</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="address"
-                                                    placeholder="Enter address" required>
+                                                        placeholder="Enter address" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Phone</label>
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Phone</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="linkedin"
-                                                    placeholder="Enter contact number" required>
+                                                    <input type="text" class="form-control" name="phone"
+                                                        placeholder="Enter contact number" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">NIC</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="nic"
-                                                    placeholder="Enter NIC number" required>
+                                                        placeholder="Enter NIC number" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label"
+                                                    style="font-weight: 600;">Password</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="password"
+                                                        value="SpectraZ@123" required>
                                                 </div>
                                             </div>
 
