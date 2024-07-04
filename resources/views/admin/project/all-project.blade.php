@@ -61,7 +61,7 @@
                                             </td>
                                             {{-- {{ route('manage.edit.products', $item->id) }} --}}
                                             <td>
-                                                <a href="" class="btn btn-outline-success">Edit</a>
+                                                <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-success">Edit</a>
                                             </td>
 
                                         </tr>
