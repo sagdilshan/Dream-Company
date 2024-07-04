@@ -17,7 +17,7 @@
 
 
     <!-- Favicon -->
-    <link rel="icon" href="../assets/img/logo.jpg" alt="spectraz-techlabs-logo" type="image/gif">
+    <link rel="icon" href="../../assets/img/logo.jpg" alt="spectraz-techlabs-logo" type="image/gif">
 
 
     <!-- Google Web Fonts -->
@@ -32,26 +32,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="../assets/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../../assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="../../assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <link href="../assets/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-    <link href="../assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="../../assets/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="../../assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/mystyle.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/mystyle.css" rel="stylesheet">
     <link rel="stylesheet"
-        href="{{ asset('../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+        href="{{ asset('../../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('../../assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
-    <link rel="stylesheet" href="{{ asset('../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('../../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 
     @stack('stylesheets')
 </head>
@@ -206,28 +206,28 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/lib/wow/wow.min.js"></script>
-    <script src="../assets/lib/easing/easing.min.js"></script>
-    <script src="../assets/lib/waypoints/waypoints.min.js"></script>
-    <script src="../assets/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../assets/lib/counterup/counterup.min.js"></script>
+    <script src="../../assets/lib/wow/wow.min.js"></script>
+    <script src="../../assets/lib/easing/easing.min.js"></script>
+    <script src="../../assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="../../assets/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../assets/lib/counterup/counterup.min.js"></script>
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 
-    <script src="{{ asset('../assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/jszip/jszip.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
-    <script src="{{ asset('../assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/jszip/jszip.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/pdfmake/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/pdfmake/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('../../assets/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
@@ -275,7 +275,7 @@
     </script>
 
     <!-- Template Javascript -->
-    <script src="../assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
     @stack('scripts')
 </body>
 
