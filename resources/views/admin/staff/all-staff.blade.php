@@ -60,7 +60,7 @@
                                             <td>{{ $item->address }}</td>
 
                                             <td>
-                                                <a href="" class="btn btn-outline-success">Edit</a>
+                                                <a href="{{ route('edit.staff', $item->id) }}" class="btn btn-outline-success">Edit</a>
                                             </td>
 
 
