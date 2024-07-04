@@ -339,4 +339,39 @@ class AdminController extends Controller
         return redirect()->back()->with($notification);
     }
 
+
+    public function EditAdmin($id)
+    {
+        $uadmin = User::findOrFail($id);
+        return view('admin.all-admin.edit-admin', compact('uadmin'));
+    }
+
+    public function EditCustomer($id)
+    {
+        $ucustomer = CustomerModel::findOrFail($id);
+        return view('admin.client.edit-client', compact('ucustomer'));
+    }
+
+    public function EditProject($id)
+    {
+        $uproject = ProjectModel::findOrFail($id);
+        if ($uproject->project_status != 'pending') {
+            // Redirect or abort with an error message
+
+            $notification = [
+                'message' => 'This project passed pending step',
+                'alert-type' => 'error'
+            ];
+            return redirect()->route('admin.project')->with($notification);
+        }
+
+        return view('admin.project.edit-project', compact('uproject'));
+    }
+
+    public function EditStaff($id)
+    {
+        $ustaff = StaffModel::findOrFail($id);
+        return view('admin.staff.edit-staff', compact('ustaff'));
+    }
+
 }
