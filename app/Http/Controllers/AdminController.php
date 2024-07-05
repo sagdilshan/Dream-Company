@@ -19,10 +19,49 @@ class AdminController extends Controller
     public function AdminDashboard()
     {
 
+        $fakeTotalcustomers = 0;
+        $realTotaladmins = User::where('role', 'admin')->where('status', 'active')->count();
+        $totaladmins = $fakeTotalcustomers + $realTotaladmins;
+        $formattedTotaladmins = number_format($totaladmins);
+
+
+        $fakeTotalcustomers = 0;
+        $realTotalcustomers = User::where('role', 'guest')->where('status', 'active')->count();
+        $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
+        $formattedTotalcustomers = number_format($totalcustomers);
+
+
+        $fakePending_project = 0;
+        $realPending_project = ProjectModel::where('project_status', 'pending')->count();
+        $totalPending_project = $fakePending_project + $realPending_project;
+        $formattedPending_project = number_format($totalPending_project);
+
+
+        $fakeCompleted_project = 10;
+        $realCompleted_project = ProjectModel::where('project_status', 'completed')->count();
+        $totalCompleted_project = $fakeCompleted_project + $realCompleted_project;
+        $formattedCompleted_project = number_format($totalCompleted_project);
+
+
+        $totalPrice = ProjectModel::where('project_status', 'completed')->sum('p_fee');
+        $formattedPrice = number_format($totalPrice, 0, '.', ',');
+
+
+        $all_staff = StaffModel::where('status', 'work')
+            ->count();
+
+        $all_feedbacks = FeedbackModel::where('status', 'show')
+            ->count();
+
+        $all_inquire = FeedbackModel::where('status', 'show')
+            ->count();
+
+
         $pending_project = ProjectModel::where('project_status', 'pending')
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('admin.index', compact('pending_project'));
+
+        return view('admin.index', compact('pending_project', 'all_inquire', 'all_staff', 'all_feedbacks', 'formattedTotaladmins', 'formattedPrice', 'formattedTotalcustomers', 'formattedPending_project', 'formattedCompleted_project'));
     }
 
     public function AdminLogout(Request $request)
