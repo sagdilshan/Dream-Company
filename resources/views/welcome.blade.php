@@ -136,6 +136,9 @@
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'SpectraZ Techlabs - Transforming Visions into Digital
     Spectrums')
 @section('content')
+<head>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+</head>
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -508,6 +511,19 @@
                     <h4>Anura Perera</h4>
                     <span></span>
                 </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
+                        <div class="btn-square bg-white border rounded-circle">
+                            <i class="fa fa-quote-right fa-2x text-danger"></i>
+                        </div>
+                        Their attention to detail and ability to tailor solutions to our unique needs made all the
+                        difference. SpectraZ Techlabs is not just a service provider; they are a strategic partner in our
+                        digital journey.
+                    </div>
+                    <img class="rounded-circle mb-3" src="../assets/img/testimonial-4.jpg" alt="">
+                    <h4>Anura Perera</h4>
+                    <span></span>
+                </div>
             </div>
         </div>
     </div>
@@ -530,35 +546,35 @@
                                 <div class="col-sm-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control text-capitalize" id="name"
-                                            name="name" placeholder="Your Name">
+                                            name="name" placeholder="Your Name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
                                         <input type="email" class="form-control" id="mail" name="email"
-                                            placeholder="Your Email">
+                                            placeholder="Your Email" required>
                                         <label for="mail">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="mobile" name="mobile"
-                                            placeholder="Your Mobile">
+                                            placeholder="Your Mobile" required>
                                         <label for="mobile">Your Mobile</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
                                         <input type="text" class="form-control" id="subject" name="subject"
-                                            placeholder="Subject">
+                                            placeholder="Subject" required>
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="Leave a message here" id="message" name="message"
-                                            style="height: 100px"></textarea>
+                                            style="height: 100px" required></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
@@ -573,6 +589,29 @@
         </div>
     </div>
     <!-- Callback End -->
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 
 @endsection
