@@ -15,7 +15,21 @@ class OtherController extends Controller
 {
     public function IndexPage()
     {
-        return view('welcome');
+
+        $fakeTotalcustomers = 120;
+        $realTotalcustomers = User::where('role', 'guest')->where('status', 'active')->count();
+        $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
+        $formattedTotalcustomers = number_format($totalcustomers);
+
+        $fakePending_project = 56;
+        $realPending_project = ProjectModel::where('project_status', 'completed')->count();
+        $totalPending_project = $fakePending_project + $realPending_project;
+        $formattedPending_project = number_format($totalPending_project);
+
+        $all_staff = StaffModel::where('status', 'work')
+            ->count();
+
+        return view('welcome', compact('formattedTotalcustomers', 'formattedPending_project', 'all_staff'));
     }
 
     public function InquireStore(Request $request)
@@ -36,6 +50,29 @@ class OtherController extends Controller
         );
 
         return redirect()->route('contact')->with($notification);
+
+    }
+
+    public function AboutPage()
+    {
+        $fakeTotalcustomers = 120;
+        $realTotalcustomers = User::where('role', 'guest')->where('status', 'active')->count();
+        $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
+        $formattedTotalcustomers = number_format($totalcustomers);
+
+        $fakePending_project = 56;
+        $realPending_project = ProjectModel::where('project_status', 'completed')->count();
+        $totalPending_project = $fakePending_project + $realPending_project;
+        $formattedPending_project = number_format($totalPending_project);
+
+        $all_staff = StaffModel::where('status', 'work')
+            ->count();
+
+            $staffs = StaffModel::where('status', 'work')
+            ->get();
+
+
+        return view('about', compact('formattedTotalcustomers','staffs', 'formattedPending_project', 'all_staff'));
 
     }
 }
