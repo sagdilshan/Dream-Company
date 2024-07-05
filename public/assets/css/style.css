@@ -372,6 +372,7 @@ h6,
 .team-item img {
     position: relative;
     z-index: 2;
+
 }
 
 .team-item .team-text {
@@ -401,7 +402,7 @@ h6,
 }
 
 .team-item:hover .team-text h4 {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .team-item .team-social .btn {
