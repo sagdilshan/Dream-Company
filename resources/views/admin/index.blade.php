@@ -14,7 +14,7 @@
                     <!-- small card -->
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
-                            <h3>hfgf</h3>
+                            <h3>{{$formattedPending_project}}</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Pending Projects</p>
                         </div>
@@ -32,7 +32,7 @@
                     <!-- small card -->
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
-                            <h3>sw</h3>
+                            <h3>{{$formattedCompleted_project}}</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Completed Projects</p>
                         </div>
@@ -50,7 +50,7 @@
                     <!-- small card -->
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
-                            <h3>nnb</h3>
+                            <h3>{{$formattedTotalcustomers}}</h3>
 
                             <p style="font-size: 1.5rem; color: white;">SpectraZ Customers</p>
                         </div>
@@ -69,7 +69,7 @@
                     <!-- small card -->
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
-                            <h3>rgg</h3>
+                            <h3>{{$formattedTotaladmins}}</h3>
 
                             <p style="font-size: 1.5rem; color: white;">SpectraZ Admins</p>
                         </div>
@@ -86,7 +86,7 @@
                     <!-- small card -->
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
-                            <h3>dbb</h3>
+                            <h3>Rs. {{$formattedPrice}}</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Total Earn</p>
                         </div>
@@ -103,7 +103,7 @@
                     <!-- small card -->
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
-                            <h3>dbd</h3>
+                            <h3>{{$all_staff}}</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Total Staff</p>
                         </div>
@@ -119,7 +119,7 @@
                     <!-- small card -->
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
-                            <h3>db</h3>
+                            <h3>{{$all_feedbacks}}</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Total Feedbacks</p>
                         </div>
@@ -135,7 +135,7 @@
                     <!-- small card -->
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
-                            <h3>cfb</h3>
+                            <h3>{{$all_inquire}}</h3>
 
                             <p style="font-size: 1.5rem;color: white;">Inquires</p>
                         </div>
