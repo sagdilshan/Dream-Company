@@ -134,19 +134,19 @@
             <div class="row g-5">
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-users fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">100</h1>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">{{$formattedTotalcustomers}}</h1>
                     <span class="fs-5 text-white">Happy Clients</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                     <i class="fa fa-check fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">100</h1>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">{{$formattedPending_project}}</h1>
                     <span class="fs-5 text-white">Projects Completed</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                     <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">5</h1>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">{{$all_staff}}</h1>
                     <span class="fs-5 text-white">Dedicated Staff</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
@@ -170,25 +170,28 @@
                 <h1 class="display-5 mb-5">Exclusive Team</h1>
             </div>
             <div class="row g-4 justify-content-center">
-
+                @foreach ($staffs as $staff)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <img class="img-fluid rounded" src="../assets/img/gayathra.jpg" alt="gayathra dilshan">
+                    <div class="team-item ">
+                        <img class="img-fluid rounded"
+                        src="{{ !empty($staff->photo) ? url('upload/staff_images/' . $staff->photo) : url('upload/no_image.png') }}"
+                        alt="{{ $staff->e_name }}" title="{{ $staff->e_name }}">
                         <div class="team-text">
-                            <h4 class="mb-0">Gayathra Dilshan</h4>
+                            <h4 class="mb-0 text-capitalize">{{ $staff->e_name }}</h4>
 
                             <div class="team-social d-flex">
 
                                 {{-- <h5 class="mb-0" style="color: rgb(111, 0, 255);">Software Engineer</h5> --}}
-                                <h5 class="mb-0"
+                                <h5 class="mb-0  text-capitalize"
                                     style="color: rgb(250, 0, 0); text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;">
-                                    Software Engineer</h5>
+                                    {{ $staff->job_role }}</h5>
 
                             </div>
 
                         </div>
                     </div>
                 </div>
+                @endforeach
 
                 {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
