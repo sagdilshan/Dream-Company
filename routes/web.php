@@ -35,7 +35,6 @@ require __DIR__ . '/auth.php';
 // Route::get('/', 'welcome')->name('welcome');
 Route::view('/contact-us', 'contact')->name('contact');
 Route::view('/service', 'service')->name('service');
-Route::view('/about-us', 'about')->name('about');
 Route::view('/portfolio', 'portfolio')->name('portfolio');
 
 
@@ -46,6 +45,7 @@ Route::controller(OtherController::class)->group(function () {
 
     Route::get('/', 'IndexPage')->name('welcome');
     Route::post('/inquire/store', 'InquireStore')->name('inquire.store');
+    Route::get('/about-us', 'AboutPage')->name('about');
 
 
 
