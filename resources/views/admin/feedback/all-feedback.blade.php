@@ -16,7 +16,6 @@
                 <div class="col-12">
                     <div class="card">
 
-                        <!-- /.card-header -->
                         <div class="card-body">
                             <h2 style="font-family: Open Sans;">All Feedbacks</h2>
 
