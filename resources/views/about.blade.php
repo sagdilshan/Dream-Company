@@ -181,7 +181,6 @@
 
                             <div class="team-social d-flex">
 
-                                {{-- <h5 class="mb-0" style="color: rgb(111, 0, 255);">Software Engineer</h5> --}}
                                 <h5 class="mb-0  text-capitalize"
                                     style="color: rgb(250, 0, 0); text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;">
                                     {{ $staff->job_role }}</h5>
@@ -193,38 +192,7 @@
                 </div>
                 @endforeach
 
-                {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <img class="img-fluid rounded" src="../assets/img/team-1.jpg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">N Nawanjana</h4>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <img class="img-fluid rounded" src="../assets/img/team-1.jpg" alt="">
-                        <div class="team-text">
-                            <h4 class="mb-0">S Satheeshg</h4>
-                            <div class="team-social d-flex">
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                        class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+                
             </div>
         </div>
     </div>
