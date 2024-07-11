@@ -91,7 +91,7 @@
                                     <!-- /.tab-pane -->
                                 </div>
                                 <!-- /.tab-content -->
-                            </div><!-- /.card-body -->
+                            </div><!-- /.card-ody -->
                         </div>
                         <!-- /.card -->
                     </div>
