@@ -59,7 +59,7 @@
                                                         style="font-size: 1rem;background-color: rgb(255, 144, 18);">{{ $item->status }}</span>
                                                 @endif
                                             </td>
-                                            {{-- {{ route('manage.edit.products', $item->id) }} --}}
+                                            {{-- {{ route('manage.edit.product', $item->id) }} --}}
                                             <td>
                                                 <a href="{{ route('edit.admin', $item->id) }}" class="btn btn-outline-success">Edit</a>
                                                 <a href="" class="btn btn-outline-danger">Delete</a>
