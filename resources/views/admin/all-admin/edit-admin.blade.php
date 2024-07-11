@@ -4,7 +4,7 @@
 
     <!-- Page Head End -->
     <br><br><br><br>
-    <!-- Contact Start -->
+    <!-- Contact Star -->
     <div class="container-xxl py-5">
 
         <section class="content ">
