@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
-                    <!-- small card -->
+                    <!-- smal card -->
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
                             <h3>{{$formattedPending_project}}</h3>
