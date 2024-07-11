@@ -59,7 +59,7 @@
                                                         style="font-size: 1rem;background-color: rgb(255, 144, 18);">Canceled</span>
                                                 @endif
                                             </td>
-                                            {{-- {{ route('manage.edit.products', $item->id) }} --}}
+                                            {{-- {{ route('manage.eit.products', $item->id) }} --}}
                                             <td>
                                                 <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-success">Edit</a>
                                             </td>
