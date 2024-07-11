@@ -6,7 +6,7 @@
 
     <!-- Page Head End -->
     <br><br><br><br>
-    <!-- Contact Start -->
+    <!-- Contct Start -->
     <div class="container-xxl py-5">
 
 
