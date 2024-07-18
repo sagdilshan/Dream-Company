@@ -90,7 +90,7 @@
 
                                     <!-- /.tab-pane -->
                                 </div>
-                                <!-- /.tab-content -->
+                                <!-- /.ta-content -->
                             </div><!-- /.card-ody -->
                         </div>
                         <!-- /.card -->
