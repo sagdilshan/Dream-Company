@@ -16,7 +16,7 @@
             <div class="container-fluid ">
                 <div class="row">
 
-                    <!-- /.ol -->
+                    <!-- /.col -->
                     <div class="col-lg-12">
                         <div class="card">
 
