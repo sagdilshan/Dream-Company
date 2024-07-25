@@ -93,7 +93,7 @@
                                 <!-- /.ta-content -->
                             </div><!-- /.card-ody -->
                         </div>
-                        <!-- /.card -->
+                        <!-- /.car -->
                     </div>
                     <!-- /.col -->
                 </div>
