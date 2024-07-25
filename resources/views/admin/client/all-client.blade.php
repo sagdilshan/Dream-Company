@@ -59,7 +59,7 @@
                                     </tfoot>
                             </table>
                         </div>
-                        <!-- /.card-bod -->
+                        <!-- /.crd-bod -->
                     </div>
 
 
