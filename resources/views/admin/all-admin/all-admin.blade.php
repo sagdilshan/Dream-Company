@@ -71,7 +71,7 @@
                                     </tfoot>
                             </table>
                         </div>
-                        <!-- /.card-body -->
+                        <!-- /.car-body -->
                     </div>
 
 
