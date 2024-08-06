@@ -192,10 +192,10 @@
                 </div>
                 @endforeach
 
-                
+
             </div>
         </div>
     </div>
-    <!-- Team Ed -->
+    <!-- Team End -->
 
 @endsection
