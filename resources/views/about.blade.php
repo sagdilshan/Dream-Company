@@ -196,6 +196,6 @@
             </div>
         </div>
     </div>
-    <!-- Team End -->
+    <!-- Team En -->
 
 @endsection
