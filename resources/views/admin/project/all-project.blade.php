@@ -245,8 +245,8 @@
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control" name="p_fee"
                                                         placeholder="Enter project fee" required min="10000">
-                                                    <small id="emailHelp" class="form-text text-muted">Minimum value
-                                                        10000</small>
+                                                    <small id="emailHelp" class="form-text text-muted "><span style="color: red;">Minimum value
+                                                        10000</span></small>
 
 
                                                 </div>
@@ -267,8 +267,8 @@
                                                     Month</label>
                                                 <div class="col-sm-10">
                                                     <input type="month" class="form-control" name="f_month">
-                                                    <small id="emailHelp" class="form-text text-muted">Project not
-                                                        finished... Don't fill this...</small>
+                                                    <small id="emailHelp" class="form-text text-muted"><span style="color: red;">Project not
+                                                        finished... Don't fill this...</span></small>
                                                 </div>
                                             </div>
 
