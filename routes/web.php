@@ -79,6 +79,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/admin/edit/{id}', 'EditAdmin')->name('edit.admin');
         Route::get('/client/edit/{id}', 'EditCustomer')->name('edit.client');
         Route::get('/project/edit/{id}', 'EditProject')->name('edit.project');
+        // Route::post('project/edit/{id}','EditProject') ->name('project.update');
+
         Route::get('/staff/edit/{id}', 'EditStaff')->name('edit.staff');
 
 
