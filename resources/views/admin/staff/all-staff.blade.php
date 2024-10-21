@@ -125,7 +125,7 @@
                                                     Image</label>
                                                 <div class="col-sm-10">
                                                     <input type="file" class="form-control" name="photo"
-                                                        accept="image/*">
+                                                        accept="image/*" required>
                                                 </div>
                                             </div>
 
@@ -135,7 +135,7 @@
                                                     Role</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="job_role"
-                                                        placeholder="Enter Job Role" required>
+                                                        placeholder="Enter job role" required>
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-3">
