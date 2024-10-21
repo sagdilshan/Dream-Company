@@ -73,8 +73,8 @@
                                                     Month</label>
                                                 <div class="col-sm-10">
                                                     <input type="month" class="form-control" name="f_month" value="{{ $uproject->f_month }}">
-                                                    <small class="form-text text-muted">Project not
-                                                        finished... Don't fill this...</small>
+                                                    <small class="form-text text-muted"><span style="color: red;">Project not
+                                                        finished... Don't fill this...</span></small>
                                                 </div>
                                             </div>
 
@@ -90,9 +90,6 @@
                                                         </option>
                                                         <option value="cancel">Cancel Project
                                                         </option>
-
-
-
 
                                                     </select>
 
