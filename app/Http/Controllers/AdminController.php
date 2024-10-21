@@ -410,7 +410,12 @@ class AdminController extends Controller
     public function EditStaff($id)
     {
         $ustaff = StaffModel::findOrFail($id);
-        return view('admin.staff.edit-staff', compact('ustaff'));
+
+        // $status = StaffModel::distinct()->pluck('status'); // Assuming Role is your model for roles
+        $status = StaffModel::distinct()->pluck('status')->map(function ($item) {
+            return ucfirst($item);
+        });
+        return view('admin.staff.edit-staff', compact('ustaff','status'));
     }
 
 }
