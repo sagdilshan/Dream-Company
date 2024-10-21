@@ -46,7 +46,7 @@
 
 
 
-                                            <div class="form-group row mt-3" id="uploadForm">
+                                            {{-- <div class="form-group row mt-3" id="uploadForm">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Employee
                                                     Image</label>
                                                 <div class="col-sm-10">
@@ -55,7 +55,7 @@
                                                         <input type="hidden" class="form-control"  name="photo" id="fileLink"
                                                          required value="{{ $ustaff->photo }}">
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
 
                                             <div class="form-group row mt-3">
@@ -97,6 +97,23 @@
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="address" value="{{ $ustaff->address }}"
                                                         placeholder="Enter address" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Work
+                                                    Status</label>
+                                                <div class="col-sm-10">
+                                                    {{-- <select class="form-control" name="status" value="{{ $ustaff->status }}" required> --}}
+                                                        <select class="form-control" name="status" required>
+                                                            @foreach ($status as $statu)
+                                                                <option value="{{ $statu }}"
+                                                                    {{ $ustaff->statu == $statu ? 'selected' : '' }}>
+                                                                    {{ $statu }}
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+
                                                 </div>
                                             </div>
 
