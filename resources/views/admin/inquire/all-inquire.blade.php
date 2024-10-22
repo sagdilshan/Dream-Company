@@ -43,7 +43,7 @@
                                             <td>{{ $key + 1 }}</td>
 
                                             <td>{{ $item->name }}</td>
-                                            <td><a style="color: red;" href="{{ $item->email }}">{{ $item->email }}</a>
+                                            <td><a style="color: red;" href="mailto:{{ $item->email }}">{{ $item->email }}</a>
                                             </td>
                                             <td>{{ $item->mobile }}</td>
                                             <td>{{ $item->subject }}</td>
