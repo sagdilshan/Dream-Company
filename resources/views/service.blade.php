@@ -195,7 +195,7 @@
             </div>
         </div>
     </div>
-    <!-- Callbac  End -->
+    <!-- Callback  End -->
 
 
 @endsection
