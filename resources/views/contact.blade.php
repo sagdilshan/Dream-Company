@@ -17,7 +17,7 @@
             </nav>
         </div>
     </div>
-    <!-- Page Hea End -->
+    <!-- Page Head End -->
 
 
     <!-- Conta t Start -->
