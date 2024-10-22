@@ -31,6 +31,7 @@
                                         <th>Phone</th>
                                         <th>Job</th>
                                         <th>Address</th>
+                                        <th>Status</th>
 
                                         <th>Action</th>
                                     </tr>
@@ -58,9 +59,22 @@
                                             <td>{{ $item->phone }}</td>
                                             <td>{{ $item->job_role }}</td>
                                             <td>{{ $item->address }}</td>
+                                            <td>
+                                                @if ($item->status == 'work')
+                                                    <span class="badge badge-success text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(42, 253, 0);">Work</span>
+                                                @elseif ($item->status == 'resigned')
+                                                    <span class="badge badge-danger text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 18, 18);">Resigned</span>
+                                                @else
+                                                    <span class="badge badge-warning text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 144, 18);">{{ $item->status }}</span>
+                                                @endif
+                                            </td>
 
                                             <td>
-                                                <a href="{{ route('edit.staff', $item->id) }}" class="btn btn-outline-success">Edit</a>
+                                                <a href="{{ route('edit.staff', $item->id) }}"
+                                                    class="btn btn-outline-success">Edit</a>
                                             </td>
 
 
@@ -172,6 +186,15 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Joined
+                                                    Date</label>
+                                                <div class="col-sm-10">
+                                                    <input type="date" class="form-control" name="join_date" id="join_date"
+                                                        placeholder="Enter joining date" required>
+                                                </div>
+                                            </div>
+
 
 
 
@@ -200,5 +223,19 @@
     </div>
     <!-- Contact End -->
 
+    <script>
+        // Function to get today's date in the format yyyy-mm-dd
+        function setMaxDate() {
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = ('0' + (today.getMonth() + 1)).slice(-2); // getMonth() is zero-based, so we add 1
+            var day = ('0' + today.getDate()).slice(-2);
+
+            return year + '-' + month + '-' + day;
+        }
+
+        // Set max attribute to the current date to prevent future dates
+        document.getElementById('join_date').setAttribute('max', setMaxDate());
+    </script>
 
 @endsection
