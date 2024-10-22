@@ -112,7 +112,7 @@ class AdminController extends Controller
     public function AdminProject()
     {
         $completed_project = ProjectModel::whereIn('project_status', ['completed', 'cancel'])
-            ->orderBy('created_at', 'desc')
+            ->orderBy('updated_at', 'desc')
 
             ->get();
 
@@ -135,9 +135,10 @@ class AdminController extends Controller
 
     public function AdminStaff()
     {
-        $allstaff = StaffModel::orderBy('created_at', 'desc')
-            // ->where('status', 'show')
+        $allstaff = StaffModel::orderByRaw("CASE WHEN status = 'work' THEN 1 ELSE 0 END DESC")
+            ->orderBy('created_at', 'desc')
             ->get();
+
         return view('admin.staff.all-staff', compact('allstaff'));
     }
 
@@ -259,7 +260,7 @@ class AdminController extends Controller
         $staf->phone = trim($request->phone);
         $staf->address = trim($request->address);
         $staf->email = trim($request->email);
-
+        $staf->join_date = trim($request->join_date);
         $staf->created_by = Auth::user()->id;
 
 
@@ -411,11 +412,97 @@ class AdminController extends Controller
     {
         $ustaff = StaffModel::findOrFail($id);
 
-        // $status = StaffModel::distinct()->pluck('status'); // Assuming Role is your model for roles
-        $status = StaffModel::distinct()->pluck('status')->map(function ($item) {
-            return ucfirst($item);
-        });
-        return view('admin.staff.edit-staff', compact('ustaff','status'));
+        $statuss = StaffModel::distinct()->pluck('status'); // Assuming Role is your model for roles
+
+        return view('admin.staff.edit-staff', compact('ustaff', 'statuss'));
+    }
+
+    public function UpdateProject(Request $request)
+    {
+        $pid = $request->id;
+        $uproject = ProjectModel::findOrFail($pid);
+
+
+        // Update other fields
+        $uproject->p_name = $request->p_name;
+        $uproject->s_name = $request->s_name;
+        $uproject->p_link = $request->p_link;
+        $uproject->f_month = $request->f_month;
+        $uproject->project_status = $request->project_status;
+        $uproject->description = $request->description;
+        $uproject->updated_by = Auth::user()->id;
+
+
+
+        // Save the changes to the database
+        $uproject->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'Project Details Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('admin.project')->with($notification);
+    }
+
+    public function UpdateStaff(Request $request)
+    {
+        $pid = $request->id;
+        $ustaff = StaffModel::findOrFail($pid);
+
+
+        // Update other fields
+        $ustaff->e_name = $request->e_name;
+        $ustaff->job_role = $request->job_role;
+        $ustaff->nic = $request->nic;
+        $ustaff->phone = $request->phone;
+        $ustaff->email = $request->email;
+        $ustaff->address = $request->address;
+        $ustaff->status = $request->status;
+        $ustaff->resigned_date = $request->resigned_date;
+        $ustaff->updated_by = Auth::user()->id;
+
+
+
+        // Save the changes to the database
+        $ustaff->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'Staff Details Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('admin.staff')->with($notification);
+    }
+
+    public function UpdateCustomer(Request $request)
+    {
+        $pid = $request->id;
+        $ucustomer = CustomerModel::findOrFail($pid);
+
+
+        // Update other fields
+        $ucustomer->cus_name = $request->cus_name;
+        $ucustomer->email = $request->email;
+        $ucustomer->address = $request->address;
+        $ucustomer->phone = $request->phone;
+        $ucustomer->nic = $request->nic;
+        $ucustomer->updated_by = Auth::user()->id;
+
+
+
+        // Save the changes to the database
+        $ucustomer->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'Client Details Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('admin.client')->with($notification);
     }
 
 }
