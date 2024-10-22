@@ -26,7 +26,7 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="post" action="">
+                                        <form method="post" action="{{ route('update.client', ['id' => $ucustomer->id]) }}">
                                             @csrf
                                             <input type="hidden" class="form-control" name="id"
                                             value="{{ $ucustomer->id }}">
