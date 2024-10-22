@@ -83,6 +83,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
         Route::get('/staff/edit/{id}', 'EditStaff')->name('edit.staff');
 
+        Route::post('update/project/{id}', 'UpdateProject')->name('update.project');
+        Route::post('update/staff/{id}', 'UpdateStaff')->name('update.staff');
+        Route::post('update/client/{id}', 'UpdateCustomer')->name('update.client');
 
 
 
