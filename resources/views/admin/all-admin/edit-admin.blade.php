@@ -22,7 +22,7 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="" class="form-horizontal">
+                                        <form method="POST" action="{{ route('update.admin', ['id' => $uadmin->id]) }}" class="form-horizontal">
                                             @csrf
 
                                             <input type="hidden" class="form-control" name="id"
@@ -84,7 +84,23 @@
                                                         placeholder="Enter NIC number" value="{{ $uadmin->nic }}" required>
                                                 </div>
                                             </div>
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Work
+                                                    Status</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" name="status" required>
 
+                                                        @foreach ($statuss as $status)
+                                                            <option value="{{ $status }}"
+                                                                {{ $uadmin->status == $status ? 'selected' : '' }}>
+                                                                {{ ucfirst($status) }}
+                                                            </option>
+                                                        @endforeach
+
+                                                    </select>
+
+                                                </div>
+                                            </div>
 
 
                                             <div class="form-group row mt-3">
