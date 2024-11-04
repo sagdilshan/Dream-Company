@@ -86,7 +86,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('update/project/{id}', 'UpdateProject')->name('update.project');
         Route::post('update/staff/{id}', 'UpdateStaff')->name('update.staff');
         Route::post('update/client/{id}', 'UpdateCustomer')->name('update.client');
+        Route::post('update/admin/{id}', 'UpdateAdmin')->name('update.admin');
 
+        Route::get('/admin/delete/feedback/{id}', 'DeleteFeedback')->name('delete.feedback');
 
 
 
