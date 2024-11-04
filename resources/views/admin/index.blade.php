@@ -52,7 +52,7 @@
                         <div class="inner">
                             <h3>{{$formattedTotalcustomers}}</h3>
 
-                            <p style="font-size: 1.5rem; color: white;">SpectraZ Customers</p>
+                            <p style="font-size: 1.5rem; color: white;">Eversys Customers</p>
                         </div>
                         <div class="icon">
                             <i class="fa fa-users"></i>
@@ -71,7 +71,7 @@
                         <div class="inner">
                             <h3>{{$formattedTotaladmins}}</h3>
 
-                            <p style="font-size: 1.5rem; color: white;">SpectraZ Admins</p>
+                            <p style="font-size: 1.5rem; color: white;">Eversys Admins</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-user-shield"></i>
