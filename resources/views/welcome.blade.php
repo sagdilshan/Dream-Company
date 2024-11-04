@@ -1,12 +1,10 @@
-
-
 @extends('home.header')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'SpectraZ Techlabs - Transforming Visions into Digital
-    Spectrums')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Eversys Holdings - Innovation for Every Journey')
 @section('content')
-<head>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-</head>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    </head>
 
     <!-- Carouse Startt -->
     <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -18,7 +16,8 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-8">
-                                    <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Spectraz Techlabs</p>
+                                    <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Eversys Holdings
+                                        (PVT) LTD</p>
                                     <h1 class="display-3 mb-4 animated slideInDown">Where Innovation Meets Expertise in Web
                                         Development.</h1><br>
                                     <a href="{{ route('contact') }}"
@@ -34,9 +33,11 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-7">
-                                    <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Spectraz Techlabs</p>
+                                    <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Eversys Holdings
+                                        (PVT) LTD</p>
+
                                     <h1 class="display-3 mb-4 animated slideInDown">Elevate Your Digital Presence with
-                                        SpectraZ Techlabs.</h1><br>
+                                        Eversys Holdings.</h1><br>
                                     <a href="{{ route('contact') }}"
                                         class="btn btn-danger py-3 px-5 animated slideInDown">Let's Get Strated</a>
                                 </div>
@@ -65,7 +66,7 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="fs-5 fw-medium text-danger">Why Choosing SpectraZ</p>
+                    <p class="fs-5 fw-medium text-danger">Why Choosing Eversys</p>
                     <h1 class="display-5 mb-4">Few Reasons Why People Choosing Us</h1>
                     <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
                         eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
@@ -79,7 +80,7 @@
                                     <div class="feature-box border rounded p-4">
                                         <i class="fa fa-check fa-3x text-danger mb-3"></i>
                                         <h4 class="mb-3">Innovation and Technology Leadership</h4>
-                                        <p class="mb-3">At SpectraZ Techlabs, we lead in innovation, shaping the future
+                                        <p class="mb-3">At Eversys Holdings, we lead in innovation, shaping the future
                                             with cutting-edge technology solutions for transformative digital experiences.
                                         </p>
                                         <a class="fw-semi-bold text-danger">Read More <i
@@ -90,7 +91,7 @@
                                     <div class="feature-box border rounded p-4">
                                         <i class="fa fa-check fa-3x text-danger mb-3"></i>
                                         <h4 class="mb-3">Exceptional Support and Maintenance</h4>
-                                        <p class="mb-3">Experience peace of mind with SpectraZ Techlabs – Exceptional
+                                        <p class="mb-3">Experience peace of mind with Eversys Holdings – Exceptional
                                             Support and Maintenance for sustained success and worry-free digital solutions.
                                         </p>
                                         <a class="fw-semi-bold text-danger">Read More <i
@@ -104,7 +105,7 @@
                             <div class="feature-box border rounded p-4">
                                 <i class="fa fa-check fa-3x text-danger mb-3"></i>
                                 <h4 class="mb-3">Client-Centric Approach</h4>
-                                <p class="mb-3">At SpectraZ Techlabs, your needs are at the heart of what we do – a
+                                <p class="mb-3">At Eversys Holdings, your needs are at the heart of what we do – a
                                     Client-Centric Approach delivering tailored solutions and exceptional experiences.</p>
                                 <a class="fw-semi-bold text-danger">Read More <i class="fa fa-arrow-right ms-1"></i></a>
                             </div>
@@ -125,19 +126,19 @@
             <div class="row g-5">
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-users fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">{{$formattedTotalcustomers}}</h1>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">{{ $formattedTotalcustomers }}</h1>
                     <span class="fs-5 text-white">Happy Clients</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                     <i class="fa fa-check fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">{{$formattedPending_project}}</h1>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">{{ $formattedPending_project }}</h1>
                     <span class="fs-5 text-white">Projects Completed</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                     <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">{{$all_staff}}</h1>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">{{ $all_staff }}</h1>
                     <span class="fs-5 text-white">Dedicated Staff</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
@@ -163,7 +164,7 @@
 
                     <p class="fs-5 fw-medium text-danger">About Us</p>
                     <h1 class="display-6 mb-4">We Help Our Clients To Grow Their Business Website</h1>
-                    <p class="mb-4">At SpectraZ Techlabs, we are more than a web development company – we are architects
+                    <p class="mb-4">At Eversys Holdings, we are more than a web development company – we are architects
                         of digital experiences, weaving innovation and technology to shape the future. Established with a
                         vision to transform ideas into impactful digital realities, our journey is driven by a passion for
                         excellence.</p>
@@ -192,18 +193,13 @@
                             </div>
                             <div class="tab-pane fade" id="nav-mission" role="tabpanel"
                                 aria-labelledby="nav-mission-tab">
-                                <p class="mb-0">Our mission at SpectraZ Techlabs is to empower businesses and individuals
-                                    through cutting-edge web solutions. We strive to redefine digital experiences, fostering
-                                    positive change and creating limitless possibilities. With a focus on innovation,
-                                    transparency, and client satisfaction, we aim to be the catalyst for transformative
-                                    journeys in the digital realm.</p>
+                                <p class="mb-0">Our mission at Eversys Holdings aims to deliver exceptional technology
+                                    solutions that enhance productivity and foster sustainable growth. We prioritize
+                                    customer satisfaction, innovation, and a culture of trust in all our endeavors.</p>
                             </div>
                             <div class="tab-pane fade" id="nav-vision" role="tabpanel" aria-labelledby="nav-vision-tab">
-                                <p class="mb-0">Our vision is to lead in innovation and technology, driving the evolution
-                                    of digital solutions. We aspire to be the go-to partner for businesses seeking to
-                                    elevate their digital presence. With a forward-thinking approach and a commitment to
-                                    excellence, we envision a future where technology seamlessly transforms visions into
-                                    impactful digital realities.</p>
+                                <p class="mb-0">Our vision is to inspire progress and innovation, becoming the most
+                                    trusted partner in delivering transformative solutions for a better tomorrow.</p>
                             </div>
                         </div>
                     </div>
@@ -329,69 +325,39 @@
                 <h1 class="display-5 mb-5">What Our Clients Say!</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-danger"></i>
+
+                @foreach ($allfeedback as $feedback)
+                    <div class="testimonial-item">
+                        <div class="testimonial-text border rounded p-4 pt-5 mb-5">
+                            <div class="btn-square bg-white border rounded-circle">
+                                <i class="fa fa-quote-right fa-2x text-danger"></i>
+                            </div>
+                            {!! nl2br(e(Str::limit($feedback->feedback, 200))) !!}
+
                         </div>
-                        Working with SpectraZ Techlabs was a game-changer for our business. Their web development expertise
-                        and commitment to excellence transformed our digital presence. The results speak for themselves.
+                        <img style="object-fit: cover; height: 100px; width: 100px" class="rounded-circle mb-3"
+                        src="{{ !empty($feedback->photo) ? url('upload/feedback_images/' . $feedback->photo) : url('../../upload/no_image.png') }}"
+                        alt="{{ $feedback->cus_name }}">
+
+
+                        <h4>{{ $feedback->cus_name }}</h4>
+                        <span></span>
                     </div>
-                    <img class="rounded-circle mb-3" src="../assets/img/testimonial-1.jpg" alt="">
-                    <h4>Shanika Wanniarachchi</h4>
-                    <span></span>
-                </div>
-                <div class="testimonial-item">
+                @endforeach
+
+                {{-- <div class="testimonial-item">
                     <div class="testimonial-text border rounded p-4 pt-5 mb-5">
                         <div class="btn-square bg-white border rounded-circle">
                             <i class="fa fa-quote-right fa-2x text-danger"></i>
                         </div>
-                        SpectraZ Techlabs exceeded our expectations in every aspect. From the initial consultation to the
+                        Eversys Holdings exceeded our expectations in every aspect. From the initial consultation to the
                         final delivery, their team's dedication to quality and innovation shone through. Highly recommended.
                     </div>
                     <img class="rounded-circle mb-3" src="../assets/img/testimonial-2.jpg" alt="">
                     <h4>Abdhul Raazeen</h4>
                     <span></span>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-danger"></i>
-                        </div>
-                        Their client-centric approach truly sets them apart. SpectraZ Techlabs not only delivered a
-                        top-notch website but also ensured our team felt involved and heard throughout the process. A
-                        pleasure to work with
-                    </div>
-                    <img class="rounded-circle mb-3" src="../assets/img/testimonial-3.jpg" alt="">
-                    <h4>Hashina Soysa</h4>
-                    <span></span>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-danger"></i>
-                        </div>
-                        Their attention to detail and ability to tailor solutions to our unique needs made all the
-                        difference. SpectraZ Techlabs is not just a service provider; they are a strategic partner in our
-                        digital journey.
-                    </div>
-                    <img class="rounded-circle mb-3" src="../assets/img/testimonial-4.jpg" alt="">
-                    <h4>Anura Perera</h4>
-                    <span></span>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-danger"></i>
-                        </div>
-                        Their attention to detail and ability to tailor solutions to our unique needs made all the
-                        difference. SpectraZ Techlabs is not just a service provider; they are a strategic partner in our
-                        digital journey.
-                    </div>
-                    <img class="rounded-circle mb-3" src="../assets/img/testimonial-4.jpg" alt="">
-                    <h4>Anura Perera</h4>
-                    <span></span>
-                </div>
+                </div> --}}
+
             </div>
         </div>
     </div>
