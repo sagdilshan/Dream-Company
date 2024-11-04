@@ -60,8 +60,8 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{ route('edit.admin', $item->id) }}" class="btn btn-outline-success">Edit</a>
-                                                <a href="" class="btn btn-outline-danger">Delete</a>
+                                                <a href="{{ route('edit.admin', $item->id) }}" class="btn btn-outline-danger">Edit</a>
+                                                {{-- <a href="" class="btn btn-outline-danger">Delete</a> --}}
                                             </td>
 
                                         </tr>
@@ -174,7 +174,7 @@
                                                     style="font-weight: 600;">Password</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="password"
-                                                        value="SpectraZ@123" required>
+                                                        value="Eversys@123" required>
                                                 </div>
                                             </div>
 
