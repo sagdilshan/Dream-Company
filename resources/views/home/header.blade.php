@@ -3,17 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    {{-- <title>SpectraZ Techlabs - Transforming Visions into Digital Spectrums</title> --}}
-    <title>@yield('pageTitle') - SpectraZ Techlabs</title>
+    {{-- <title>Eversys Holdings - Innovation for Every Journey</title> --}}
+    <title>@yield('pageTitle') - Eversys Holdings</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="keywords" content="Web Developers, Software Developers, Panadura web developers, ">
     <meta name="description"
-        content="SpectraZ Techlabs, a premier web development company, is dedicated to reshaping
+        content="Eversys Holdings, a premier web development company, is dedicated to reshaping
     online experiences through innovative and tailored solutions. As expert web developers, we blend technical prowess
-    with creative flair to bring your digital visions to life. Elevate your online presence with SpectraZ Techlabs –
+    with creative flair to bring your digital visions to life. Elevate your online presence with Eversys Holdings –
     where cutting-edge technology meets exceptional web development expertise for unparalleled digital success.">
 
-    <meta name="author" content="SpectraZ Techlabs">
+    <meta name="author" content="Eversys Holdings">
 
 
     <!-- Favicon -->
@@ -71,8 +71,8 @@
             </div>
             <div class="col-lg-6 px-5 text-end">
                 <small><i class="fa fa-envelope me-2" style="color:rgb(255, 0, 0);"></i><a
-                        href="mailto:spectraztechlabs@gmail.com"
-                        class="text-dark">spectraztechlabs@gmail.com</a></small>
+                        href="mailto:eversysholdings@gmail.com"
+                        class="text-dark">eversysholdings@gmail.com</a></small>
                 <small class="ms-4"><i class="fa fa-phone-alt me-2" style="color:rgb(255, 0, 0);"></i><a
                         href="tel:+94779919634" target="_blank" class="text-dark">+94 77 99 19 634</a></small>
             </div>
@@ -80,7 +80,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="{{ url('/') }}" class="navbar-brand ms-4 ms-lg-0">
-                <h1 class="display-5 m-0" style="color:rgb(255, 0, 0);">SpectraZ Techlabs</h1>
+                <h1 class="display-5 m-0" style="color:rgb(255, 0, 0);">EVERSYS HOLDINGS</h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -167,8 +167,8 @@
                             target="_blank"> 265 2/A, Madupitiya, Panadura.</a></p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+94779919634" target="_blank"
                             class="text-light">+94779919634</a></p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a href="mailto:spectraztechlabs@gmail.com"
-                            class="text-light">spectraztechlabs@gmail.com</a></p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a href="mailto:eversysholdings@gmail.com"
+                            class="text-light">eversysholdings@gmail.com</a></p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
                                 class="fab fa-twitter"></i></a>
@@ -190,7 +190,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Pages</h4>
-                    <a class="btn btn-link" href="{{ url('/') }}">SpectraZ Techlabs</a>
+                    <a class="btn btn-link" href="{{ url('/') }}">Eversys Holdings</a>
                     <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
                     <a class="btn btn-link" href="{{ route('contact') }}">Contact Us</a>
                     <a class="btn btn-link" href="{{ route('portfolio') }}">Our Portfolio</a>
@@ -198,7 +198,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Our Vision</h4>
-                    <p>Transforming Visions into Digital Spectrums.</p>
+                    <p>Innovation for Every Journey.</p>
 
                 </div>
             </div>
@@ -212,7 +212,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    &copy; Copyright 2023 <a href="https://spectraztechlabs.tech/"> SpectraZ Techlabs</a>
+                    &copy; Copyright 2023 <a href="https://spectraztechlabs.tech/"> Eversys Holdings</a>
                 </div>
             </div>
         </div>
