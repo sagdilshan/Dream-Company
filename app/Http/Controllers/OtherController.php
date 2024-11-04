@@ -15,6 +15,8 @@ class OtherController extends Controller
 {
     public function IndexPage()
     {
+        $allfeedback = FeedbackModel::orderBy('id', 'asc')->take(5)->inRandomOrder()->get();
+
 
         $fakeTotalcustomers = 120;
         $realTotalcustomers = User::where('role', 'guest')->where('status', 'active')->count();
@@ -29,7 +31,7 @@ class OtherController extends Controller
         $all_staff = StaffModel::where('status', 'work')
             ->count();
 
-        return view('welcome', compact('formattedTotalcustomers', 'formattedPending_project', 'all_staff'));
+        return view('welcome', compact('formattedTotalcustomers', 'formattedPending_project', 'all_staff', 'allfeedback'));
     }
 
     public function InquireStore(Request $request)
@@ -68,11 +70,17 @@ class OtherController extends Controller
         $all_staff = StaffModel::where('status', 'work')
             ->count();
 
-            $staffs = StaffModel::where('status', 'work')
+        $staffs = StaffModel::where('status', 'work')
             ->get();
 
 
-        return view('about', compact('formattedTotalcustomers','staffs', 'formattedPending_project', 'all_staff'));
+        return view('about', compact('formattedTotalcustomers', 'staffs', 'formattedPending_project', 'all_staff'));
 
     }
+
+
+
+
+
+
 }
