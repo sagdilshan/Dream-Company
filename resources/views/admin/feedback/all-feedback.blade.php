@@ -54,7 +54,7 @@
                                             <td>{{ $item->feedback }}</td>
 
                                             <td>
-                                                <a href="" class="btn btn-outline-danger">Delete</a>
+                                                <a href="{{ route('delete.feedback', $item->id) }}" class="btn btn-outline-danger">Delete</a>
                                             </td>
 
 
