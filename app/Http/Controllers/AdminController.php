@@ -337,6 +337,16 @@ class AdminController extends Controller
 
     public function AdminStore(Request $request)
     {
+        // Check if the logged-in user's email is 'gdyya@gmail.com'
+        if (Auth::user()->email !== 'gayathradilshan1@gmail.com') {
+            $notification = array(
+                'message' => 'Unauthorized Activity.',
+                'alert-type' => 'error'
+            );
+
+            return redirect()->route('admin.all')->with($notification);
+        }
+
         $admins = new User;
         $admins->name = trim($request->name);
         $admins->email = trim($request->email);
@@ -383,7 +393,9 @@ class AdminController extends Controller
     public function EditAdmin($id)
     {
         $uadmin = User::findOrFail($id);
-        return view('admin.all-admin.edit-admin', compact('uadmin'));
+        $statuss = User::distinct()->pluck('status'); // Assuming Role is your model for roles
+
+        return view('admin.all-admin.edit-admin', compact('uadmin', 'statuss'));
     }
 
     public function EditCustomer($id)
@@ -503,6 +515,72 @@ class AdminController extends Controller
         );
 
         return redirect()->route('admin.client')->with($notification);
+    }
+
+    public function UpdateAdmin(Request $request)
+    {
+
+        // Check if the logged-in user's email is 'gdyya@gmail.com'
+        if (Auth::user()->email !== 'gayathradilshan1@gmail.com') {
+            $notification = array(
+                'message' => 'Unauthorized Activity.',
+                'alert-type' => 'error'
+            );
+
+            return redirect()->route('admin.all')->with($notification);
+        }
+
+        $pid = $request->id;
+        $uadmin = User::findOrFail($pid);
+
+
+        // Update other fields
+        $uadmin->name = $request->name;
+        $uadmin->username = $request->username;
+        $uadmin->nic = $request->nic;
+        $uadmin->email = $request->email;
+        $uadmin->address = $request->address;
+        $uadmin->status = $request->status;
+        $uadmin->phone = $request->phone;
+        $uadmin->updated_by = Auth::user()->id;
+
+
+        // Save the changes to the database
+        $uadmin->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'Admin Details Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('admin.all')->with($notification);
+    }
+
+    public function DeleteFeedback($id)
+    {
+        $feed = FeedbackModel::findOrFail($id);
+        // Delete the category's image if it exists
+        if ($feed->photo) {
+            // Determine the file path
+            $imagePath = public_path('upload/feedback_images/' . $feed->photo);
+
+            // Check if the file exists before attempting to delete it
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+
+        // Delete the category from the database
+        $feed->delete();
+
+
+        $notification = array(
+            'message' => 'Feedback Deleted',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
     }
 
 }
