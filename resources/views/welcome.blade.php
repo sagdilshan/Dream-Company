@@ -1,5 +1,5 @@
 @extends('home.header')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Eversys Holdings - Innovation for Every Journey')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Eversys Lanka - Innovation for Every Journey')
 @section('content')
 
     <head>
@@ -16,8 +16,8 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-8">
-                                    <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Eversys Holdings
-                                        (PVT) LTD</p>
+                                    <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Eversys Lanka
+                                        (Pvt) Ltd</p>
                                     <h1 class="display-3 mb-4 animated slideInDown">Where Innovation Meets Expertise in Web
                                         Development.</h1><br>
                                     <a href="{{ route('contact') }}"
@@ -33,11 +33,11 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-7">
-                                    <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Eversys Holdings
-                                        (PVT) LTD</p>
+                                    <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Eversys Lanka
+                                        (Pvt) Ltd</p>
 
                                     <h1 class="display-3 mb-4 animated slideInDown">Elevate Your Digital Presence with
-                                        Eversys Holdings.</h1><br>
+                                        Eversys Lanka.</h1><br>
                                     <a href="{{ route('contact') }}"
                                         class="btn btn-danger py-3 px-5 animated slideInDown">Let's Get Strated</a>
                                 </div>
@@ -80,7 +80,7 @@
                                     <div class="feature-box border rounded p-4">
                                         <i class="fa fa-check fa-3x text-danger mb-3"></i>
                                         <h4 class="mb-3">Innovation and Technology Leadership</h4>
-                                        <p class="mb-3">At Eversys Holdings, we lead in innovation, shaping the future
+                                        <p class="mb-3">At Eversys Lanka, we lead in innovation, shaping the future
                                             with cutting-edge technology solutions for transformative digital experiences.
                                         </p>
                                         <a class="fw-semi-bold text-danger">Read More <i
@@ -91,7 +91,7 @@
                                     <div class="feature-box border rounded p-4">
                                         <i class="fa fa-check fa-3x text-danger mb-3"></i>
                                         <h4 class="mb-3">Exceptional Support and Maintenance</h4>
-                                        <p class="mb-3">Experience peace of mind with Eversys Holdings – Exceptional
+                                        <p class="mb-3">Experience peace of mind with Eversys Lanka – Exceptional
                                             Support and Maintenance for sustained success and worry-free digital solutions.
                                         </p>
                                         <a class="fw-semi-bold text-danger">Read More <i
@@ -105,7 +105,7 @@
                             <div class="feature-box border rounded p-4">
                                 <i class="fa fa-check fa-3x text-danger mb-3"></i>
                                 <h4 class="mb-3">Client-Centric Approach</h4>
-                                <p class="mb-3">At Eversys Holdings, your needs are at the heart of what we do – a
+                                <p class="mb-3">At Eversys Lanka, your needs are at the heart of what we do – a
                                     Client-Centric Approach delivering tailored solutions and exceptional experiences.</p>
                                 <a class="fw-semi-bold text-danger">Read More <i class="fa fa-arrow-right ms-1"></i></a>
                             </div>
@@ -164,7 +164,7 @@
 
                     <p class="fs-5 fw-medium text-danger">About Us</p>
                     <h1 class="display-6 mb-4">We Help Our Clients To Grow Their Business Website</h1>
-                    <p class="mb-4">At Eversys Holdings, we are more than a web development company – we are architects
+                    <p class="mb-4">At Eversys Lanka, we are more than a web development company – we are architects
                         of digital experiences, weaving innovation and technology to shape the future. Established with a
                         vision to transform ideas into impactful digital realities, our journey is driven by a passion for
                         excellence.</p>
@@ -193,7 +193,7 @@
                             </div>
                             <div class="tab-pane fade" id="nav-mission" role="tabpanel"
                                 aria-labelledby="nav-mission-tab">
-                                <p class="mb-0">Our mission at Eversys Holdings aims to deliver exceptional technology
+                                <p class="mb-0">Our mission at Eversys Lanka aims to deliver exceptional technology
                                     solutions that enhance productivity and foster sustainable growth. We prioritize
                                     customer satisfaction, innovation, and a culture of trust in all our endeavors.</p>
                             </div>
@@ -350,7 +350,7 @@
                         <div class="btn-square bg-white border rounded-circle">
                             <i class="fa fa-quote-right fa-2x text-danger"></i>
                         </div>
-                        Eversys Holdings exceeded our expectations in every aspect. From the initial consultation to the
+                        Eversys Lanka exceeded our expectations in every aspect. From the initial consultation to the
                         final delivery, their team's dedication to quality and innovation shone through. Highly recommended.
                     </div>
                     <img class="rounded-circle mb-3" src="../assets/img/testimonial-2.jpg" alt="">
