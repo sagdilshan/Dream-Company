@@ -31,7 +31,7 @@
 
                     <p class="fs-5 fw-medium text-danger">About Us</p>
                     <h1 class="display-6 mb-4">We Help Our Clients To Grow Their Business Website</h1>
-                    <p class="mb-4">At Eversys Holdings, we are more than a web development company – we are architects
+                    <p class="mb-4">At Eversys Lanka, we are more than a web development company – we are architects
                         of digital experiences, weaving innovation and technology to shape the future. Established with a
                         vision to transform ideas into impactful digital realities, our journey is driven by a passion for
                         excellence.</p>
@@ -59,7 +59,7 @@
                                     digital landscape.</p>
                             </div>
                             <div class="tab-pane fade" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
-                                <p class="mb-0">Our mission at Eversys Holdings aims to deliver exceptional technology
+                                <p class="mb-0">Our mission at Eversys Lanka aims to deliver exceptional technology
                                     solutions that enhance productivity and foster sustainable growth. We prioritize
                                     customer satisfaction, innovation, and a culture of trust in all our endeavors.</p>
                             </div>
