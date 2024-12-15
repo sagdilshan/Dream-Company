@@ -7199,6 +7199,38 @@ button.bg-dark:focus {
     display: inline-flex !important;
   }
 }
+@media print {
+    .card-body {
+        position: relative;
+        /* Position context for absolute positioning */
+        overflow: hidden;
+        /* Prevent text from overflowing outside the card */
+    }
+    .invoice {
+        position: relative;
+        z-index: 1;
+        /* Ensures content appears above "Pending" text */
+    }
+    .pending-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        /* Rotate text diagonally */
+        font-size: 5rem;
+        /* Adjust size as needed */
+        font-weight: bold;
+        color: rgba(255, 0, 0, 0.2);
+        /* Light red with transparency */
+        white-space: nowrap;
+        z-index: 0;
+        /* Keeps text behind content */
+        pointer-events: none;
+        /* Prevents interactions */
+        user-select: none;
+        /* Prevents text selection */
+    }
+}
 
 @media print {
   .d-print-none {
