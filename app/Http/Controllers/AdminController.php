@@ -583,4 +583,15 @@ class AdminController extends Controller
         return redirect()->back()->with($notification);
     }
 
+
+
+
+    public function AdminInvoice($id)
+    {
+        $project = ProjectModel::findOrFail($id);
+        $customers = CustomerModel::all();
+
+        return view('admin.invoice.invoice', compact('project','customers'));
+    }
+
 }
