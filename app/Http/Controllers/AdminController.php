@@ -293,6 +293,7 @@ class AdminController extends Controller
         $projec->association = trim($request->association);
         $projec->assign_customer = trim($request->assign_customer);
         $projec->p_fee = trim($request->p_fee);
+        $projec->advance_fee = trim($request->advance_fee);
         $projec->s_month = trim($request->s_month);
         $projec->description = trim($request->description);
         $projec->created_by = Auth::user()->id;
