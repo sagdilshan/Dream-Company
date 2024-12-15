@@ -159,7 +159,9 @@ abbr[data-bs-original-title] {
 address {
     margin-bottom: 1rem;
     font-style: normal;
-    line-height: inherit
+    line-height: inherit;
+    font-family: Open Sans;
+    font-size: smaller;
 }
 
 ol,
