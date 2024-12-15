@@ -78,7 +78,17 @@ class OtherController extends Controller
 
     }
 
+    public function getProjectName()
+    {
+        // Fetch the first project from the database
+        $project = ProjectModel::first();  // Adjust this logic as needed
 
+        if ($project) {
+            return response()->json(['p_name' => $project->p_name]);  // Return p_name field directly
+        } else {
+            return response()->json(['error' => 'No project found'], 404);
+        }
+    }
 
 
 
