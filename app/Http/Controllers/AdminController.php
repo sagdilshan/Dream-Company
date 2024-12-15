@@ -26,7 +26,7 @@ class AdminController extends Controller
 
 
         $fakeTotalcustomers = 0;
-        $realTotalcustomers = User::where('role', 'guest')->where('status', 'active')->count();
+        $realTotalcustomers = CustomerModel::count();
         $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
         $formattedTotalcustomers = number_format($totalcustomers);
 
@@ -37,13 +37,19 @@ class AdminController extends Controller
         $formattedPending_project = number_format($totalPending_project);
 
 
-        $fakeCompleted_project = 10;
+        $fakeCompleted_project = 0;
         $realCompleted_project = ProjectModel::where('project_status', 'completed')->count();
         $totalCompleted_project = $fakeCompleted_project + $realCompleted_project;
         $formattedCompleted_project = number_format($totalCompleted_project);
 
 
-        $totalPrice = ProjectModel::where('project_status', 'completed')->sum('p_fee');
+        $pFeeTotal = ProjectModel::where('project_status', 'completed')->sum('p_fee');
+
+        $advanceFeeTotal = ProjectModel::whereIn('project_status', ['canceled', 'pending'])->sum('advance_fee');
+
+        $totalPrice = $pFeeTotal + $advanceFeeTotal;
+
+
         $formattedPrice = number_format($totalPrice, 0, '.', ',');
 
 
@@ -53,7 +59,7 @@ class AdminController extends Controller
         $all_feedbacks = FeedbackModel::where('status', 'show')
             ->count();
 
-        $all_inquire = FeedbackModel::where('status', 'show')
+        $all_inquire = InquireModel::where('status', 'new')
             ->count();
 
 
@@ -592,7 +598,7 @@ class AdminController extends Controller
         $project = ProjectModel::findOrFail($id);
         $customers = CustomerModel::all();
 
-        return view('admin.invoice.invoice', compact('project','customers'));
+        return view('admin.invoice.invoice', compact('project', 'customers'));
     }
 
 }
