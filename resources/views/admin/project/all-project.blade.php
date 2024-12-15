@@ -62,6 +62,8 @@
                                             {{-- {{ route('manage.eit.products', $item->id) }} --}}
                                             <td>
                                                 <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-success">Edit</a>
+                                                <a href="{{ route('admin.invoice', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
+
                                             </td>
 
                                         </tr>
@@ -123,12 +125,18 @@
                                                 @if ($item->project_status == 'completed')
                                                     <span class="badge badge-success text-uppercase"
                                                         style="font-size: 1rem;background-color: rgb(42, 253, 0);">Completed</span>
+                                                <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
+
                                                 @elseif ($item->project_status == 'pending')
                                                     <span class="badge badge-danger text-uppercase"
                                                         style="font-size: 1rem;background-color: rgb(255, 18, 18);">Pending</span>
+                                                <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
+
                                                 @else
                                                     <span class="badge badge-warning text-uppercase"
                                                         style="font-size: 1rem;background-color: rgb(255, 144, 18);">Canceled</span>
+                                                <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
+
                                                 @endif
                                             </td>
 
