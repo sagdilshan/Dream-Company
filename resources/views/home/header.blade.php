@@ -17,7 +17,7 @@
 
 
     <!-- Favicon -->
-    <link rel="icon" href="../assets/img/logo.jpg" alt="spectraz-techlabs-logo" type="image/gif">
+    <link rel="icon" href="../assets/img/logo.jpg" alt="eversys-lanka-logo" type="image/gif">
 
 
     <!-- Google Web Fonts -->
