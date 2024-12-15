@@ -6,14 +6,49 @@
             float: right !important;
         }
 
-        @media print {
+        /* Default page styles */
+    body {
+        font-family: Arial, sans-serif;
+    }
 
-            //Add to elements that you do not want to show when printing
-            .no-print {
-                display: none !important;
-            }
 
+
+        .card-body {
+            position: relative;
+            /* Position context for absolute positioning */
+            overflow: hidden;
+            /* Prevent text from overflowing outside the card */
         }
+
+        .pending-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            /* Rotate text diagonally */
+            font-size: 5rem;
+            /* Adjust size as needed */
+            font-weight: bold;
+            color: rgba(255, 0, 0, 0.074);
+            /* Light red with transparency */
+            white-space: nowrap;
+            z-index: 0;
+            /* Keeps text behind content */
+            pointer-events: none;
+            /* Prevents interactions */
+            user-select: none;
+            /* Prevents text selection */
+        }
+
+        .invoice {
+            position: relative;
+            z-index: 1;
+            /* Ensures content appears above "Pending" text */
+        }
+
+
+        /* Ensures the text is visible when printed */
+
     </style>
 
     <br><br><br><br>
@@ -28,12 +63,13 @@
                         <div class="card">
 
                             <!-- /.card-header -->
-                            <div class="card-body">
+                            <div class="card-body ">
+
                                 <!-- Main content -->
-                                <div class="invoice p-3 mb-3" style="font-family: Open sans" id="invoice">
+                                <div class="invoice p-3 mb-3 " style="font-family: Open sans" id="invoice">
 
-
-
+                                    <!-- Diagonal Text -->
+                                    <div class="pending-text" id="invoice">EVERSYS LANKA (PVT) LTD</div>
                                     <!-- title row -->
                                     <div class="row border-bottom">
                                         <div class="col-12">
@@ -47,7 +83,8 @@
                                         </div>
                                         <!-- /.col -->
                                     </div>
-                                    <br>
+
+                                    <br><br>
                                     <!-- info row -->
                                     <div class="row invoice-info" style="color: black">
                                         <div class="col-sm-4 invoice-col">
@@ -65,6 +102,7 @@
                                             </address>
                                         </div>
                                         <!-- /.col -->
+
                                         <div class="col-sm-4 invoice-col">
                                             To
                                             <address>
@@ -80,27 +118,42 @@
 
                                                 {!! $formattedAddress !!}<br>
                                                 {{-- {{ ucwords($project->customer->address) }}<br> --}}
-                                                <strong class="text-dark"> Phone: +94 70 15 25200</strong><br>
-                                                <strong class="text-dark">Email: john.doe@example.com</strong>
+                                                <strong class="text-dark"> Phone:
+                                                    {{ $project->customer->phone }}</strong><br>
+                                                <strong class="text-dark">Email: {{ $project->customer->email }}</strong>
                                             </address>
                                         </div>
                                         <!-- /.col -->
                                         <div class="col-sm-4 invoice-col">
                                             <b class="text-dark">Invoice Number: <span
-                                                    style="font-size: large; color: #b71c1c">#007612</span></b><br>
+                                                    style="font-size: large; color: #b71c1c">#P1000{{ $project->id }}</span></b><br>
                                             <br>
                                             <b class="text-dark">Project Number: <span
-                                                    style="font-size: large; color: #b71c1c">15220</span></b><br>
+                                                    style="font-size: large; color: #b71c1c">000{{ $project->id }}</span></b><br>
                                             <b class="text-dark">Project Status: <span
-                                                    style="font-size: large; color: #b71c1c">Pending</span></b><br>
+                                                    style="font-size: large; color: #b71c1c">
+                                                    @if ($project->project_status == 'completed')
+                                                        <span class="badge badge-success text-uppercase"
+                                                            style="font-size: 1rem;background-color: rgb(42, 253, 0);">Completed</span>
+                                                    @elseif ($project->project_status == 'pending')
+                                                        <span class="badge badge-danger text-uppercase"
+                                                            style="font-size: 1rem;background-color: rgb(255, 18, 18);">Pending</span>
+                                                    @else
+                                                        <span class="badge badge-warning text-uppercase"
+                                                            style="font-size: 1rem;background-color: rgb(255, 144, 18);">Canceled</span>
+                                                    @endif
+                                                </span></b><br>
                                             <b class="text-dark">Project Started: <span
-                                                    style="font-size: large; color: #b71c1c">12/2024</span></b><br>
+                                                    style="font-size: large; color: #b71c1c">{{ \Carbon\Carbon::parse($project->s_month)->format('F Y') }}
+
+
+                                                </span></b><br>
                                             {{-- <b class="text-dark">Account:</b> 968-34567 --}}
                                         </div>
                                         <!-- /.col -->
                                     </div>
                                     <!-- /.row -->
-                                    <br>
+                                    <br><br><br>
                                     <!-- Table row -->
                                     <div class="row">
                                         <div class="col-12 table-responsive">
@@ -110,7 +163,7 @@
                                                         <th>#</th>
                                                         <th>Project Name</th>
                                                         <th>Description</th>
-                                                        <th>Total</th>
+                                                        <th>Subtotal</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -129,8 +182,12 @@
                                         <!-- /.col -->
                                     </div>
                                     <!-- /.row -->
-                                    <br>
-                                    <div class="row">
+                                    <br><br><br>
+
+
+
+
+                                    {{-- <div class="row">
                                         <!-- accepted payments column -->
                                         <div class="col-6">
                                             <p class="lead">Payment Methods:</p>
@@ -142,31 +199,137 @@
                                                 Acc. Name : <b>Eversys Lanka (Pvt) Ltd</b></Br>
                                                 Acc. Number : <b>8010223334</b>
                                             </p>
+
+
                                         </div>
                                         <!-- /.col -->
+
                                         <div class="col-6">
-                                            <p class="lead">Amount Due 12/20/2024</p>
+                                            <p class="lead">Amount Due {{ \Carbon\Carbon::today()->addDays(14)->format('d/m/Y') }}</p>
+
 
                                             <div class="table-responsive">
                                                 <table class="table">
                                                     <tr>
                                                         <th style="width:50%">Subtotal:</th>
-                                                        <td>$250.30</td>
+                                                        <td>Rs. {{ number_format($project->p_fee, 2) }}</td>
                                                     </tr>
                                                     <tr>
                                                         <th>Tax (18%)</th>
-                                                        <td>$10.34</td>
+                                                        <td>Rs. {{ number_format($project->p_fee * 0.18, 2) }}</td>
                                                     </tr>
-
                                                     <tr>
-                                                        <th>Total:</th>
-                                                        <td>$265.24</td>
+                                                        <th>Paid</th>
+                                                        <td>Rs. {{ number_format($project->advance_fee, 2) }}
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="background-color: #ca0c0cbf; color: #ffffff">
+                                                        <th>Total Amount:</th>
+                                                        <td>Rs. {{ number_format(($project->p_fee - $project->advance_fee) + (($project->p_fee - $project->advance_fee) * 0.18), 2) }}
+                                                        </td>
                                                     </tr>
                                                 </table>
                                             </div>
                                         </div>
                                         <!-- /.col -->
+                                        <div class="notice" style="font-size: 12px; color: rgb(255, 0, 0);padding: 10px;">
+                                            <p>Payment should be made by the due date to avoid any late fees or service disruption. Please ensure that the payment is completed on time. If you have any questions or concerns, feel free to contact our support team.</p>
+                                        </div>
+                                    </div> --}}
+
+
+
+
+
+
+
+                                    <div class="row">
+                                        <!-- accepted payments column -->
+                                        @if ($project->project_status != 'cancel')
+                                            <div class="col-6">
+                                                <p class="lead">Payment Methods:</p>
+                                                <b style="color: #b71c1c">Bank Transfer Only</b>
+
+                                                <p class="well well-sm shadow-none" style="margin-top: 10px;">
+                                                    Bank : <b>Commercial Bank </b></Br>
+                                                    Branch : <b>Panadura Branch</b></Br>
+                                                    Acc. Name : <b>Eversys Lanka (Pvt) Ltd</b></Br>
+                                                    Acc. Number : <b>8010223334</b>
+                                                </p>
+                                                <div class="notice" style="font-size: 12px; color: rgb(255, 0, 0);">
+                                                    <p>Payment should be made by the due date to avoid any late fees or service disruption. Please ensure that the payment is completed on time. If you have any questions or concerns, feel free to contact our support team.</p>
+                                                </div>
+                                            </div>
+                                        @endif
+                                        <!-- /.col -->
+
+                                        <div class="col-6">
+                                            @if ($project->project_status == 'completed')
+                                                <p class="lead">Amount Due {{ \Carbon\Carbon::today()->addDays(14)->format('d/m/Y') }}</p>
+
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <th style="width:50%">Subtotal:</th>
+                                                            <td>Rs. {{ number_format($project->p_fee, 2) }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Tax (18%)</th>
+                                                            <td>Rs. {{ number_format($project->p_fee * 0.18, 2) }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Paid</th>
+                                                            <td>Rs. {{ number_format($project->advance_fee, 2) }}</td>
+                                                        </tr>
+                                                        <tr style="background-color: #ca0c0cbf; color: #ffffff">
+                                                            <th>Total Amount:</th>
+                                                            <td>Rs. {{ number_format(($project->p_fee - $project->advance_fee) + (($project->p_fee - $project->advance_fee) * 0.18), 2) }}</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            @elseif ($project->project_status == 'pending')
+                                                <p class="lead">Amount Due {{ \Carbon\Carbon::today()->addDays(14)->format('d/m/Y') }}</p>
+
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tr>
+                                                            <th style="width:50%">Subtotal:</th>
+                                                            <td>Rs. {{ number_format($project->p_fee, 2) }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Tax (18%)</th>
+                                                            <td>Rs. {{ number_format($project->p_fee * 0.18, 2) }}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Paid</th>
+                                                            <td>Rs. {{ number_format($project->advance_fee, 2) }}</td>
+                                                        </tr>
+                                                        <tr style="background-color: #ca0c0cbf; color: #ffffff">
+                                                            <th>Total Amount:</th>
+                                                            <td>Rs. {{ number_format(($project->p_fee - $project->advance_fee) + (($project->p_fee - $project->advance_fee) * 0.18), 2) }}</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+
+
+                                            @elseif ($project->project_status == 'cancel')
+                                                <p class="lead" style="color: red;">Sorry, this project has been canceled.</p>
+
+                                                @if ($project->advance_fee > 0)
+                                                    <p class="notice" style="font-size: 12px; color: rgb(255, 0, 0); padding: 10px;">
+                                                        Please note that any advance payment made will not be refunded. We regret any inconvenience caused.
+                                                    </p>
+                                                @else
+                                                    <p class="notice" style="font-size: 12px; color: rgb(255, 0, 0); padding: 10px;">
+                                                        This project was canceled, and no advance payment was made.
+                                                    </p>
+                                                @endif
+
+                                            @endif
+                                        </div>
+                                        <!-- /.col -->
                                     </div>
+
                                     <!-- /.row -->
                                     <br><br>
 
@@ -180,6 +343,8 @@
                                             questions or clarifications, refer to our support or customer service section.
                                         </p>
                                     </div>
+
+
 
                                 </div>
                             </div>
@@ -216,12 +381,15 @@
 
 
 
+
+
+
     <script>
         // Get today's date
         const today = new Date();
 
         // Format the date as "MM/DD/YYYY"
-        const formattedDate = today.toLocaleDateString("en-US");
+        const formattedDate = today.toLocaleDateString("en-GB");
 
         // Display the date in the small tag
         document.getElementById("currentDate").innerText = "Invoice Date: " + formattedDate;
