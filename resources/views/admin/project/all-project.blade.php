@@ -89,7 +89,7 @@
 
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <h2 style="font-family: Open Sans;">Completed Projects</h2>
+                            <h2 style="font-family: Open Sans;">All Projects</h2>
 
                             <br>
                             <table id="example3" class="table table-bordered table-striped">
@@ -125,17 +125,17 @@
                                                 @if ($item->project_status == 'completed')
                                                     <span class="badge badge-success text-uppercase"
                                                         style="font-size: 1rem;background-color: rgb(42, 253, 0);">Completed</span>
-                                                <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
+                                                <a href="{{ route('admin.invoice', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
 
                                                 @elseif ($item->project_status == 'pending')
                                                     <span class="badge badge-danger text-uppercase"
                                                         style="font-size: 1rem;background-color: rgb(255, 18, 18);">Pending</span>
-                                                <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
+                                                <a href="{{ route('admin.invoice', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
 
                                                 @else
                                                     <span class="badge badge-warning text-uppercase"
                                                         style="font-size: 1rem;background-color: rgb(255, 144, 18);">Canceled</span>
-                                                <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
+                                                <a href="{{ route('admin.invoice', $item->id) }}" class="btn btn-outline-danger" title="Invoice"><i class='fas fa-file-invoice-dollar'></i></a>
 
                                                 @endif
                                             </td>
@@ -255,6 +255,18 @@
                                                         placeholder="Enter project fee" required min="10000">
                                                     <small id="emailHelp" class="form-text text-muted "><span style="color: red;">Minimum value
                                                         10000</span></small>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Advance
+                                                    Fee</label>
+                                                <div class="col-sm-10">
+                                                    <input type="number" class="form-control" name="advance_fee"
+                                                        placeholder="Enter advance fee" required min="10000">
+                                                    <small id="emailHelp" class="form-text text-muted "><span style="color: rgb(31, 30, 30);">(Optional)</span></small>
 
 
                                                 </div>
