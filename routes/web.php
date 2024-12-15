@@ -75,6 +75,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::put('/admin/inquire/status/{id}', 'AdminInquireStatus')->name('admin.inquire.status');
 
 
+        Route::get('/admin-invoice/{id}', 'AdminInvoice')->name('admin.invoice');
+
 
         Route::get('/admin/edit/{id}', 'EditAdmin')->name('edit.admin');
         Route::get('/client/edit/{id}', 'EditCustomer')->name('edit.client');
@@ -89,6 +91,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('update/admin/{id}', 'UpdateAdmin')->name('update.admin');
 
         Route::get('/admin/delete/feedback/{id}', 'DeleteFeedback')->name('delete.feedback');
+
+
 
 
 
