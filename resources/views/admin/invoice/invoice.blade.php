@@ -256,7 +256,7 @@
                                                     Acc. Name : <b>Eversys Lanka (Pvt) Ltd</b></Br>
                                                     Acc. Number : <b>8010223334</b>
                                                 </p>
-                                                <div class="notice" style="font-size: 12px; color: rgb(255, 0, 0);">
+                                                <div class="notice" style="font-size: 12px; color: #b71c1c;">
                                                     <p>Payment should be made by the due date to avoid any late fees or service disruption. Please ensure that the payment is completed on time. If you have any questions or concerns, feel free to contact our support team.</p>
                                                 </div>
                                             </div>
@@ -265,8 +265,15 @@
 
                                         <div class="col-6">
                                             @if ($project->project_status == 'completed')
-                                                <p class="lead">Amount Due {{ \Carbon\Carbon::today()->addDays(14)->format('d/m/Y') }}</p>
-
+                                                {{-- <p class="lead">Amount Due {{ \Carbon\Carbon::today()->addDays(14)->format('d/m/Y') }}</p> --}}
+                                                <p class="lead">
+                                                    Amount Due
+                                                    @if ($project->f_month)
+                                                        {{ \Carbon\Carbon::parse($project->f_month)->addDays(14)->format('d/m/Y') }}
+                                                    @else
+                                                        {{ \Carbon\Carbon::today()->addDays(14)->format('d/m/Y') }}
+                                                    @endif
+                                                </p>
                                                 <div class="table-responsive">
                                                     <table class="table">
                                                         <tr>
@@ -316,11 +323,11 @@
                                                 <p class="lead" style="color: red;">Sorry, this project has been canceled.</p>
 
                                                 @if ($project->advance_fee > 0)
-                                                    <p class="notice" style="font-size: 12px; color: rgb(255, 0, 0); padding: 10px;">
+                                                    <p class="notice" style="font-size: 12px; color: #b71c1c; padding: 10px;">
                                                         Please note that any advance payment made will not be refunded. We regret any inconvenience caused.
                                                     </p>
                                                 @else
-                                                    <p class="notice" style="font-size: 12px; color: rgb(255, 0, 0); padding: 10px;">
+                                                    <p class="notice" style="font-size: 12px; color: #b71c1c; padding: 10px;">
                                                         This project was canceled, and no advance payment was made.
                                                     </p>
                                                 @endif
@@ -343,6 +350,7 @@
                                             questions or clarifications, refer to our support or customer service section.
                                         </p>
                                     </div>
+                                    <span style="font-size: 9px; font-family: Open Sans; color: #b71c1c;font-weight: 600">Generated Time: {{ \Carbon\Carbon::now()->format('H:i:s') }}</span>
 
 
 

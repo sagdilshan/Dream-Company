@@ -261,11 +261,11 @@
                                             </div>
 
                                             <div class="form-group row mt-3">
-                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Advance
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Paid
                                                     Fee</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control" name="advance_fee"
-                                                        placeholder="Enter advance fee" required min="10000">
+                                                        placeholder="Enter paid fee" required min="10000">
                                                     <small id="emailHelp" class="form-text text-muted "><span style="color: rgb(31, 30, 30);">(Optional)</span></small>
 
 
@@ -274,9 +274,9 @@
 
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Started
-                                                    Month</label>
+                                                    Date</label>
                                                 <div class="col-sm-10">
-                                                    <input type="month" class="form-control" name="s_month" required>
+                                                    <input type="date" class="form-control" name="s_month" required>
 
 
                                                 </div>
@@ -284,9 +284,9 @@
 
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Finished
-                                                    Month</label>
+                                                    Date</label>
                                                 <div class="col-sm-10">
-                                                    <input type="month" class="form-control" name="f_month">
+                                                    <input type="date" class="form-control" name="f_month">
                                                     <small id="emailHelp" class="form-text text-muted"><span style="color: red;">Project not
                                                         finished... Don't fill this...</span></small>
                                                 </div>

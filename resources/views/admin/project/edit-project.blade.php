@@ -70,11 +70,23 @@
 
                                             <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Finished
-                                                    Month</label>
+                                                    Date</label>
                                                 <div class="col-sm-10">
-                                                    <input type="month" class="form-control" name="f_month" id="f_month" value="{{ $uproject->f_month }}">
+                                                    <input type="date" class="form-control" name="f_month" id="f_month" value="{{ $uproject->f_month }}">
                                                     <small class="form-text text-muted"><span style="color: red;">Project not
                                                         finished... Don't fill this...</span></small>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Paid
+                                                    Fee</label>
+                                                <div class="col-sm-10">
+                                                    <input type="number" class="form-control" name="advance_fee"
+                                                        value="{{ $uproject->advance_fee }}" required >
+                                                    <small id="emailHelp" class="form-text text-danger "><span style="color: rgb(255, 0, 0);">Balance Payment: {{ number_format($uproject->p_fee - $uproject->advance_fee, 2) }}</span></small>
+
+
                                                 </div>
                                             </div>
 
