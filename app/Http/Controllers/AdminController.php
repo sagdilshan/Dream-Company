@@ -6,6 +6,7 @@ use App\Models\CustomerModel;
 use App\Models\FeedbackModel;
 use App\Models\InquireModel;
 use App\Models\ProjectModel;
+use App\Models\QuotationModel;
 use App\Models\StaffModel;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -600,5 +601,78 @@ class AdminController extends Controller
 
         return view('admin.invoice.invoice', compact('project', 'customers'));
     }
+
+
+    public function AdminQuotation()
+    {
+        $quotation = QuotationModel::all();
+        return view('admin.quotation.quotation', compact('quotation'));
+    }
+
+
+
+    public function AdminQuotationStore(Request $request)
+    {
+        // Validate the form inputs
+        $request->validate([
+            'cus_name' => 'required|string|max:255',
+            'com_name' => 'required|string|max:255',
+            'contact' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+
+            // ser_name can be nullable, but ser_price is required if ser_name is filled
+            'ser_name_1' => 'required|string|max:255',
+            'ser_price_1' => 'required|numeric|min:0',
+
+
+            'additional' => 'nullable|string',
+            'service_cost' => 'required|numeric|min:0',
+            'tax' => 'required|numeric|min:0',
+            'total' => 'required|numeric|min:0',
+        ]);
+
+        // Save the data
+        $quota = new QuotationModel();
+        $quota->cus_name = trim($request->cus_name);
+        $quota->com_name = trim($request->com_name);
+        $quota->contact = trim($request->contact);
+        $quota->address = trim($request->address);
+        $quota->ser_name_1 = trim($request->ser_name_1);
+        $quota->ser_price_1 = trim($request->ser_price_1);
+        $quota->ser_name_2 = trim($request->ser_name_2);
+        $quota->ser_price_2 = trim($request->ser_price_2);
+        $quota->ser_name_3 = trim($request->ser_name_3);
+        $quota->ser_price_3 = trim($request->ser_price_3);
+        $quota->ser_name_4 = trim($request->ser_name_4);
+        $quota->ser_price_4 = trim($request->ser_price_4);
+
+        $quota->additional = trim($request->additional);
+        $quota->service_cost = trim($request->service_cost);
+        $quota->tax = trim($request->tax);
+        $quota->total = trim($request->total);
+
+        $quota->created_by = Auth::user()->id;
+
+        $quota->save();
+
+        $notification = array(
+            'message' => 'New Quotation Created',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('admin.quotation')->with($notification);
+    }
+
+
+    public function AdminQuotationView($id)
+    {
+        $quotationss = QuotationModel::findOrFail($id);
+
+
+
+        return view('admin.quotation.view-quotation', compact('quotationss' ));
+
+    }
+
 
 }
