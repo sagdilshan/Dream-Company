@@ -1,5 +1,5 @@
 @extends('home.dash-header')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Invoice')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Invoice View')
 @section('content')
     <style>
         .float-right {
@@ -126,10 +126,11 @@
                                         <!-- /.col -->
                                         <div class="col-sm-4 invoice-col">
                                             <b class="text-dark">Invoice Number: <span
-                                                    style="font-size: large; color: #b71c1c">#P1000{{ $project->id }}</span></b><br>
+                                                    style="font-size: large; color: #b71c1c">#P{{ str_pad($project->id, 5, '0', STR_PAD_LEFT) }}
+                                                </span></b><br>
                                             <br>
                                             <b class="text-dark">Project Number: <span
-                                                    style="font-size: large; color: #b71c1c">000{{ $project->id }}</span></b><br>
+                                                    style="font-size: large; color: #b71c1c">{{ str_pad($project->id, 4, '0', STR_PAD_LEFT) }}</span></b><br>
                                             <b class="text-dark">Project Status: <span
                                                     style="font-size: large; color: #b71c1c">
                                                     @if ($project->project_status == 'completed')
