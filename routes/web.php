@@ -76,6 +76,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
         Route::get('/admin-invoice/{id}', 'AdminInvoice')->name('admin.invoice');
+        Route::get('/admin-quotation', 'AdminQuotation')->name('admin.quotation');
+        Route::post('/admin/quotation/store', 'AdminQuotationStore')->name('admin.quotation.store');
+        Route::get('/admin-quotation/{id}', 'AdminQuotationView')->name('admin.quotation.view');
 
 
         Route::get('/admin/edit/{id}', 'EditAdmin')->name('edit.admin');
