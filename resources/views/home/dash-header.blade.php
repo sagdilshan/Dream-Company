@@ -102,8 +102,8 @@
 
                     <a href="{{ route('admin.project') }}"
                         class="nav-item nav-link {{ Route::is('admin.project') ? 'active' : '' }}">Projects</a>
-                    <a href="{{ route('admin.feedback') }}"
-                        class="nav-item nav-link {{ Route::is('admin.feedback') ? 'active' : '' }}">Feedbacks</a>
+                    <a href="{{ route('admin.quotation') }}"
+                        class="nav-item nav-link {{ Route::is('admin.quotation') ? 'active' : '' }}">Quotation</a>
                     <a href="{{ route('admin.staff') }}"
                         class="nav-item nav-link {{ Route::is('admin.staff') ? 'active' : '' }}">Staff</a>
                     <a href="{{ route('admin.client') }}"
