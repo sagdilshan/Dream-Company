@@ -134,7 +134,7 @@
                                         <!-- /.col -->
                                     </div>
                                     <!-- /.row -->
-
+                                    <br>
                                     <!-- Table row -->
                                     <div class="row">
                                         <div class="col-12 table-responsive">
@@ -206,14 +206,19 @@
                                         <!-- accepted payments column -->
 
                                         <div class="col-6">
-                                            <p class="lead" style="font-size: 12px; color: #b71c1c">* Valid for 21 days
-                                                from the issue date.</p>
+                                            {{-- <p class="lead" style="font-size: 12px; color: #b71c1c">* Valid for 21 days
+                                                from the issue date.</p> --}}
+
+
+
 
                                                 <p class=" well well-sm shadow-none" style="margin-top: 10px; font-size: 14px">
-                                                    Additional Note : <b>{!! nl2br(ucfirst(e($quotationss->additional))) !!}
+                                                    <b>Additional Note :</b>
+                                                    <p class="notice" style="font-size: 13px; color: #b71c1c; padding: 0 10px;">
+                                                        {!! nl2br(ucfirst(e($quotationss->additional))) !!}
+                                                    </p>
 
-
-                                                    </b></Br>
+                                                    </Br>
 
                                                 </p>
 
@@ -240,12 +245,14 @@
 
                                                     <tr style="background-color: #ca0c0cbf; color: #ffffff">
                                                         <th>Total Amount:</th>
-                                                        <td>Rs. {{ number_format($quotationss->total, 2) }}</td>
+                                                        <td><b>Rs. {{ number_format($quotationss->total, 2) }}</b></td>
                                                     </tr>
 
 
 
-                                                </table>
+                                                </table><p class="lead" style="font-size: 12px; color: #b71c1c; float: right;">
+                                                    * Valid until: {{ \Carbon\Carbon::parse($quotationss->created_at)->addDays(21)->format('d M Y') }}
+                                                </p>
                                             </div>
 
 
@@ -279,28 +286,31 @@
                                         <ul style="font-size: 12px; color: black; background-color:">
                                             <li>To proceed with your service, an <strong>advance payment of
                                                     {{ number_format(round($quotationss->total * 0.25, -3), 2) }}</strong>
-                                                [25% nearest largest value] is required.</li>
-                                            <li>The work will commence once the advance is received.</li>
-                                            <li>The remaining balance will be due upon completion of the project, prior to
-                                                delivery.</li>
-                                            <li>Please ensure the advance payment is made to start the process. Thank you
+                                                [25% nearest largest value] is required. Thank you
                                                 for your understanding.</li>
-                                            <li>If the project is delayed due to client-side issues, the project completion
-                                                date may be extended accordingly.</li>
-                                            <li>In case of additional requests or changes after the project has started,
-                                                extra charges may apply based on the nature of the modifications.</li>
+                                            {{-- <li>The work will commence once the advance is received.</li> --}}
+                                            {{-- <li>The remaining balance will be due upon completion of the project, prior to
+                                                delivery.</li> --}}
+                                            {{-- <li>Please ensure the advance payment is made to start the process. Thank you
+                                                for your understanding.</li> --}}
+                                            {{-- <li>If the project is delayed due to client-side issues, the project completion
+                                                date may be extended accordingly.</li> --}}
+
                                             {{-- <li>The quotation provided is valid for 30 days from the issue date. After this period, a new quotation may be required.</li> --}}
                                             {{-- <li>Should you wish to cancel the project after the work has commenced, the advance payment will be forfeited.</li> --}}
 
-                                            <li>Eversys Lanka will retain all intellectual property rights related to the
-                                                work until final payment is received in full.</li>
-                                            <li><strong>Please note that any advance payment made will not be refunded once
-                                                    the project has started. We regret any inconvenience caused.</strong>
-                                            </li>
+                                            {{-- <li>Eversys Lanka will retain all intellectual property rights related to the
+                                                work until final payment is received in full.</li> --}}
+                                            <li>Please note that any <strong>advance payment made will not be refunded</strong> once
+                                                    the project has started. We regret any inconvenience caused.
 
-                                            <li><strong>Any additional services not explicitly mentioned in this quotation
+                                            </li>
+                                            <li>In case of <strong>additional requests or changes after the project has started,
+                                                extra charges may apply</strong> based on the nature of the modifications.</li>
+
+                                            {{-- <li><strong>Any additional services not explicitly mentioned in this quotation
                                                     will be subject to separate charges, based on the scope and requirements
-                                                    of the service.</strong></li>
+                                                    of the service.</strong></li> --}}
                                         </ul>
 
                                     </div>
@@ -348,7 +358,7 @@
         </section>
 
     </div>
-    <script>
+    {{-- <script>
         function printInvoice() {
             const printContents = document.querySelector('.invoice').innerHTML; // Get only the content of the invoice
             const originalContents = document.body.innerHTML; // Backup original page content
@@ -357,6 +367,108 @@
 
             document.body.innerHTML = originalContents; // Restore original page content
             window.location.reload(); // Reload to ensure page state is preserved
+        }
+    </script> --}}
+
+    {{-- <script>
+        function printInvoice() {
+            const printContents = document.querySelector('.invoice').innerHTML; // Get invoice content
+            const originalContents = document.body.innerHTML; // Backup original page content
+
+            // Check for company name first, fallback to customer name if null
+            const companyName = "{{ $quotationss->com_name ?? '' }}".trim();
+            const customerName = "{{ $quotationss->cus_name ?? 'Customer' }}".trim();
+
+            let printFileName = "Invoice_";
+            if (companyName) {
+                printFileName += companyName.replace(/ /g, "_"); // Use company name if available
+            } else {
+                printFileName += customerName.replace(/ /g, "_"); // Use customer name otherwise
+            }
+
+            const originalTitle = document.title; // Backup the original title
+            document.title = printFileName; // Set new title for print dialog
+
+            // Replace the page content with the invoice content
+            document.body.innerHTML = printContents;
+
+            window.print(); // Trigger the print dialog
+
+            // Restore original content and title
+            document.body.innerHTML = originalContents;
+            document.title = originalTitle; // Restore the original page title
+            window.location.reload(); // Reload to preserve state
+        }
+    </script> --}}
+
+    {{-- <script>
+        function printInvoice() {
+            const printContents = document.querySelector('.invoice').innerHTML; // Get invoice content
+            const originalContents = document.body.innerHTML; // Backup original page content
+
+            // Retrieve variables from Laravel
+            const companyName = "{{ $quotationss->com_name ?? '' }}".trim();
+            const customerName = "{{ $quotationss->cus_name ?? 'Customer' }}".trim();
+            const createdDate = "{{ \Carbon\Carbon::parse($quotationss->created_at)->format('d-m-Y') }}";
+            const quotationId = "{{ str_pad($quotationss->id, 4, '0', STR_PAD_LEFT) }}";
+
+            // Generate filename
+            let printFileName = `ELPL/${createdDate}/Q/${quotationId}`;
+            if (companyName) {
+                printFileName += `_${companyName.replace(/ /g, "_")}`; // Append company name
+            } else {
+                printFileName += `_${customerName.replace(/ /g, "_")}`; // Append customer name
+            }
+
+            const originalTitle = document.title; // Backup original title
+            document.title = printFileName; // Set new title for print dialog
+
+            // Replace page content with invoice content
+            document.body.innerHTML = printContents;
+
+            window.print(); // Trigger print dialog
+
+            // Restore original content and title
+            document.body.innerHTML = originalContents;
+            document.title = originalTitle; // Restore original title
+            window.location.reload(); // Reload to preserve state
+        }
+    </script> --}}
+
+    <script>
+        function printInvoice() {
+            const printContents = document.querySelector('.invoice').innerHTML; // Get invoice content
+            const originalContents = document.body.innerHTML; // Backup original page content
+
+            // Retrieve variables from Laravel
+            const companyName = "{{ $quotationss->com_name ?? '' }}".trim();
+            const customerName = "{{ $quotationss->cus_name ?? 'Customer' }}".trim();
+            const createdDate = "{{ \Carbon\Carbon::parse($quotationss->created_at)->format('d-m-Y') }}";
+            const quotationId = "{{ str_pad($quotationss->id, 4, '0', STR_PAD_LEFT) }}";
+
+            // Generate filename
+            let printFileName = `Quotation_`;
+
+            if (companyName) {
+                printFileName += `${companyName.replace(/ /g, "_")}`; // Add company name if exists
+            } else {
+                printFileName += `${customerName.replace(/ /g, "_")}`; // Add customer name if company name is null
+            }
+
+            printFileName += `_ELPL_${createdDate}_Q_${quotationId}`;
+
+            const originalTitle = document.title; // Backup original title
+            document.title = printFileName; // Set new title for print dialog
+
+            // Replace page content with invoice content
+            document.body.innerHTML = printContents;
+
+            window.print(); // Trigger print dialog
+
+            // Restore original content and title
+            document.body.innerHTML = originalContents;
+            document.title = originalTitle; // Restore original title
+            window.location.reload(); // Reload to preserve state
         }
     </script>
 
