@@ -154,7 +154,7 @@
                                         <!-- /.col -->
                                     </div>
                                     <!-- /.row -->
-                                    <br><br><br>
+                                    <br><br>
                                     <!-- Table row -->
                                     <div class="row">
                                         <div class="col-12 table-responsive">
@@ -183,7 +183,7 @@
                                         <!-- /.col -->
                                     </div>
                                     <!-- /.row -->
-                                    <br><br><br>
+                                    <br><br>
 
 
 
@@ -255,7 +255,7 @@
                                                     Bank : <b>Commercial Bank </b></Br>
                                                     Branch : <b>Panadura Branch</b></Br>
                                                     Acc. Name : <b>Eversys Lanka (Pvt) Ltd</b></Br>
-                                                    Acc. Number : <b>8010223334</b>
+                                                    Acc. Number : <b>80******34</b>
                                                 </p>
                                                 <div class="notice" style="font-size: 12px; color: #b71c1c;">
                                                     <p>Payment should be made by the due date to avoid any late fees or service disruption. Please ensure that the payment is completed on time. If you have any questions or concerns, feel free to contact our support team.</p>
@@ -291,7 +291,7 @@
                                                         </tr>
                                                         <tr style="background-color: #ca0c0cbf; color: #ffffff">
                                                             <th>Total Amount:</th>
-                                                            <td>Rs. {{ number_format(($project->p_fee - $project->advance_fee) + (($project->p_fee - $project->advance_fee) * 0.18), 2) }}</td>
+                                                            <td>Rs. <b>{{ number_format(($project->p_fee - $project->advance_fee) + (($project->p_fee - $project->advance_fee) * 0.18), 2) }}</b></td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -314,7 +314,7 @@
                                                         </tr>
                                                         <tr style="background-color: #ca0c0cbf; color: #ffffff">
                                                             <th>Total Amount:</th>
-                                                            <td>Rs. {{ number_format(($project->p_fee - $project->advance_fee) + (($project->p_fee - $project->advance_fee) * 0.18), 2) }}</td>
+                                                            <td>Rs. <b>{{ number_format(($project->p_fee - $project->advance_fee) + (($project->p_fee - $project->advance_fee) * 0.18), 2) }}</b></td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -376,7 +376,7 @@
         </section>
 
     </div>
-    <script>
+    {{-- <script>
         function printInvoice() {
             const printContents = document.querySelector('.invoice').innerHTML; // Get only the content of the invoice
             const originalContents = document.body.innerHTML; // Backup original page content
@@ -386,7 +386,31 @@
             document.body.innerHTML = originalContents; // Restore original page content
             window.location.reload(); // Reload to ensure page state is preserved
         }
+    </script> --}}
+
+    <script>
+        function printInvoice() {
+            const printContents = document.querySelector('.invoice').innerHTML; // Get invoice content
+            const originalContents = document.body.innerHTML; // Backup original page content
+
+            // Set dynamic page title for print (e.g., Invoice_CustomerName)
+            const customerName = "{{ $project->customer->cus_name ?? 'Customer' }}";
+            const newTitle = "Invoice_" + customerName.replace(/ /g, "_"); // Replace spaces with underscores
+            const originalTitle = document.title; // Backup the original title
+            document.title = newTitle; // Set new title
+
+            // Replace the page content with the invoice for printing
+            document.body.innerHTML = printContents;
+
+            window.print(); // Trigger the print dialog
+
+            // Restore original content and title
+            document.body.innerHTML = originalContents;
+            document.title = originalTitle; // Restore the original page title
+            window.location.reload(); // Reload to preserve state
+        }
     </script>
+
 
 
 
