@@ -24,6 +24,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Project ID</th>
                                         <th>Project Name</th>
                                         <th>Association</th>
                                         <th>Price</th>
@@ -41,7 +42,7 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
 
-
+                                            <td>P{{ str_pad($item->id, 4, '0', STR_PAD_LEFT) }}</td>
                                             <td>{{ $item->p_name }}</td>
                                             <td>{{ $item->association }}</td>
                                             <td>{{ $item->p_fee }}</td>
@@ -96,6 +97,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Project ID</th>
                                         <th>Project Name</th>
                                         <th>Association</th>
                                         <th>Price</th>
@@ -113,7 +115,7 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
 
-
+                                            <td>P{{ str_pad($item->id, 4, '0', STR_PAD_LEFT) }}</td>
                                             <td>{{ $item->p_name }}</td>
                                             <td>{{ $item->association }}</td>
                                             <td>{{ $item->p_fee }}</td>
