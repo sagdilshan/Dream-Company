@@ -194,7 +194,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    &copy; Copyright 2023 <a href="https://spectraztechlabs.tech/"> Eversys Lanka (Pvt) Ltd</a>
+                    &copy; Copyright 2023 <a href="">Eversys Lanka (Pvt) Ltd</a>
                 </div>
             </div>
         </div>
