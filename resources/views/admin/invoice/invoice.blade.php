@@ -286,8 +286,8 @@
                                                             <td>Rs. {{ number_format($project->p_fee * 0.18, 2) }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <th>Paid</th>
-                                                            <td>Rs. {{ number_format($project->advance_fee, 2) }}</td>
+                                                            <th>Paid ( - )</th>
+                                                            <td><b>-</b> Rs. {{ number_format($project->advance_fee, 2) }}</td>
                                                         </tr>
                                                         <tr style="background-color: #ca0c0cbf; color: #ffffff">
                                                             <th>Total Amount:</th>
@@ -309,8 +309,8 @@
                                                             <td>Rs. {{ number_format($project->p_fee * 0.18, 2) }}</td>
                                                         </tr>
                                                         <tr>
-                                                            <th>Paid</th>
-                                                            <td>Rs. {{ number_format($project->advance_fee, 2) }}</td>
+                                                            <th>Paid ( - )</th>
+                                                            <td><b>-</b> Rs. {{ number_format($project->advance_fee, 2) }}</td>
                                                         </tr>
                                                         <tr style="background-color: #ca0c0cbf; color: #ffffff">
                                                             <th>Total Amount:</th>
