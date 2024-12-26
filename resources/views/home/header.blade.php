@@ -78,13 +78,18 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-            <h1 class="display-5 m-0"
+            {{-- <h1 class="display-5 m-0"
+                style="background: radial-gradient(circle, #264242, #424242, #d32f2f, #b71c1c);-webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
+                EVERSYS LANKA
+            </h1> --}}
+            <a href="{{ url('/') }}" class="navbar-brand ms-4 ms-lg-0">
+                <h1 class="display-5 m-0"
                 style="background: radial-gradient(circle, #264242, #424242, #d32f2f, #b71c1c);-webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
                 EVERSYS LANKA
             </h1>
-
-
             </a>
+
+            {{-- </a> --}}
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
