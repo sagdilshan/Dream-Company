@@ -72,11 +72,11 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 600px;">
+                <div class="col-lg-6 wow fadeIn d-none d-lg-block" data-wow-delay="0.5s" style="min-height: 600px;">
                     <div class="position-relative rounded overflow-hidden h-100">
-                        <iframe class="position-relative w-100 h-100" src="../assets/img/service-4.jpg" frameborder="0"
-                            style="min-height: 600px; border:0;" allowfullscreen="" aria-hidden="false"
-                            tabindex="0"></iframe>
+                        <img class="position-relative w-100 h-100" src="../assets/img/service-4.jpg" frameborder="0"
+                            style="min-height: 600px; border:0;  object-fit: cover;" allowfullscreen="" aria-hidden="false"
+                            tabindex="0"></img>
                     </div>
                 </div>
             </div>
