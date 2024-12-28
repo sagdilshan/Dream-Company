@@ -164,9 +164,9 @@
                 <p class="fs-5 fw-medium text-danger">Our Team</p>
                 <h1 class="display-5 mb-5">Exclusive Team</h1>
             </div>
-            <div class="row g-4 justify-content-center">
+            <div class="row g-4 justify-content-center owl-carousel project-carousel">
                 @foreach ($staffs as $staff)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item ">
                         <img class="img-fluid rounded"
                         src="{{ !empty($staff->photo) ? url('upload/staff_images/' . $staff->photo) : url('upload/no_staff.jpg') }}"
@@ -185,6 +185,7 @@
                         </div>
                     </div>
                 </div>
+
                 @endforeach
 
 
