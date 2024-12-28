@@ -61,7 +61,7 @@
                                     <p class="mb-4">Empowering online presence through expert web development. Secure and
                                         reliable web hosting for seamless digital experiences. Your journey to success
                                         begins here.</p>
-                                    <p><i class="fa fa-check text-danger me-3"></i>Integrated Web Solutions:</p>
+                                    <p><i class="fa fa-check text-danger me-3"></i>Integrated Web Solutions</p>
                                     <p><i class="fa fa-check text-danger me-3"></i>Reliable Hosting Services</p>
                                     <p><i class="fa fa-check text-danger me-3"></i>Security and Support</p>
                                     <a class="btn btn-danger py-3 px-5 mt-3" href="{{ route('contact') }}">Contact Us</a>
