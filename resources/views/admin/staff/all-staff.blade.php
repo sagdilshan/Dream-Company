@@ -138,8 +138,9 @@
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">Employee
                                                     Image</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-control" name="photo"
-                                                        accept="image/*" required>
+                                                    {{-- <input type="file" class="form-control" name="photo"
+                                                        accept="image/*" required> --}}
+                                                        <input type="file" class="form-control" name="photo" accept="image/*" required onchange="validateImage(this)">
                                                 </div>
                                             </div>
 
@@ -222,6 +223,22 @@
         </section>
     </div>
     <!-- Contact End -->
+
+    <script>
+        function validateImage(input) {
+            const file = input.files[0];
+            if (file) {
+                const img = new Image();
+                img.onload = function () {
+                    if (img.width !== img.height) {
+                        alert("Please upload a square image (1:1 aspect ratio).");
+                        input.value = ""; // Clear the input value
+                    }
+                };
+                img.src = URL.createObjectURL(file);
+            }
+        }
+    </script>
 
     <script>
         // Function to get today's date in the format yyyy-mm-dd
