@@ -11,14 +11,14 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="../assets/img/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="../assets/img/carousel-1.png" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-8">
                                     <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Eversys Lanka
                                         (Pvt) Ltd</p>
-                                    <h1 class="display-3 mb-4 animated slideInDown">Where Innovation Meets Expertise in Web
+                                    <h1 class="display-3 mb-4 animated slideInDown" style="color:rgb(255, 255, 255); -webkit-text-stroke: 2px black; ">Where Innovation Meets Expertise in Web
                                         Development.</h1><br>
                                     <a href="{{ route('contact') }}"
                                         class="btn btn-danger py-3 px-5 animated slideInDown">Let's Get Strated</a>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="../assets/img/carousel-1.jpg" alt="Image">
+                    <img class="w-100" src="../assets/img/carousel-2.png" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -36,7 +36,7 @@
                                     <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Eversys Lanka
                                         (Pvt) Ltd</p>
 
-                                    <h1 class="display-3 mb-4 animated slideInDown">Elevate Your Digital Presence with
+                                    <h1 class="display-3 mb-4 animated slideInDown" style="color:rgb(255, 255, 255); -webkit-text-stroke: 2px black;">Elevate Your Digital Presence with
                                         Eversys Lanka.</h1><br>
                                     <a href="{{ route('contact') }}"
                                         class="btn btn-danger py-3 px-5 animated slideInDown">Let's Get Strated</a>
@@ -68,9 +68,8 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="fs-5 fw-medium text-danger">Why Choosing Eversys</p>
                     <h1 class="display-5 mb-4">Few Reasons Why People Choosing Us</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <a class="btn btn-danger py-3 px-5" href="">Explore More</a>
+                    <p class="mb-4">Discover the difference with Eversys Lanka. Here are just a few reasons why people trust and choose us</p>
+                    <a class="btn btn-danger py-3 px-5" href="{{ route('service') }}">Explore More</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="row g-4 align-items-center">
