@@ -111,7 +111,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style=" object-fit: cover;">
                     <div class="position-relative rounded overflow-hidden h-100 ">
-                        <img class="position-relative w-100 h-100" src="../assets/img/service-4.jpg"
+                        <img class="position-relative w-100 h-100" src="../assets/img/login.jpg"
                             style=" border:0; object-fit: cover; max-height: 26rem;" />
                     </div>
                 </div>
