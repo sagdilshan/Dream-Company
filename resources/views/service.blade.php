@@ -34,7 +34,7 @@
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4"
                             data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-danger me-3"></i>E-Commerce Solutions</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-danger me-3"></i>E - Commerce Solutions</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4"
                             data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
