@@ -169,7 +169,7 @@
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item ">
                         <img class="img-fluid rounded"
-                        src="{{ !empty($staff->photo) ? url('upload/staff_images/' . $staff->photo) : url('upload/no_image.png') }}"
+                        src="{{ !empty($staff->photo) ? url('upload/staff_images/' . $staff->photo) : url('upload/no_staff.jpg') }}"
                         alt="{{ $staff->e_name }}" title="{{ $staff->e_name }}">
                         <div class="team-text">
                             <h4 class="mb-0 text-capitalize">{{ $staff->e_name }}</h4>
