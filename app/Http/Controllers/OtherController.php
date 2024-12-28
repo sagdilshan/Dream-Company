@@ -71,6 +71,7 @@ class OtherController extends Controller
             ->count();
 
         $staffs = StaffModel::where('status', 'work')
+        ->orderBy('role_value', 'desc')
             ->get();
 
 
