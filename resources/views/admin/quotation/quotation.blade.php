@@ -119,7 +119,7 @@
                                                                 style="font-weight: 600;">Company Name</label>
                                                             <div class="col-sm-8">
                                                                 <input type="text" class="form-control" name="com_name"
-                                                                    placeholder="Comapany name (optional)" required>
+                                                                    placeholder="Comapany name (optional)" >
                                                             </div>
                                                         </div>
                                                     </div>
@@ -342,6 +342,12 @@
                                                                     value="0" required readonly id="tax">
                                                             </div>
                                                         </div>
+                                                        <div class="form-check" >
+                                                            <input class="form-check-input" type="checkbox" value="option1"  name="option1" id="checkbox1">
+                                                            <label class="form-check-label text-danger" for="checkbox1">
+                                                                Need to be add Tax?
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -356,6 +362,9 @@
                                             </div>
 
 
+
+                                            {{-- <input type="checkbox" name="option1" value="option1"> Option 1 --}}
+                                        </label>
 
 
 
@@ -395,7 +404,45 @@
             });
         }
     </script>
-    <script>
+
+<script>
+    function calculateCost() {
+        var prices = [
+            parseFloat(document.querySelector('input[name="ser_price_1"]').value) || 0,
+            parseFloat(document.querySelector('input[name="ser_price_2"]').value) || 0,
+            parseFloat(document.querySelector('input[name="ser_price_3"]').value) || 0,
+            parseFloat(document.querySelector('input[name="ser_price_4"]').value) || 0
+        ];
+
+        // Calculate Service Cost (sum of all prices)
+        var serviceCost = prices.reduce(function(total, price) {
+            return total + price;
+        }, 0);
+
+        // Check if the tax checkbox is checked
+        var isTaxChecked = document.querySelector('input[name="option1"]').checked;
+        var tax = isTaxChecked ? serviceCost * 0.18 : 0;
+
+        // Calculate Total Cost
+        var totalCost = serviceCost + tax;
+
+        // Update the fields with calculated values
+        document.getElementById('service_cost').value = serviceCost.toFixed(2);
+        document.getElementById('tax').value = tax.toFixed(2);
+        document.getElementById('total').value = totalCost.toFixed(2);
+    }
+
+    // Attach event listeners to inputs and checkbox for dynamic updates
+    document.querySelectorAll('input[name^="ser_price"]').forEach(function(input) {
+        input.addEventListener('input', calculateCost);
+    });
+    document.querySelector('input[name="option1"]').addEventListener('click', calculateCost);
+</script>
+
+
+
+
+    {{-- <script>
         function calculateCost() {
             var prices = [
                 parseFloat(document.querySelector('input[name="ser_price_1"]').value) || 0,
@@ -420,55 +467,8 @@
             document.getElementById('tax').value = tax.toFixed(2);
             document.getElementById('total').value = totalCost.toFixed(2);
         }
-    </script>
-    {{-- <script>
-        // Function to validate the fields dynamically
-        function validateServiceFields() {
-            // Check each service name field and apply validation to the corresponding price field
-            const serviceNames = [{
-                    name: 'ser_name_1',
-                    price: 'ser_price_1'
-                },
-                {
-                    name: 'ser_name_2',
-                    price: 'ser_price_2'
-                },
-                {
-                    name: 'ser_name_3',
-                    price: 'ser_price_3'
-                },
-                {
-                    name: 'ser_name_4',
-                    price: 'ser_price_4'
-                }
-            ];
-
-            let isValid = true;
-
-            // Loop through each service name and price pair
-            serviceNames.forEach(function(service) {
-                const serviceName = document.querySelector('[name="' + service.name + '"]');
-                const servicePrice = document.querySelector('[name="' + service.price + '"]');
-
-                // If service name is filled, check if service price is also filled
-                if (serviceName.value.trim() !== '' && servicePrice.value.trim() === '') {
-                    // Add custom validation message
-                    isValid = false;
-                    alert(service.price.replace('_', ' ').toUpperCase() + " is required when " + service.name
-                        .replace('_', ' ').toUpperCase() + " is filled.");
-                }
-            });
-
-            return isValid;
-        }
-
-        // Call the validation function when the form is submitted
-        document.querySelector('form').addEventListener('submit', function(event) {
-            if (!validateServiceFields()) {
-                event.preventDefault(); // Prevent form submission if validation fails
-            }
-        });
     </script> --}}
+
     <script>
         // Function to validate the fields dynamically
         function validateServiceFields() {
