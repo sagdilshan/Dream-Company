@@ -64,7 +64,7 @@
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <small><a href="https://www.google.com/maps/place/6.696325,79.935113" class="text-dark"
-                        target="_blank"><i class="fa fa-map-marker-alt me-2" style="color:rgb(255, 0, 0);"></i>265 2/B,
+                        target="_blank"><i class="fa fa-map-marker-alt me-2" style="color:rgb(255, 0, 0);"></i>265 2/B, Kurunduwatta Rd,
                         Madupitiya, Panadura.</a></small>
                 <small class="ms-4 text-dark"><i class="fa fa-clock me-2" style="color:rgb(255, 0, 0);"></i>09.00 AM -
                     06.00 PM</small>
