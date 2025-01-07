@@ -633,6 +633,7 @@ h6,
         user-select: none;
         /* Prevents text selection */
     }
+    
     @page {
         size: A4; /* Set paper size to A4 */
     }
