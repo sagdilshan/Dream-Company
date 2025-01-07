@@ -605,7 +605,9 @@ class AdminController extends Controller
 
     public function AdminQuotation()
     {
-        $quotation = QuotationModel::all();
+        $quotation = QuotationModel::orderBy('created_at', 'desc')
+        ->get();
+
         return view('admin.quotation.quotation', compact('quotation'));
     }
 
@@ -616,9 +618,9 @@ class AdminController extends Controller
         // Validate the form inputs
         $request->validate([
             'cus_name' => 'required|string|max:255',
-            'com_name' => 'required|string|max:255',
+            'com_name' => 'nullable|string|max:255',
             'contact' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
+            'address' => 'nullable|string|max:255',
 
             // ser_name can be nullable, but ser_price is required if ser_name is filled
             'ser_name_1' => 'required|string|max:255',
