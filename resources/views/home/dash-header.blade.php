@@ -77,8 +77,8 @@
             </div>
             <div class="col-lg-6 px-5 text-end">
                 <small><i class="fa fa-envelope me-2" style="color:rgb(255, 0, 0);"></i><a
-                        href="mailto:eversyslanka@gmail.com"
-                        class="text-dark">eversyslanka@gmail.com</a></small>
+                        href="mailto:eversyslanka.technology@gmail.com"
+                        class="text-dark">eversyslanka.technology@gmail.com</a></small>
                 <small class="ms-4"><i class="fa fa-phone-alt me-2" style="color:rgb(255, 0, 0);"></i><a
                         href="tel:+94763839634" target="_blank" class="text-dark">+94 76 38 39 634</a></small>
             </div>
@@ -88,7 +88,7 @@
             <a href="{{ url('/') }}" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="display-5 m-0"
                 style="background: radial-gradient(circle, #264242, #424242, #d32f2f, #b71c1c);-webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
-                EVERSYS LANKA
+                Eversys Technology
             </h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
