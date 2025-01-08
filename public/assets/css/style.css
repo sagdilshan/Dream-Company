@@ -309,7 +309,7 @@ h6,
 
 .project-item .project-title {
     position: absolute;
-    top: 3rem;
+    top: 2rem;
     right: 0;
     bottom: 0;
     left: 3rem;
@@ -633,7 +633,7 @@ h6,
         user-select: none;
         /* Prevents text selection */
     }
-    
+
     @page {
         size: A4; /* Set paper size to A4 */
     }
