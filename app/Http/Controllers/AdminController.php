@@ -346,6 +346,8 @@ class AdminController extends Controller
     public function AdminStore(Request $request)
     {
         // Check if the logged-in user's email is 'gdyya@gmail.com'
+        // only can be added admins in gayathra dilshan
+
         if (Auth::user()->email !== 'gayathradilshan1@gmail.com') {
             $notification = array(
                 'message' => 'Unauthorized Activity.',
@@ -363,8 +365,9 @@ class AdminController extends Controller
         $admins->nic = trim($request->nic);
         $admins->address = trim($request->address);
         $admins->phone = trim($request->phone);
+
         $admins->password = Hash::make($request->password);
-        $admins->role = 'admin';
+        $admins->role = trim($request->role);
 
 
         $admins->save();
