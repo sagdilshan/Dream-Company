@@ -69,12 +69,12 @@
                                 <div class="invoice p-3 mb-3 " style="font-family: Open sans" id="invoice">
 
                                     <!-- Diagonal Text -->
-                                    <div class="pending-text" id="invoice">EVERSYS LANKA (PVT) LTD</div>
+                                    <div class="pending-text" id="invoice">EVERSYS TECHNOLOGY</div>
                                     <!-- title row -->
                                     <div class="row border-bottom">
                                         <div class="col-12">
                                             <h2 class="m-0" style="color:  #b71c1c;text-align: left;">
-                                                EVERSYS LANKA (PVT) LTD
+                                                EVERSYS TECHNOLOGY
                                                 <small class="float-right" style="float: right" id="currentDate">Invoice
                                                     Date:
                                                 </small>
@@ -93,9 +93,10 @@
                                                 <strong style="font-size: large" class="text-dark">Eversys Lanka (Pvt)
                                                     Ltd</strong><br>
                                                 265 2/B, Kurunduwatta Road,<br>
-                                                Madupitiya, <br>Panadura,<br>
-                                                Sri Lanka<br>
-                                                <strong class="text-dark"> Phone: <a href="tel:+94763839634" target="_blank"
+                                                Madupitiya, Panadura,<br>
+                                                {{-- Sri Lanka<br> --}}
+                                                <strong class="text-dark">Reg No:</strong> PV 00318532<br>
+                                                <strong class="text-dark">Phone: <a href="tel:+94763839634" target="_blank"
                                                         class="text-dark">+94 77 99 19 634</a></strong><br>
                                                 <strong class="text-dark">Email: <a href="mailto:eversyslanka@gmail.com"
                                                         class="text-dark">eversyslanka@gmail.com</a></strong>
