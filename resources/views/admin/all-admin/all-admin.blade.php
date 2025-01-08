@@ -170,11 +170,27 @@
                                             </div>
 
                                             <div class="form-group row mt-3">
+                                                <label class="col-sm-2 col-form-label" style="font-weight: 600;">Department</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" name="role" required>
+                                                        <option value="" disabled selected>Select Department</option>
+                                                        <option value="admin">Software Department
+                                                        </option>
+                                                        <option value="travel">Travel Department
+                                                        </option>
+
+
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-3">
                                                 <label class="col-sm-2 col-form-label"
                                                     style="font-weight: 600;">Password</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="password"
-                                                        value="Eversys@123" required>
+                                                        value="Eversys@123" required readonly>
                                                 </div>
                                             </div>
 
