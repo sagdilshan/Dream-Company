@@ -96,16 +96,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="{{ url('/') }}"
-                        class="nav-item nav-link {{ Route::is('welcome') ? 'active' : '' }}">Home</a>
+                    <a href="{{ route('software') }}"
+                        class="nav-item nav-link {{ Route::is('software') ? 'active' : '' }}">IT Department</a>
                     <a href="{{ route('about') }}"
-                        class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}">About</a>
-                    <a href="{{ route('service') }}"
-                        class="nav-item nav-link {{ Route::is('service') ? 'active' : '' }}">Services</a>
-                    <a href="{{ route('portfolio') }}"
-                        class="nav-item nav-link {{ Route::is('portfolio') ? 'active' : '' }}">Portfolio</a>
-                    <a href="{{ route('contact') }}"
-                        class="nav-item nav-link {{ Route::is('contact') ? 'active' : '' }}">Contact</a>
+                        class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}">Travel Department</a>
 
                     @if (Route::has('login'))
                         @auth
@@ -177,6 +171,7 @@
                             class="text-light">+94763839634</a></p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a href="mailto:eversyslanka@gmail.com"
                             class="text-light">eversyslanka@gmail.com</a></p>
+
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
                                 class="fab fa-twitter"></i></a>
@@ -190,19 +185,19 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Services</h4>
-                    <a class="btn btn-link">Financial Planning</a>
-                    <a class="btn btn-link">Cash Investment</a>
-                    <a class="btn btn-link">Financial Consultancy</a>
-                    <a class="btn btn-link">Business Loans</a>
-                    <a class="btn btn-link">Business Analysis</a>
+                    <a class="btn btn-link">Web Development and Hosting</a>
+
+                    <a class="btn btn-link">Flight Ticket Booking</a>
+                    <a class="btn btn-link">Custom Software Development</a>
+                    <a class="btn btn-link">Special Vehicle Hire Booking</a>
+                    <a class="btn btn-link">Software Consulting</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Pages</h4>
                     <a class="btn btn-link" href="{{ url('/') }}">Eversys Lanka</a>
-                    <a class="btn btn-link" href="{{ route('about') }}">About Us</a>
-                    <a class="btn btn-link" href="{{ route('contact') }}">Contact Us</a>
-                    <a class="btn btn-link" href="{{ route('portfolio') }}">Our Portfolio</a>
-                    <a class="btn btn-link" href="{{ route('service') }}">Our Services</a>
+                    <a class="btn btn-link" href="{{ route('software') }}">IT Department</a>
+                    <a class="btn btn-link" href="{{ route('software') }}">Travel Department</a>
+
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Our Vision</h4>
