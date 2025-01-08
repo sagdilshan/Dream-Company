@@ -1,4 +1,4 @@
-@extends('home.header')
+@extends('home.software-header')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Services')
 @section('content')
 
