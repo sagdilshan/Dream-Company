@@ -94,10 +94,12 @@
                                                 {{-- 265 2/B, Kurunduwatta Road,<br>
                                                 Madupitiya, <br>Panadura,<br>
                                                 Sri Lanka<br> --}}
-                                                <strong class="text-dark"> Phone: <a href="tel:+94763839634" target="_blank"
+                                                <strong class="text-dark">Reg No:</strong> PV 00318532<br>
+
+                                                <strong class="text-dark">Phone: <a href="tel:+94763839634" target="_blank"
                                                         class="text-dark">+94 77 99 19 634</a></strong><br>
-                                                <strong class="text-dark">Email: <a href="mailto:eversyslanka@gmail.com"
-                                                        class="text-dark">eversyslanka@gmail.com</a></strong>
+                                                <strong class="text-dark"><a href="mailto:eversyslanka.technology@gmail.com"
+                                                        class="text-dark">eversyslanka.technology@gmail.com</a></strong>
                                             </address>
                                         </div>
                                         <!-- /.col -->
