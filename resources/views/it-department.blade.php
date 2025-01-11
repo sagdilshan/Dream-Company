@@ -268,8 +268,8 @@
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-1.jpg" alt="">
-                        <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a>
+                        <img class="img-fluid rounded" src="../assets/img/host.jpg" alt="">
+                        {{-- <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">Web Hosting</h5>
@@ -277,49 +277,63 @@
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-2.jpg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
+                        <img class="img-fluid rounded" src="../assets/img/custom.jpg" alt="">
+                        {{-- <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
-                        <h5 class="mb-0">Flight Ticket Booking</h5>
+                        <h5 class="mb-0">Responsive Web Design</h5>
                     </div>
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="../assets/img/service-1.jpg" alt="">
-                        <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a>
+                        {{-- <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a> --}}
+                    </div>
+                    <div class="project-title">
+                        <h5 class="mb-0">Landing Page Design</h5>
+                    </div>
+                </div>
+                <div class="project-item pe-5 pb-5">
+                    <div class="project-img mb-3">
+                        <img class="img-fluid rounded" src="../assets/img/ui.jpg" alt="">
+                        {{-- <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a> --}}
+                    </div>
+                    <div class="project-title">
+                        <h5 class="mb-0">Web Design & User Experience</h5>
+                    </div>
+                </div>
+                <div class="project-item pe-5 pb-5">
+                    <div class="project-img mb-3">
+                        <img class="img-fluid rounded" src="../assets/img/seo.jpg" alt="">
+                        {{-- <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a> --}}
+                    </div>
+                    <div class="project-title">
+                        <h5 class="mb-0">SEO Optimization</h5>
+                    </div>
+                </div>
+
+                <div class="project-item pe-5 pb-5">
+                    <div class="project-img mb-3">
+                        <img class="img-fluid rounded" src="../assets/img/service-2.jpg" alt="">
+                        {{-- <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">E - Commerce Website</h5>
                     </div>
                 </div>
+
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-3.jpg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
-                    </div>
-                    <div class="project-title">
-                        <h5 class="mb-0">Customized Travel Packages</h5>
-                    </div>
-                </div>
-                <div class="project-item pe-5 pb-5">
-                    <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-1.jpg" alt="">
-                        <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a>
+                        <img class="img-fluid rounded" src="../assets/img/maintain.jpeg" alt="">
+                        {{-- <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">Maintenance and Support</h5>
                     </div>
                 </div>
-                <div class="project-item pe-5 pb-5">
-                    <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-4.jpg" alt="">
-                        <a href="https://gridspro.tech" target="_blank"><i class="fa fa-link fa-3x text-danger"></i></a>
-                    </div>
-                    <div class="project-title">
-                        <h5 class="mb-0">Travel Insurance Assistance</h5>
-                    </div>
-                </div>
+
+
+
             </div>
         </div>
     </div>
