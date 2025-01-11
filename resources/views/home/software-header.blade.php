@@ -60,7 +60,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s"  style="background-color: #ffffff37";>
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <small><a href="https://www.google.com/maps/place/6.696325,79.935113" class="text-dark"
@@ -97,7 +97,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="{{ url('/') }}"
-                        class="nav-item nav-link {{ Route::is('welcome') ? 'active' : '' }}">Eversys Lanka Home</a>
+                        class="nav-item nav-link {{ Route::is('welcome') ? 'active' : '' }}" >Eversys Lanka Home</a>
                     <a href="{{ route('about') }}"
                         class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}">About</a>
                     <a href="{{ route('service') }}"
