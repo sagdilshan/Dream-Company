@@ -95,11 +95,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <div class="navbar-nav ms-auto p-4 p-lg-0" >
                     <a href="{{ route('software') }}"
-                        class="nav-item nav-link {{ Route::is('software') ? 'active' : '' }}">IT Department</a>
+                        class="nav-item nav-link {{ Route::is('software') ? 'active' : '' }}" style="color: #000000">IT Department</a>
                     <a href="{{ route('about') }}"
-                        class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}">Travel Department</a>
+                        class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}" style="color: #000000">Travel Department</a>
 
                     @if (Route::has('login'))
                         @auth
@@ -144,7 +144,7 @@
                         <div class="d-none d-lg-flex ms-2">
                             <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="{{ route('login') }}"
                                 title="Login">
-                                <small class="bi bi-box-arrow-right" style="color:rgb(255, 0, 0);"></small>
+                                <small class="bi bi-box-arrow-right" style="color:rgb(255, 0, 0);" ></small>
                             </a>
                         </div>
                     @endauth
