@@ -4,16 +4,22 @@
 <head>
     <meta charset="utf-8">
     {{-- <title>Eversys Lanka - Innovation for Every Journey</title> --}}
-    <title>@yield('pageTitle') - Eversys Lanka</title>
+    <title>@yield('pageTitle') - Eversys Lanka (Pvt) Ltd</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Web Developers, Software Developers, Panadura web developers, ">
-    <meta name="description"
+    <meta name="keywords"
+        content="Web Developers, Software Developers, Panadura web developers,Travel Agency, Travel services">
+    {{-- <meta name="description"
         content="Eversys Lanka, a premier web development company, is dedicated to reshaping
     online experiences through innovative and tailored solutions. As expert web developers, we blend technical prowess
     with creative flair to bring your digital visions to life. Elevate your online presence with Eversys Lanka –
-    where cutting-edge technology meets exceptional web development expertise for unparalleled digital success.">
+    where cutting-edge technology meets exceptional web development expertise for unparalleled digital success."> --}}
+    <meta name="description"
+        content="Eversys Lanka (Pvt) Ltd specializes in innovative IT services, including web development and technology
+         solutions, alongside comprehensive travel services such as vehicle hire, flight bookings,
+         travel packages, and 24/7 customer support. Experience excellence in technology and travel." />
 
-    <meta name="author" content="Eversys Lanka">
+
+    <meta name="author" content="Eversys Lanka (Pvt) Ltd">
 
 
     <!-- Favicon -->
@@ -64,7 +70,8 @@
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <small><a href="https://www.google.com/maps/place/6.696325,79.935113" class="text-dark"
-                        target="_blank"><i class="fa fa-map-marker-alt me-2" style="color:rgb(255, 0, 0);"></i>265 2/B, Kurunduwatta Rd,
+                        target="_blank"><i class="fa fa-map-marker-alt me-2" style="color:rgb(255, 0, 0);"></i>265 2/B,
+                        Kurunduwatta Rd,
                         Madupitiya, Panadura.</a></small>
                 <small class="ms-4 text-dark"><i class="fa fa-clock me-2" style="color:rgb(255, 0, 0);"></i>09.00 AM -
                     06.00 PM</small>
@@ -84,9 +91,9 @@
             </h1> --}}
             <a href="{{ url('/') }}" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="display-5 m-0"
-                style="background: radial-gradient(circle, #264242, #424242, #d32f2f, #b71c1c);-webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
-                EVERSYS LANKA
-            </h1>
+                    style="background: radial-gradient(circle, #264242, #424242, #d32f2f, #b71c1c);-webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
+                    EVERSYS LANKA
+                </h1>
             </a>
 
             {{-- </a> --}}
@@ -95,11 +102,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0" >
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="{{ route('software') }}"
-                        class="nav-item nav-link {{ Route::is('software') ? 'active' : '' }}" style="color: #000000">IT Department</a>
-                    <a href="{{ route('about') }}"
-                        class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}" style="color: #000000">Travel Department</a>
+                        class="nav-item nav-link {{ Route::is('software') ? 'active' : '' }}" style="color: #000000">IT
+                        Department</a>
+                    <a href="{{ route('about') }}" class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}"
+                        style="color: #000000">Travel Department</a>
 
                     @if (Route::has('login'))
                         @auth
@@ -144,7 +152,7 @@
                         <div class="d-none d-lg-flex ms-2">
                             <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="{{ route('login') }}"
                                 title="Login">
-                                <small class="bi bi-box-arrow-right" style="color:rgb(255, 0, 0);" ></small>
+                                <small class="bi bi-box-arrow-right" style="color:rgb(255, 0, 0);"></small>
                             </a>
                         </div>
                     @endauth
