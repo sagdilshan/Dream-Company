@@ -165,7 +165,7 @@
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-1.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/host.jpg" alt="">
                         <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -174,7 +174,7 @@
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-1.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/custom.jpg" alt="">
                         <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -192,7 +192,7 @@
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-3.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/ui.jpg" alt="">
                         <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -201,7 +201,7 @@
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-1.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/seo.jpg" alt="">
                         <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -211,7 +211,7 @@
 
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-1.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/service-2.jpg" alt="">
                         <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -221,7 +221,7 @@
 
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-1.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/maintain.jpeg" alt="">
                         <a href="{{ route('software') }}"><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -244,7 +244,7 @@
 
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-3.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/ticket.jpg" alt="">
                         <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -253,7 +253,7 @@
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-2.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/air.jpg" alt="">
                         <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -262,7 +262,7 @@
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-4.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/customer.jpg" alt="">
                         <a href="https://gridspro.tech" target="_blank"><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -271,7 +271,7 @@
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-3.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/custom-travel.jpg" alt="">
                         <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -280,7 +280,7 @@
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-3.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/special.jpeg" alt="">
                         <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
@@ -298,7 +298,7 @@
                 </div>
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-3.jpg" alt="">
+                        <img class="img-fluid rounded" src="../assets/img/car.jpeg" alt="">
                         <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
