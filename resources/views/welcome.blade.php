@@ -11,7 +11,7 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="../assets/img/carousel-1.png" alt="Image">
+                    <img class="w-100" src="../assets/img/as.jpg" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="../assets/img/carousel-2.png" alt="Image">
+                    <img class="w-100" src="../assets/img/ad.jpg" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -39,7 +39,8 @@
                                         (Pvt) Ltd</p>
 
                                     <h1 class="display-3 mb-4 animated slideInDown"
-                                        style="color:rgb(255, 255, 255); -webkit-text-stroke: 2px black;">Experience Seamless Travel with Eversys Travels.</h1><br>
+                                        style="color:rgb(255, 255, 255); -webkit-text-stroke: 2px black;">Experience
+                                        Seamless Travel with Eversys Travels.</h1><br>
                                     <a href="{{ route('contact') }}"
                                         class="btn btn-danger py-3 px-5 animated slideInDown">Visit Travel Department</a>
                                 </div>
@@ -324,10 +325,12 @@
                     <p class="mb-4">Welcome to <b>Eversys Lanka</b>, a company driven by a passion for innovation and
                         excellence. Our business is structured into two main Department.<br> <b>Eversys Technology</b> and
                         <b>Eversys
-                            Travel</b>.<br><br>At <b>Eversys Technology</b>, we offer a full range of IT services and solutions
+                            Travel</b>.<br><br>At <b>Eversys Technology</b>, we offer a full range of IT services and
+                        solutions
                         aimed at helping
                         businesses navigate their digital transformation. We specialize in custom software development, IT
-                        consulting, and web services, all designed to meet the specific needs of our clients.<br><br><b>Eversys
+                        consulting, and web services, all designed to meet the specific needs of our
+                        clients.<br><br><b>Eversys
                             Travel</b>, on the other hand, offers a wide range of travel services to make your journey as
                         seamless
                         and enjoyable as possible. We specialize in providing van, bus, and car hire, along with special
@@ -336,10 +339,12 @@
                         and tailored to your needs. Additionally, we offer flight ticket booking services, travel insurance
                         assistance, customized travel packages, holiday and tour package bookings, as well as ticket
                         rebooking and cancellations. Our 24/7 customer support is always ready to assist with any
-                        travel-related inquiries, ensuring you have peace of mind throughout your journey.<br><br>At <b>Eversys
+                        travel-related inquiries, ensuring you have peace of mind throughout your journey.<br><br>At
+                        <b>Eversys
                             Lanka</b>,
                         we are committed to delivering exceptional service across both technology and travel sectors,
-                        ensuring that our clients experience the highest levels of satisfaction, trust, and innovation.</p>
+                        ensuring that our clients experience the highest levels of satisfaction, trust, and innovation.
+                    </p>
                 </div>
             </div>
             <div class="border rounded p-4 wow fadeInUp" data-wow-delay="0.1s">
