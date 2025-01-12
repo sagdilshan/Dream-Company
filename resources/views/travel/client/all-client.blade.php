@@ -29,6 +29,7 @@
                                         <th>Email</th>
                                         <th>Phone</th>
                                         <th>Address</th>
+                                        <th>Passport</th>
 
                                         <th>Action</th>
                                     </tr>
@@ -45,6 +46,8 @@
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->phone }}</td>
                                             <td>{{ $item->address }}</td>
+                                            <td>{{ $item->passport }}</td>
+
 
                                             <td>
                                                 <a href="{{ route('travel.edit.client', $item->id) }}" class="btn btn-outline-success">Edit</a>
