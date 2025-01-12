@@ -19,11 +19,9 @@
                                     <p class="fs-5 fw-medium" style="color:rgb(255, 0, 0);">Welcome to Eversys Lanka
                                         (Pvt) Ltd</p>
                                     <h1 class="display-3 mb-4 animated slideInDown"
-                                        style="color:rgb(255, 255, 255); -webkit-text-stroke: 2px black; ">Where Innovation
-                                        Meets Expertise in Web
-                                        Development.</h1><br>
-                                    <a href="{{ route('software') }}"
-                                        class="btn btn-danger py-3 px-5 animated slideInDown">Visit IT Department</a>
+                                        style="color:rgb(255, 255, 255); -webkit-text-stroke: 2px black; ">Simplifying Travel, <br>Elevating Experiences with <br>Eversys Travels.</h1><br>
+                                    <a href="#contact"
+                                        class="btn btn-danger py-3 px-5 animated slideInDown">Let's Get Strated</a>
                                 </div>
                             </div>
                         </div>
@@ -39,10 +37,9 @@
                                         (Pvt) Ltd</p>
 
                                     <h1 class="display-3 mb-4 animated slideInDown"
-                                        style="color:rgb(255, 255, 255); -webkit-text-stroke: 2px black;">Experience
-                                        Seamless Travel with Eversys Travels.</h1><br>
-                                    <a href="{{ route('contact') }}"
-                                        class="btn btn-danger py-3 px-5 animated slideInDown">Visit Travel Department</a>
+                                        style="color:rgb(255, 255, 255); -webkit-text-stroke: 2px black;">Seamless Solutions for Every Destination.</h1><br>
+                                    <a href="#contact"
+                                        class="btn btn-danger py-3 px-5 animated slideInDown">Let's Get Strated</a>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +78,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="../assets/img/ticket.jpg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
+                        {{-- <a href=""><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">Ticket Rebooking and Cancellations</h5>
@@ -90,7 +87,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="../assets/img/air.jpg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
+                        {{-- <a href=""><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">Flight Ticket Booking</h5>
@@ -99,7 +96,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="../assets/img/customer.jpg" alt="">
-                        <a href="https://gridspro.tech" target="_blank"><i class="fa fa-link fa-3x text-danger"></i></a>
+                        {{-- <a href="https://gridspro.tech" target="_blank"><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">Customer Support for Travel Needs</h5>
@@ -108,7 +105,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="../assets/img/custom-travel.jpg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
+                        {{-- <a href=""><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">Customized Travel Packages</h5>
@@ -117,7 +114,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="../assets/img/special.jpeg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
+                        {{-- <a href=""><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">Special Vehicle Hire Booking</h5>
@@ -126,7 +123,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="../assets/img/service-4.jpg" alt="">
-                        <a href="https://gridspro.tech" target="_blank"><i class="fa fa-link fa-3x text-danger"></i></a>
+                        {{-- <a href="https://gridspro.tech" target="_blank"><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">Travel Insurance Assistance</h5>
@@ -135,7 +132,7 @@
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
                         <img class="img-fluid rounded" src="../assets/img/car.jpeg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
+                        {{-- <a href=""><i class="fa fa-link fa-3x text-danger"></i></a> --}}
                     </div>
                     <div class="project-title">
                         <h5 class="mb-0">Car, Bus, and Van Hire with Drivers</h5>
@@ -154,7 +151,7 @@
         <div class="container">
             <div class="row g-4 align-items-end mb-4">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid rounded" src="../assets/img/about.jpg">
+                    <img class="img-fluid rounded" src="../assets/img/about2.jpg">
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
 
