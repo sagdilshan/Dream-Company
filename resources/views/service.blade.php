@@ -164,10 +164,17 @@
                                         <label for="mail">Your Email</label>
                                     </div>
                                 </div>
+                                <div class="col-sm-6" hidden>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control"  name="department" value="it"
+                                            placeholder="Enter needed department" required readonly>
+                                            <label for="department">Department</label>
+                                    </div>
+                                </div>
                                 <div class="col-sm-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="mobile" name="mobile"
-                                            placeholder="Your Mobile" required>
+                                        <input type="number" class="form-control" id="mobile" name="mobile"
+                                            placeholder="Your Mobile" required min="0">
                                         <label for="mobile">Your Mobile</label>
                                     </div>
                                 </div>
