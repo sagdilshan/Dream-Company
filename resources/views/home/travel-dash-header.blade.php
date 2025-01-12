@@ -104,10 +104,9 @@
                         class="nav-item nav-link {{ Route::is('admin.project') ? 'active' : '' }}">Tours</a>
                     <a href="{{ route('admin.quotation') }}"
                         class="nav-item nav-link {{ Route::is('admin.quotation') ? 'active' : '' }}">Quotation</a>
-                    <a href="{{ route('admin.staff') }}"
-                        class="nav-item nav-link {{ Route::is('admin.staff') ? 'active' : '' }}">Staff</a>
-                    <a href="{{ route('admin.client') }}"
-                        class="nav-item nav-link {{ Route::is('admin.client') ? 'active' : '' }}">Customers</a>
+                    
+                    <a href="{{ route('travel.client') }}"
+                        class="nav-item nav-link {{ Route::is('travel.client') ? 'active' : '' }}">Customers</a>
                     <a href="{{ route('travel.inquire') }}"
                         class="nav-item nav-link {{ Route::is('travel.inquire') ? 'active' : '' }}">Inquires</a>
                     <a href="{{ route('travel.profile') }}"
