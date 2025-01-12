@@ -116,8 +116,16 @@ Route::controller(TravelController::class)->group(function () {
     // Route::get('/', 'IndexPage')->name('welcome');
     // Route::post('/inquire/store', 'InquireStore')->name('inquire.store');
     // Route::get('/it-department/about-us', 'AboutPage')->name('about');
-    // Route::get('/it-department', 'IndexPage')->name('software');
+    Route::get('/travel-admin-profile', 'TravelProfile')->name('travel.profile');
     Route::get('/travel-admin-index', 'TravelDashboard')->name('travel.index');
+    Route::get('/travel-inquires', 'TravelInquire')->name('travel.inquire');
+    Route::put('/travel/inquire/status/{id}', 'TravelInquireStatus')->name('travel.inquire.status');
+    Route::get('/travel-clients', 'TravelClient')->name('travel.client');
+    Route::post('/travel/client/store', 'TravelClientStore')->name('travel.client.store');
+    Route::get('/travel-client/edit/{id}', 'TravelEditCustomer')->name('travel.edit.client');
+    Route::post('/travel-update/client/{id}', 'TravelUpdateCustomer')->name('travel.update.client');
+
+
     // Route::get('/', 'MainIndexPage')->name('welcome');
 
 
