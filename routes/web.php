@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OtherController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TravelController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -109,7 +111,18 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
 
+Route::controller(TravelController::class)->group(function () {
 
+    // Route::get('/', 'IndexPage')->name('welcome');
+    // Route::post('/inquire/store', 'InquireStore')->name('inquire.store');
+    // Route::get('/it-department/about-us', 'AboutPage')->name('about');
+    // Route::get('/it-department', 'IndexPage')->name('software');
+    Route::get('/travel-admin-index', 'TravelDashboard')->name('travel.index');
+    // Route::get('/', 'MainIndexPage')->name('welcome');
+
+
+
+});
 
 
 
