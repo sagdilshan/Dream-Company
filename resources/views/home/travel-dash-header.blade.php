@@ -97,14 +97,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="{{ route('admin.index') }}"
-                        class="nav-item nav-link {{ Route::is('admin.index') ? 'active' : '' }}">Dashboard</a>
+                    <a href="{{ route('travel.index') }}"
+                        class="nav-item nav-link {{ Route::is('travel.index') ? 'active' : '' }}">Dashboard</a>
 
                     <a href="{{ route('admin.project') }}"
                         class="nav-item nav-link {{ Route::is('admin.project') ? 'active' : '' }}">Tours</a>
                     <a href="{{ route('admin.quotation') }}"
                         class="nav-item nav-link {{ Route::is('admin.quotation') ? 'active' : '' }}">Quotation</a>
-                    
+
                     <a href="{{ route('travel.client') }}"
                         class="nav-item nav-link {{ Route::is('travel.client') ? 'active' : '' }}">Customers</a>
                     <a href="{{ route('travel.inquire') }}"
