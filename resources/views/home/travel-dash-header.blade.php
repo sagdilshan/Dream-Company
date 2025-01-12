@@ -85,7 +85,7 @@
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-            <a href="{{ route('software') }}" class="navbar-brand ms-4 ms-lg-0">
+            <a href="{{ route('travel') }}" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="display-5 m-0"
                 style="background: radial-gradient(circle, #264242, #424242, #d32f2f, #b71c1c);-webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
                 Eversys Travels
@@ -108,10 +108,10 @@
                         class="nav-item nav-link {{ Route::is('admin.staff') ? 'active' : '' }}">Staff</a>
                     <a href="{{ route('admin.client') }}"
                         class="nav-item nav-link {{ Route::is('admin.client') ? 'active' : '' }}">Customers</a>
-                    <a href="{{ route('admin.inquire') }}"
-                        class="nav-item nav-link {{ Route::is('admin.inquire') ? 'active' : '' }}">Inquires</a>
-                    <a href="{{ route('admin.profile') }}"
-                        class="nav-item nav-link {{ Route::is('admin.profile') ? 'active' : '' }}">Profile</a>
+                    <a href="{{ route('travel.inquire') }}"
+                        class="nav-item nav-link {{ Route::is('travel.inquire') ? 'active' : '' }}">Inquires</a>
+                    <a href="{{ route('travel.profile') }}"
+                        class="nav-item nav-link {{ Route::is('travel.profile') ? 'active' : '' }}">Profile</a>
 
                     <a href="{{ route('admin.logout') }}"
                         class="nav-item d-lg-none d-block nav-link {{ Route::is('admin.logout') ? 'active' : '' }}">Log
