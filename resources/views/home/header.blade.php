@@ -106,7 +106,7 @@
                     <a href="{{ route('software') }}"
                         class="nav-item nav-link {{ Route::is('software') ? 'active' : '' }}" style="color: #000000">IT
                         Department</a>
-                    <a href="{{ route('about') }}" class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}"
+                    <a href="{{ route('travel') }}" class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}"
                         style="color: #000000">Travel Department</a>
 
                     @if (Route::has('login'))
