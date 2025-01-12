@@ -93,13 +93,13 @@
                                                 <strong style="font-size: large" class="text-dark">Eversys Lanka (Pvt)
                                                     Ltd</strong><br>
                                                 265 2/B, Kurunduwatta Road,<br>
-                                                Madupitiya, Panadura,<br>
+                                                Madupitiya, Panadura.<br>
                                                 {{-- Sri Lanka<br> --}}
                                                 <strong class="text-dark">Reg No:</strong> PV 00318532<br>
                                                 <strong class="text-dark">Phone: <a href="tel:+94763839634" target="_blank"
                                                         class="text-dark">+94 77 99 19 634</a></strong><br>
                                                 <strong class="text-dark">Email: <a href="mailto:eversyslanka@gmail.com"
-                                                        class="text-dark">eversyslanka@gmail.com</a></strong>
+                                                        class="text-dark">eversyslanka.technology@gmail.com</a></strong>
                                             </address>
                                         </div>
                                         <!-- /.col -->
@@ -253,10 +253,10 @@
                                                 <b style="color: #b71c1c">Bank Transfer Only</b>
 
                                                 <p class="well well-sm shadow-none" style="margin-top: 10px;">
-                                                    Bank : <b>Commercial Bank </b></Br>
-                                                    Branch : <b>Panadura Branch</b></Br>
+                                                    Acc. Number : <b>80******34</b></Br>
                                                     Acc. Name : <b>Eversys Lanka (Pvt) Ltd</b></Br>
-                                                    Acc. Number : <b>80******34</b>
+                                                    Branch : <b>Panadura Second Branch</b></Br>
+                                                    Bank : <b>Commercial Bank </b>
                                                 </p>
                                                 <div class="notice" style="font-size: 12px; color: #b71c1c;">
                                                     <p>Payment should be made by the due date to avoid any late fees or service disruption. Please ensure that the payment is completed on time. If you have any questions or concerns, feel free to contact our support team.</p>
