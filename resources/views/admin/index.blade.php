@@ -1,5 +1,5 @@
 @extends('home.dash-header')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Admin Dashboard')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'IT Admin Dashboard')
 @section('content')
 
 
