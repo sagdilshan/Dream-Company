@@ -39,20 +39,17 @@ class OtherController extends Controller
         $allfeedback = FeedbackModel::orderBy('id', 'asc')->take(5)->inRandomOrder()->get();
 
 
-        $fakeTotalcustomers = 120;
-        $realTotalcustomers = User::where('role', 'guest')->where('status', 'active')->count();
-        $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
-        $formattedTotalcustomers = number_format($totalcustomers);
 
-        $fakePending_project = 56;
-        $realPending_project = ProjectModel::where('project_status', 'completed')->count();
-        $totalPending_project = $fakePending_project + $realPending_project;
-        $formattedPending_project = number_format($totalPending_project);
+        return view('welcome', compact('allfeedback'));
+    }
 
-        $all_staff = StaffModel::where('status', 'work')
-            ->count();
+    public function TravelPage()
+    {
+        $allfeedback = FeedbackModel::orderBy('id', 'asc')->take(5)->inRandomOrder()->get();
 
-        return view('welcome', compact('formattedTotalcustomers', 'formattedPending_project', 'all_staff', 'allfeedback'));
+
+
+        return view('travel-department', compact('allfeedback'));
     }
 
     public function InquireStore(Request $request)
@@ -63,7 +60,7 @@ class OtherController extends Controller
         $inquir->subject = trim($request->subject);
         $inquir->message = trim($request->message);
         $inquir->mobile = trim($request->mobile);
-
+        $inquir->department = trim($request->department);
 
         $inquir->save();
 
@@ -72,7 +69,9 @@ class OtherController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect()->route('contact')->with($notification);
+        // return redirect()->route('contact')->with($notification);
+        return back()->with($notification);
+
 
     }
 
