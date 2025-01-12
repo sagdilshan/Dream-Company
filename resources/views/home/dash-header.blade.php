@@ -4,16 +4,16 @@
 <head>
     <meta charset="utf-8">
     {{-- <title>Eversys Lanka - Innovation for Every Journey</title> --}}
-    <title>@yield('pageTitle') - Eversys Lanka</title>
+    <title>@yield('pageTitle') - Eversys Lanka (Pvt) Ltd</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="Web Developers, Software Developers, Panadura web developers, ">
+    {{-- <meta name="keywords" content="Web Developers, Software Developers, Panadura web developers, ">
     <meta name="description"
         content="Eversys Lanka, a premier web development company, is dedicated to reshaping
     online experiences through innovative and tailored solutions. As expert web developers, we blend technical prowess
     with creative flair to bring your digital visions to life. Elevate your online presence with Eversys Lanka –
-    where cutting-edge technology meets exceptional web development expertise for unparalleled digital success.">
+    where cutting-edge technology meets exceptional web development expertise for unparalleled digital success."> --}}
 
-    <meta name="author" content="Eversys Lanka">
+    <meta name="author" content="Eversys Lanka (Pvt) Ltd">
 
 
     <!-- Favicon -->
