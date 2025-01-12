@@ -47,6 +47,7 @@ Route::controller(OtherController::class)->group(function () {
     Route::post('/inquire/store', 'InquireStore')->name('inquire.store');
     Route::get('/it-department/about-us', 'AboutPage')->name('about');
     Route::get('/it-department', 'IndexPage')->name('software');
+    Route::get('/travel-department', 'TravelPage')->name('travel');
     Route::get('/', 'MainIndexPage')->name('welcome');
 
 
