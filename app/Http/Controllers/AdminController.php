@@ -160,6 +160,7 @@ class AdminController extends Controller
     {
         $allinquir = InquireModel::orderBy('created_at', 'desc')
             ->where('status', 'new')
+            ->whereIn('department', ['default', 'it'])
             ->get();
         return view('admin.inquire.all-inquire', compact('allinquir'));
     }
