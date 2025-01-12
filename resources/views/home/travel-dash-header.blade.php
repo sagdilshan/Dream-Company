@@ -101,7 +101,7 @@
                         class="nav-item nav-link {{ Route::is('admin.index') ? 'active' : '' }}">Dashboard</a>
 
                     <a href="{{ route('admin.project') }}"
-                        class="nav-item nav-link {{ Route::is('admin.project') ? 'active' : '' }}">Projects</a>
+                        class="nav-item nav-link {{ Route::is('admin.project') ? 'active' : '' }}">Tours</a>
                     <a href="{{ route('admin.quotation') }}"
                         class="nav-item nav-link {{ Route::is('admin.quotation') ? 'active' : '' }}">Quotation</a>
                     <a href="{{ route('admin.staff') }}"
@@ -144,8 +144,11 @@
                             target="_blank"> 265 2/B, Madupitiya, Panadura.</a></p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i><a href="tel:+94763839634" target="_blank"
                             class="text-light">+94763839634</a></p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a href="mailto:eversyslanka@gmail.com"
-                            class="text-light">eversyslanka@gmail.com</a></p>
+                            <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a href="mailto:eversyslanka@gmail.com"
+                                class="text-light">eversyslanka@gmail.com</a></p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a
+                                href="mailto:eversyslanka.travels@gmail.com" class="text-light"
+                                style="font-size: 14px;">eversyslanka.travels@gmail.com</a></p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
                                 class="fab fa-twitter"></i></a>
