@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     {{-- <title>Eversys Lanka - Innovation for Every Journey</title> --}}
-    <title>@yield('pageTitle') - Eversys Lanka Technology</title>
+    <title>@yield('pageTitle') - Eversys Lanka (Pvt) Ltd</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="keywords" content="Web Developers, Software Developers, Panadura web developers, ">
     <meta name="description"
@@ -60,18 +60,20 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s"  style="background-color: #ffffff37";>
+    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s" style="background-color: #ffffff37";>
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <small><a href="https://www.google.com/maps/place/6.696325,79.935113" class="text-dark"
-                        target="_blank"><i class="fa fa-map-marker-alt me-2" style="color:rgb(255, 0, 0);"></i>265 2/B, Kurunduwatta Rd,
+                        target="_blank"><i class="fa fa-map-marker-alt me-2" style="color:rgb(255, 0, 0);"></i>265 2/B,
+                        Kurunduwatta Rd,
                         Madupitiya, Panadura.</a></small>
                 <small class="ms-4 text-dark"><i class="fa fa-clock me-2" style="color:rgb(255, 0, 0);"></i>09.00 AM -
                     06.00 PM</small>
             </div>
             <div class="col-lg-6 px-5 text-end">
                 <small><i class="fa fa-envelope me-2" style="color:rgb(255, 0, 0);"></i><a
-                        href="mailto:eversyslanka.technology@gmail.com" class="text-dark">eversyslanka.technology@gmail.com</a></small>
+                        href="mailto:eversyslanka.technology@gmail.com"
+                        class="text-dark">eversyslanka.technology@gmail.com</a></small>
                 <small class="ms-4"><i class="fa fa-phone-alt me-2" style="color:rgb(255, 0, 0);"></i><a
                         href="tel:+94763839634" target="_blank" class="text-dark">+94 76 38 39 634</a></small>
             </div>
@@ -84,9 +86,9 @@
             </h1> --}}
             <a href="{{ route('software') }}" class="navbar-brand ms-4 ms-lg-0">
                 <h1 class="display-5 m-0"
-                style="background: radial-gradient(circle, #264242, #424242, #d32f2f, #b71c1c);-webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
-                EVERSYS TECHNOLOGY
-            </h1>
+                    style="background: radial-gradient(circle, #264242, #424242, #d32f2f, #b71c1c);-webkit-background-clip: text;-webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; text-align: center;">
+                    EVERSYS TECHNOLOGY
+                </h1>
             </a>
 
             {{-- </a> --}}
@@ -97,7 +99,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="{{ url('/') }}"
-                        class="nav-item nav-link {{ Route::is('welcome') ? 'active' : '' }}" >Eversys Lanka Home</a>
+                        class="nav-item nav-link {{ Route::is('welcome') ? 'active' : '' }}">Eversys Lanka Home</a>
                     <a href="{{ route('about') }}"
                         class="nav-item nav-link {{ Route::is('about') ? 'active' : '' }}">About</a>
                     <a href="{{ route('service') }}"
@@ -177,8 +179,9 @@
                             class="text-light">+94763839634</a></p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a href="mailto:eversyslanka@gmail.com"
                             class="text-light">eversyslanka@gmail.com</a></p>
-                            <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a href="mailto:eversyslanka.technology@gmail.com"
-                                class="text-light" style="font-size: 14px;">eversyslanka.technology@gmail.com</a></p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i> <a
+                            href="mailto:eversyslanka.technology@gmail.com" class="text-light"
+                            style="font-size: 14px;">eversyslanka.technology@gmail.com</a></p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i
                                 class="fab fa-twitter"></i></a>
