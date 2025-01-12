@@ -46,9 +46,16 @@
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
+                            <div class="col-sm-6" hidden>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control"  name="department" value="it"
+                                        placeholder="Enter needed department" required readonly>
+                                        <label for="department">Department</label>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="mobile" name="mobile"
+                                    <input type="number" class="form-control" id="mobile" name="mobile" min="0"
                                         placeholder="Your Mobile" required>
                                     <label for="mobile">Mobile</label>
                                 </div>
