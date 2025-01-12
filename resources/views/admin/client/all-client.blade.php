@@ -133,7 +133,7 @@
                                                 <label class="col-sm-2 col-form-label" style="font-weight: 600;">NIC</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" name="nic"
-                                                        placeholder="Enter NIC number" required>
+                                                        placeholder="Enter NIC number" >
                                                 </div>
                                             </div>
 
