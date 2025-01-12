@@ -68,12 +68,12 @@
                                 <div class="invoice p-3 mb-3 " style="font-family: Open sans" id="invoice">
 
                                     <!-- Diagonal Text -->
-                                    <div class="pending-text" id="invoice">EVERSYS LANKA (PVT) LTD</div>
+                                    <div class="pending-text" id="invoice">EVERSYS TECHNOLOGY</div>
                                     <!-- title row -->
                                     <div class="row">
                                         <div class="col-12">
                                             <h2 class="m-0" style="color:  #b71c1c;text-align: left;">
-                                                EVERSYS LANKA (PVT) LTD
+                                                EVERSYS TECHNOLOGY
                                                 <small class="float-right"
                                                     style="float: right">ELPL/{{ \Carbon\Carbon::parse($quotationss->created_at)->format('d-m-Y') }}/Q/{{ str_pad($quotationss->id, 4, '0', STR_PAD_LEFT) }}
                                                 </small>
