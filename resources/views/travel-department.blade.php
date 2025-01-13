@@ -160,13 +160,13 @@
                     <p class="mb-4">Welcome to <b>Eversys Lanka</b>, a company driven by a passion for innovation and
                         excellence. Our business is structured into two main Department.<br> <b>Eversys Technology</b> and
                         <b>Eversys
-                            Travel</b>.<br><br>At <b>Eversys Technology</b>, we offer a full range of IT services and
+                            Travels</b>.<br><br>At <b>Eversys Technology</b>, we offer a full range of IT services and
                         solutions
                         aimed at helping
                         businesses navigate their digital transformation. We specialize in custom software development, IT
                         consulting, and web services, all designed to meet the specific needs of our
                         clients.<br><br><b>Eversys
-                            Travel</b>, on the other hand, offers a wide range of travel services to make your journey as
+                            Travels</b>, on the other hand, offers a wide range of travel services to make your journey as
                         seamless
                         and enjoyable as possible. We specialize in providing van, bus, and car hire, along with special
                         vehicle hire options, all available across Sri Lanka. Whether you need transportation for a
