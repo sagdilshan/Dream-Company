@@ -15,6 +15,7 @@
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
                             {{-- <h3>{{$formattedPending_project}}</h3> --}}
+                            <h3>15</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Pending Hires</p>
                         </div>
@@ -33,6 +34,7 @@
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
                             {{-- <h3>{{$formattedCompleted_project}}</h3> --}}
+                            <h3>24</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Completed Hires</p>
                         </div>
@@ -51,6 +53,7 @@
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
                             {{-- <h3>{{$formattedTotalcustomers}}</h3> --}}
+                            <h3>12</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Eversys Vehicles</p>
                         </div>
@@ -70,6 +73,7 @@
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
                             {{-- <h3>{{$formattedTotaladmins}}</h3> --}}
+                            <h3>45</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Eversys Customers</p>
                         </div>
@@ -121,6 +125,7 @@
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
                             {{-- <h3>{{$all_feedbacks}}</h3> --}}
+                            <h3>15</h3>
 
                             <p style="font-size: 1.5rem; color: white;">Total Feedbacks</p>
                         </div>
@@ -137,6 +142,7 @@
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
                             {{-- <h3>{{$all_inquire}}</h3> --}}
+                            <h3>30</h3>
 
                             <p style="font-size: 1.5rem;color: white;">Inquires</p>
                         </div>
