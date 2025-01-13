@@ -51,7 +51,7 @@
 
                                                 @if ($item->status == 'new')
                                                     <form method="POST"
-                                                        action="{{ route('admin.inquire.status', $item->id) }}">
+                                                        action="{{ route('travel.inquire.status', $item->id) }}">
                                                         @csrf
                                                         @method('PUT')
                                                         <button type="submit"
