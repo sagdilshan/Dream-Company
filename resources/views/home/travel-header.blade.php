@@ -98,7 +98,8 @@
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="{{ url('/') }}"
                     class="nav-item nav-link {{ Route::is('welcome') ? 'active' : '' }}" >Eversys Lanka Home</a>
-
+                    <a href="{{ route('travel.index') }}"
+                    class="nav-item nav-link">Dash</a>
                     <a href="#services"
                         class="nav-item nav-link">Services</a>
                         <a href="#about-us"
