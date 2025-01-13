@@ -44,7 +44,7 @@
                                             <td>{{ $key + 1 }}</td>
 
 
-                                            <td>ELPL/{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}/Q/{{ str_pad($item->id, 4, '0', STR_PAD_LEFT) }}</td>
+                                            <td>ELPL/{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}/TECH/{{ str_pad($item->id, 4, '0', STR_PAD_LEFT) }}</td>
 
                                             <td>{{ $item->cus_name }}</td>
                                             <td>{{ $item->contact }}</td>
