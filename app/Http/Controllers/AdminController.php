@@ -610,7 +610,7 @@ class AdminController extends Controller
     public function AdminQuotation()
     {
         $quotation = QuotationModel::orderBy('created_at', 'desc')
-        ->get();
+            ->get();
 
         return view('admin.quotation.quotation', compact('quotation'));
     }
@@ -676,7 +676,7 @@ class AdminController extends Controller
 
 
 
-        return view('admin.quotation.view-quotation', compact('quotationss' ));
+        return view('admin.quotation.view-quotation', compact('quotationss'));
 
     }
 
