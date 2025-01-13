@@ -123,6 +123,8 @@ Route::controller(TravelController::class)->group(function () {
     Route::post('/travel/client/store', 'TravelClientStore')->name('travel.client.store');
     Route::get('/travel-client/edit/{id}', 'TravelEditCustomer')->name('travel.edit.client');
     Route::post('/travel-update/client/{id}', 'TravelUpdateCustomer')->name('travel.update.client');
+    Route::post('/travel/update/password', 'TravelUpdatePassword')->name('travel.update.password');
+    Route::post('/travel/profile/store', 'TravelProfileStore')->name('travel.profile.store');
 
 
 
