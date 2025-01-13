@@ -105,7 +105,7 @@
                         <div class="inner">
                             {{-- <h3>{{$all_staff}}</h3> --}}
 
-                            <p style="font-size: 1.5rem; color: white;">Total Staff</p>
+                            <p style="font-size: 1.5rem; color: white;"> Hire's Commission</p>
                         </div>
                         <div class="icon">
                             <i class="fa fa-users"></i>
@@ -151,7 +151,76 @@
             </div>
 
         </div>
+        <br>
+        <div class="container-fluid">
 
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <h2 style="font-family: Open Sans;">Pending Hires</h2>
+                            <br>
+                            <table id="example2" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Customer Name</th>
+                                        <th>Customer Phone</th>
+                                        <th>Vehicle No</th>
+                                        <th>Driver Phone</th>
+                                        <th>Destination</th>
+                                        <th>Date & Time</th>
+
+                                        <th>Action</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+
+
+                                    {{-- @foreach ($pending_project as $key => $item)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+
+
+                                            <td>{{ $item->p_name }}</td>
+                                            <td>{{ $item->association }}</td>
+                                            <td>{{ $item->p_fee }}</td>
+                                            <td>{{ $item->s_month }}</td>
+
+                                            <td>
+                                                @if ($item->project_status == 'completed')
+                                                    <span class="badge badge-success text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(42, 253, 0);">Completed</span>
+                                                @elseif ($item->project_status == 'pending')
+                                                    <span class="badge badge-danger text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 18, 18);">Pending</span>
+                                                @else
+                                                    <span class="badge badge-warning text-uppercase"
+                                                        style="font-size: 1rem;background-color: rgb(255, 144, 18);">Canceled</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('edit.project', $item->id) }}" class="btn btn-outline-success">Edit</a>
+                                            </td>
+
+                                        </tr>
+                                    @endforeach --}}
+
+
+                                    </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
 
     </div>
     <!-- Contact End -->
