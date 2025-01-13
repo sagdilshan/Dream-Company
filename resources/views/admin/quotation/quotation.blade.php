@@ -310,7 +310,7 @@
                                                 <label class="col-sm-2 col-form-label"
                                                     style="font-weight: 600;">Additional</label>
                                                 <div class="col-sm-10">
-                                                    <textarea rows="4" class="form-control" name="additional" placeholder="Additional note (optional)" required></textarea>
+                                                    <textarea rows="4" class="form-control" name="additional" placeholder="Additional note (optional)" ></textarea>
 
                                                 </div>
                                             </div>
