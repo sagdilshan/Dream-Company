@@ -25,7 +25,7 @@
                                     <br>
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{ route('admin.profile.store') }}"
+                                        <form method="POST" action="{{ route('travel.profile.store') }}"
                                             class="form-horizontal">
                                             @csrf
 
@@ -138,7 +138,7 @@
 
                                     <br>
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{ route('admin.update.password') }}"
+                                        <form method="POST" action="{{ route('travel.update.password') }}"
                                             class="form-horizontal" enctype="multipart/form-data">
                                             @csrf
 
