@@ -87,11 +87,11 @@
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
                             {{-- <h3>Rs. {{$formattedPrice}}</h3> --}}
-
+                            <h3>Rs. 105,100</h3>
                             <p style="font-size: 1.5rem; color: white;">Total Earn</p>
                         </div>
                         <div class="icon">
-                            <i class="fas fa-archive"></i>
+                            <i class="fa fa-money"></i>
                         </div>
                         <a class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
@@ -104,11 +104,12 @@
                     <div class="small-box " style="background-color: rgb(255, 20, 20)";>
                         <div class="inner">
                             {{-- <h3>{{$all_staff}}</h3> --}}
+                            <h3>Rs. 15,000</h3>
 
                             <p style="font-size: 1.5rem; color: white;"> Hire's Commission</p>
                         </div>
                         <div class="icon">
-                            <i class="fa fa-users"></i>
+                            <i class="fa fa-money"></i>
                         </div>
                         <a href="{{ route('admin.staff') }}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
