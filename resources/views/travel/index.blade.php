@@ -16,7 +16,7 @@
                         <div class="inner">
                             {{-- <h3>{{$formattedPending_project}}</h3> --}}
 
-                            <p style="font-size: 1.5rem; color: white;">Pending Projects</p>
+                            <p style="font-size: 1.5rem; color: white;">Pending Hires</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-archive"></i>
@@ -34,7 +34,7 @@
                         <div class="inner">
                             {{-- <h3>{{$formattedCompleted_project}}</h3> --}}
 
-                            <p style="font-size: 1.5rem; color: white;">Completed Projects</p>
+                            <p style="font-size: 1.5rem; color: white;">Completed Hires</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-user-tie"></i>
@@ -52,12 +52,12 @@
                         <div class="inner">
                             {{-- <h3>{{$formattedTotalcustomers}}</h3> --}}
 
-                            <p style="font-size: 1.5rem; color: white;">Eversys Customers</p>
+                            <p style="font-size: 1.5rem; color: white;">Eversys Vehicles</p>
                         </div>
                         <div class="icon">
                             <i class="fa fa-users"></i>
                         </div>
-                        <a href="{{ route('admin.client') }}" class="small-box-footer">
+                        <a href="{{ route('travel.vehicle.info') }}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -71,12 +71,12 @@
                         <div class="inner">
                             {{-- <h3>{{$formattedTotaladmins}}</h3> --}}
 
-                            <p style="font-size: 1.5rem; color: white;">Eversys Admins</p>
+                            <p style="font-size: 1.5rem; color: white;">Eversys Customers</p>
                         </div>
                         <div class="icon">
                             <i class="fas fa-user-shield"></i>
                         </div>
-                        <a href="{{ route('admin.all') }}" class="small-box-footer">
+                        <a href="{{ route('travel.client') }}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -142,7 +142,7 @@
                         <div class="icon">
                             <i class="fas fa-user-shield"></i>
                         </div>
-                        <a href="{{ route('admin.inquire') }}" class="small-box-footer">
+                        <a href="{{ route('travel.inquire') }}" class="small-box-footer">
                             More info <i class="fas fa-arrow-circle-right"></i>
                         </a>
                     </div>
@@ -152,7 +152,7 @@
 
         </div>
 
-         
+
     </div>
     <!-- Contact End -->
 
