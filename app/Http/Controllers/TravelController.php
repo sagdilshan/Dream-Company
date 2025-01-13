@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\InquireModel;
 use App\Models\TravelCustomerModel;
 use App\Models\User;
+use App\Models\VehicleInfoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -250,10 +251,107 @@ class TravelController extends Controller
 
     public function TravelVehicleInfo()
     {
-        // $quotation = QuotationModel::orderBy('created_at', 'desc')
-        //     ->get();
+        $vehiview = VehicleInfoModel::orderBy('created_at', 'desc')
+            ->where('status', 'active')
+            ->get();
 
-        return view('travel.vehicle.vehicle');
+        return view('travel.vehicle.vehicle', compact('vehiview') );
+    }
+
+
+    public function TravelVehicleStore(Request $request)
+    {
+        $validatedData = $request->validate([
+            'owner_name' => 'required|string|max:24',
+            'nic' => 'required|string|max:24',
+        ]);
+
+
+        $vehicle = new VehicleInfoModel();
+        $vehicle->owner_name = $validatedData['owner_name'];
+        $vehicle->nic = $validatedData['nic'];
+        $vehicle->phone = $request->phone;
+        $vehicle->created_by = Auth::user()->id;
+        $vehicle->address = $request->address;
+        $vehicle->v_model = $request->v_model;
+        $vehicle->v_number = $request->v_number;
+        $vehicle->ac_condition = $request->ac_condition;
+        $vehicle->licence_no = $request->licence_no;
+        $vehicle->v_licence_expire = $request->v_licence_expire;
+        $vehicle->no_seats = $request->no_seats;
+        $vehicle->wo_ac = $request->wo_ac;
+        $vehicle->wi_ac = $request->wi_ac;
+        $vehicle->additional = $request->additional;
+
+        if ($request->file('owner_photo')) {
+            $file = $request->file('owner_photo');
+            $filename = date('Ymd') . $file->getClientOriginalName(); // 0215.a.gayathr.png
+            $file->move(public_path('upload/owner_photo'), $filename);
+            $vehicle['owner_photo'] = $filename;
+        }
+
+        if ($request->hasFile('vehicle_photo')) {
+            foreach ($request->file('vehicle_photo') as $image) {
+                $filename = date('Ymd') . '_' . $image->getClientOriginalName(); // Generate unique filename
+                $image->move(public_path('upload/vehicle_images'), $filename); // Move image to storage directory
+                $imagePaths[] = 'upload/vehicle_images/' . $filename; // Store image path in an array
+            }
+            $vehicle['vehicle_photo'] = json_encode($imagePaths); // Save array of image paths as JSON string in database
+        }
+
+        if ($request->file('nic_front')) {
+            $file = $request->file('nic_front');
+            $filename = date('Ymd') . $file->getClientOriginalName(); // 0215.a.gayathr.png
+            $file->move(public_path('upload/nic_photo'), $filename);
+            $vehicle['nic_front'] = $filename;
+        }
+
+        if ($request->file('nic_back')) {
+            $file = $request->file('nic_back');
+            $filename = date('Ymd') . $file->getClientOriginalName(); // 0215.a.gayathr.png
+            $file->move(public_path('upload/nic_photo'), $filename);
+            $vehicle['nic_back'] = $filename;
+        }
+
+        if ($request->file('licence_front')) {
+            $file = $request->file('licence_front');
+            $filename = date('Ymd') . $file->getClientOriginalName(); // 0215.a.gayathr.png
+            $file->move(public_path('upload/licence_photo'), $filename);
+            $vehicle['licence_front'] = $filename;
+        }
+
+        if ($request->file('licence_back')) {
+            $file = $request->file('licence_back');
+            $filename = date('Ymd') . $file->getClientOriginalName(); // 0215.a.gayathr.png
+            $file->move(public_path('upload/licence_photo'), $filename);
+            $vehicle['licence_back'] = $filename;
+        }
+
+        if ($request->file('cr_photo')) {
+            $file = $request->file('cr_photo');
+            $filename = date('Ymd') . $file->getClientOriginalName(); // 0215.a.gayathr.png
+            $file->move(public_path('upload/vehicle_images'), $filename);
+            $vehicle['cr_photo'] = $filename;
+        }
+
+        if ($request->file('rev_licence')) {
+            $file = $request->file('rev_licence');
+            $filename = date('Ymd') . $file->getClientOriginalName(); // 0215.a.gayathr.png
+            $file->move(public_path('upload/vehicle_images'), $filename);
+            $vehicle['rev_licence'] = $filename;
+        }
+
+
+        $vehicle->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'New Vehicle Listed',
+            'alert-type' => 'success'
+        );
+
+        // return redirect()->back()->with($notification);
+        return redirect()->route('travel.vehicle.info')->with($notification);
     }
 
 }
