@@ -75,7 +75,7 @@
                                             <h2 class="m-0" style="color:  #b71c1c;text-align: left;">
                                                 EVERSYS TECHNOLOGY
                                                 <small class="float-right"
-                                                    style="float: right">ELPL/{{ \Carbon\Carbon::parse($quotationss->created_at)->format('d-m-Y') }}/Q/{{ str_pad($quotationss->id, 4, '0', STR_PAD_LEFT) }}
+                                                    style="float: right">ELPL/{{ \Carbon\Carbon::parse($quotationss->created_at)->format('d-m-Y') }}/TECH/{{ str_pad($quotationss->id, 4, '0', STR_PAD_LEFT) }}
                                                 </small>
                                             </h2>
 
@@ -126,7 +126,7 @@
                                         <!-- /.col -->
                                         <div class="col-sm-4 invoice-col">
                                             <b class="text-dark">Quotation Number: <br><span
-                                                    style="font-size: ; color: #b71c1c">ELPL/{{ \Carbon\Carbon::parse($quotationss->created_at)->format('d-m-Y') }}/Q/{{ str_pad($quotationss->id, 4, '0', STR_PAD_LEFT) }}
+                                                    style="font-size: ; color: #b71c1c">ELPL/{{ \Carbon\Carbon::parse($quotationss->created_at)->format('d-m-Y') }}/TECH/{{ str_pad($quotationss->id, 4, '0', STR_PAD_LEFT) }}
                                                 </span></b>
                                             </br>
                                                 <b class="text-dark">Issued Date: <br><span
