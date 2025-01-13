@@ -124,17 +124,22 @@
                     @endif
 
                     @if (Route::has('login'))
-                        @auth
-                            @if(Auth::user()->role == 'admin')
-                                <a href="{{ route('admin.logout') }}" class="nav-item d-lg-none d-block nav-link">Logout</a>
-                            @elseif(Auth::user()->role == 'travel')
-                                <a href="{{ route('travel.logout') }}" class="nav-item d-lg-none d-block nav-link">Logout</a>
-                            @else
-                                <a href="{{ route('login') }}"
-                                    class="nav-item d-lg-none d-block nav-link {{ Route::is('login') ? 'active' : '' }}">Login</a>
-                            @endif
-                        @endauth
-                    @endif
+
+                    @auth
+                        @if (Auth::user()->role == 'admin')
+                            <a href="{{ route('admin.logout') }}" class="nav-item d-lg-none d-block nav-link">Logout</a>
+                        @elseif (Auth::user()->role == 'travel')
+                            <a href="{{ route('travel.logout') }}"
+                                class="nav-item d-lg-none d-block nav-link">Logout</a>
+                        @else
+                            <a href="{{ route('login') }}"
+                                class="nav-item d-lg-none d-block nav-link {{ Route::is('login') ? 'active' : '' }}">Login</a>
+                        @endif
+                    @else
+                        <a href="{{ route('login') }}"
+                            class="nav-item d-lg-none d-block nav-link {{ Route::is('login') ? 'active' : '' }}">Login</a>
+                    @endauth
+                @endif
 
                 </div>
 
