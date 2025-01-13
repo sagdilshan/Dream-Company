@@ -108,7 +108,7 @@
                                                                 style="font-weight: 600;">Owner
                                                                 Name</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="cus_name"
+                                                                <input type="text" class="form-control" name="owner_name"
                                                                     placeholder="Enter owner name" required>
 
                                                             </div>
@@ -120,7 +120,7 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">NIC</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="contact"
+                                                                <input type="text" class="form-control" name="nic"
                                                                     placeholder="Enter nic number">
 
 
@@ -140,8 +140,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Phone</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="cus_name"
-                                                                    placeholder="Enter owner name" required>
+                                                                <input type="text" class="form-control" name="phone"
+                                                                    placeholder="Enter phone number" required>
 
                                                             </div>
                                                         </div>
@@ -152,8 +152,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Address</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="contact"
-                                                                    placeholder="Enter phone number">
+                                                                <input type="text" class="form-control" name="address"
+                                                                    placeholder="Enter address">
 
 
                                                             </div>
@@ -172,8 +172,8 @@
                                                                 style="font-weight: 600;">Vehicle Model</label>
                                                             <div class="col-sm-8">
 
-                                                                    <input type="text" class="form-control" name="contact"
-                                                                    placeholder="Enter phone number">
+                                                                <input type="text" class="form-control" name="v_model"
+                                                                    placeholder="Enter vehicle model">
 
 
                                                             </div>
@@ -185,7 +185,7 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Vehicle Number</label>
                                                             <div class="col-sm-8">
-                                                                <input type="number" class="form-control" name="contact"
+                                                                <input type="text" class="form-control" name="v_number"
                                                                     placeholder="Enter vehicle number">
 
 
@@ -202,8 +202,9 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Have Dual A/C?</label>
                                                             <div class="col-sm-8">
-                                                                <select class="form-control" name="role" required>
-                                                                    <option value="" disabled selected>Select Condition</option>
+                                                                <select class="form-control" name="condition" required>
+                                                                    <option value="" disabled selected>Select
+                                                                        Condition</option>
                                                                     <option value="yes">Yes
                                                                     </option>
                                                                     <option value="no">No
@@ -218,12 +219,13 @@
                                                         <div class="form-group row mt-3">
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Driver Licence No</label>
-                                                                <div class="col-sm-8">
-                                                                    <input type="text" class="form-control" name="contact"
-                                                                    placeholder="Enter phone number">
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                    name="licence_no"
+                                                                    placeholder="Enter driven licence number">
 
 
-                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -236,8 +238,9 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">V. Licence Expire</label>
                                                             <div class="col-sm-8">
-                                                                <input type="date" class="form-control" name="contact"
-                                                                placeholder="Enter vehicle number">
+                                                                <input type="date" class="form-control"
+                                                                    name="v_licence_expire"
+                                                                    placeholder="Enter vehicle licence expire date">
 
 
                                                             </div>
@@ -249,8 +252,9 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">No of Seats</label>
                                                             <div class="col-sm-8">
-                                                                <input type="number" class="form-control" name="contact"
-                                                                    placeholder="Enter phone number">
+                                                                <input type="number" class="form-control"
+                                                                    name="no_seats" placeholder="Enter no of seats"
+                                                                    min="0">
 
 
                                                             </div>
@@ -273,9 +277,9 @@
                                                                 style="font-weight: 600;">Per KM (w/o AC)
                                                             </label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control"
-                                                                    name="service_cost" value="0" required
-                                                                    id="service_cost">
+                                                                <input type="number" class="form-control" name="wo_ac"
+                                                                    placeholder="Per Km fee (without a/c)" required
+                                                                    id="wo_ac" min="0">
 
 
                                                             </div>
@@ -287,8 +291,9 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Per KM (with AC)</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="tax"
-                                                                    value="0" required  id="tax">
+                                                                <input type="number" class="form-control" name="wi_ac"
+                                                                    placeholder="Per Km fee (within a/c)" required
+                                                                    min="0" id="wi_ac">
                                                             </div>
                                                         </div>
 
@@ -306,7 +311,7 @@
                                                 <label class="col-sm-2 col-form-label"
                                                     style="font-weight: 600;">Additional</label>
                                                 <div class="col-sm-10">
-                                                    <textarea rows="4" class="form-control" name="additional" placeholder="Additional note" required></textarea>
+                                                    <textarea rows="4" class="form-control" name="additional" placeholder="Additional note"></textarea>
 
                                                 </div>
                                             </div>
@@ -318,8 +323,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Driver / Owner Photo</label>
                                                             <div class="col-sm-8">
-                                                                <input type="file" class="form-control" name="cus_name"
-                                                                    placeholder="Enter owner name" required>
+                                                                <input type="file" class="form-control"
+                                                                    name="owner_photo" required>
 
                                                             </div>
                                                         </div>
@@ -330,8 +335,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Vehicle Photo</label>
                                                             <div class="col-sm-8">
-                                                                <input type="file" class="form-control" name="contact"
-                                                                    placeholder="Enter phone number" multiple>
+                                                                <input type="file" class="form-control"
+                                                                    name="vehicle_photo" required multiple>
 
 
                                                             </div>
@@ -348,8 +353,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">NIC Photo (front)</label>
                                                             <div class="col-sm-8">
-                                                                <input type="file" class="form-control" name="cus_name"
-                                                                    placeholder="Enter owner name" required>
+                                                                <input type="file" class="form-control"
+                                                                    name="nic_front" required>
 
                                                             </div>
                                                         </div>
@@ -360,8 +365,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">NIC Photo (back)</label>
                                                             <div class="col-sm-8">
-                                                                <input type="file" class="form-control" name="contact"
-                                                                    placeholder="Enter phone number">
+                                                                <input type="file" class="form-control"
+                                                                    name="nic_back" required>
 
 
                                                             </div>
@@ -379,8 +384,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Licence Photo (front)</label>
                                                             <div class="col-sm-8">
-                                                                <input type="file" class="form-control" name="cus_name"
-                                                                    placeholder="Enter owner name" required>
+                                                                <input type="file" class="form-control"
+                                                                    name="licence_front" required>
 
                                                             </div>
                                                         </div>
@@ -391,8 +396,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Licence Photo (back)</label>
                                                             <div class="col-sm-8">
-                                                                <input type="file" class="form-control" name="contact"
-                                                                    placeholder="Enter phone number">
+                                                                <input type="file" class="form-control"
+                                                                    name="licence_back" required>
 
 
                                                             </div>
@@ -410,8 +415,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">CR Photo (Vehicle)</label>
                                                             <div class="col-sm-8">
-                                                                <input type="file" class="form-control" name="cus_name"
-                                                                    placeholder="Enter owner name" required>
+                                                                <input type="file" class="form-control"
+                                                                    name="cr_photo" required>
 
                                                             </div>
                                                         </div>
@@ -422,8 +427,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Revenue Licence</label>
                                                             <div class="col-sm-8">
-                                                                <input type="file" class="form-control" name="contact"
-                                                                    placeholder="Enter phone number">
+                                                                <input type="file" class="form-control"
+                                                                    name="rev_licence" required>
 
 
                                                             </div>
@@ -434,7 +439,7 @@
 
                                             </div>
 
-                                        </label>
+                                            </label>
 
 
 
