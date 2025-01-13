@@ -126,6 +126,8 @@ Route::controller(TravelController::class)->group(function () {
     Route::post('/travel/update/password', 'TravelUpdatePassword')->name('travel.update.password');
     Route::post('/travel/profile/store', 'TravelProfileStore')->name('travel.profile.store');
 
+    Route::get('/travel-quotation', 'TravelQuotation')->name('travel.quotation');
+    Route::get('/travel-vehicle-info', 'TravelVehicleInfo')->name('travel.vehicle.info');
 
 
 
