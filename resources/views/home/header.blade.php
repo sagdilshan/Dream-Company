@@ -113,6 +113,8 @@
                         @auth
                             @if (Auth::user()->role == 'admin')
                                 <li><a class="nav-item nav-link" href="{{ url('/admin-index') }}">Dashboard</a></li>
+                            @elseif(Auth::user()->role == 'travel')
+                                <li><a class="nav-item nav-link" href="{{ url('/travel-admin-index') }}">Dashboard</a></li>
                             @elseif(Auth::user()->role == 'guest')
                                 <li><a class="nav-item nav-link" href="{{ url('/dashboard') }}">Dashboard</a></li>
                             @endif
@@ -121,10 +123,14 @@
                     @endif
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ route('admin.logout') }}" class="nav-item d-lg-none d-block nav-link">Logout</a>
-                        @else
-                            <a href="{{ route('login') }}"
-                                class="nav-item d-lg-none d-block nav-link {{ Route::is('login') ? 'active' : '' }}">Login</a>
+                            @if(Auth::user()->role == 'admin')
+                                <a href="{{ route('admin.logout') }}" class="nav-item d-lg-none d-block nav-link">Logout</a>
+                            @elseif(Auth::user()->role == 'travel')
+                                <a href="{{ route('travel.logout') }}" class="nav-item d-lg-none d-block nav-link">Logout</a>
+                            @else
+                                <a href="{{ route('login') }}"
+                                    class="nav-item d-lg-none d-block nav-link {{ Route::is('login') ? 'active' : '' }}">Login</a>
+                            @endif
                         @endauth
                     @endif
 
@@ -137,6 +143,13 @@
                             <div class="d-none d-lg-flex ms-2">
                                 <a class="btn btn-light btn-sm-square rounded-circle ms-3"
                                     href="{{ route('admin.logout') }}" title="Log Out">
+                                    <small class="fa fa-power-off" style="color:rgb(255, 0, 0);"></small>
+                                </a>
+                            </div>
+                        @elseif(Auth::user()->role == 'travel')
+                            <div class="d-none d-lg-flex ms-2">
+                                <a class="btn btn-light btn-sm-square rounded-circle ms-3"
+                                    href="{{ route('travel.logout') }}" title="Log Out">
                                     <small class="fa fa-power-off" style="color:rgb(255, 0, 0);"></small>
                                 </a>
                             </div>
