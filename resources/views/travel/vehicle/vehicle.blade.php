@@ -39,19 +39,21 @@
                                 <tbody>
 
 
-                                    {{-- @foreach ($quotation as $key => $item)
+                                    @foreach ($vehiview as $key => $item)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
 
 
-                                            <td>ELPL/{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}/Q/{{ str_pad($item->id, 4, '0', STR_PAD_LEFT) }}</td>
+                                            {{-- <td>ELPL/{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}/Q/{{ str_pad($item->id, 4, '0', STR_PAD_LEFT) }}</td> --}}
 
-                                            <td>{{ $item->cus_name }}</td>
-                                            <td>{{ $item->contact }}</td>
-                                            <td>{{ $item->ser_name_1 }}</td>
-                                            <td>{{ $item->total }}</td>
+                                            <td>{{ $item->v_number }}</td>
+                                            <td>{{ $item->v_model }}</td>
+                                            <td>{{ $item->owner_name }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->address }}</td>
+                                            <td>{{ $item->no_seats }}</td>
                                             <td>
-                                            <a href="{{ route('admin.quotation.view', $item->id) }}" class="btn btn-outline-danger" title="Quotation"><i class='fas fa-file-alt'></i></a>
+                                            <a href=" " class="btn btn-outline-success" title="View"><i class='fas fa-eye'></i></a>
 
                                             </td>
 
@@ -59,7 +61,7 @@
 
 
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
 
 
                                     </tfoot>
@@ -94,7 +96,7 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{ route('admin.quotation.store') }}"
+                                        <form method="POST" action="{{ route('travel.vehicle.store') }}"
                                             class="form-horizontal" enctype="multipart/form-data">
                                             @csrf
 
@@ -200,7 +202,7 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Have Dual A/C?</label>
                                                             <div class="col-sm-8">
-                                                                <select class="form-control" name="condition" required>
+                                                                <select class="form-control" name="ac_condition" required>
                                                                     <option value="" disabled selected>Select
                                                                         Condition</option>
                                                                     <option value="yes">Yes
@@ -334,7 +336,7 @@
                                                                 style="font-weight: 600;">Vehicle Photo</label>
                                                             <div class="col-sm-8">
                                                                 <input type="file" class="form-control"
-                                                                    name="vehicle_photo" required multiple>
+                                                                    name="vehicle_photo[]" required multiple accept="image/*">
 
 
                                                             </div>
