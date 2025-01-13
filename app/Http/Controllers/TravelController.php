@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\InquireModel;
 use App\Models\TravelCustomerModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class TravelController extends Controller
 {
@@ -73,6 +75,62 @@ class TravelController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function TravelUpdatePassword(Request $request)
+    {
+        //validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed'
+        ]);
+
+        //match the old password
+
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+
+            $notification = array(
+                'message' => 'Old Password Does not Match',
+                'alert-type' => 'error'
+            );
+
+            return back()->with($notification);
+
+        }
+
+        //update the new password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        $notification = array(
+            'message' => 'Password Change Successfully',
+            'alert-type' => 'success'
+        );
+
+        return back()->with($notification);
+    }
+
+    public function TravelProfileStore(Request $request)
+    {
+        $id = Auth::user()->id;
+        $data = user::find($id);
+        $data->username = $request->username;
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->phone = $request->phone;
+        $data->nic = $request->nic;
+        $data->address = $request->address;
+
+
+        $data->save();
+
+        $notification = array(
+            'message' => 'Admin Profile Updated Succssfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
     }
 
     public function TravelProfile()
