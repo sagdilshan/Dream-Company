@@ -129,6 +129,7 @@ Route::controller(TravelController::class)->group(function () {
     Route::get('/travel-quotation', 'TravelQuotation')->name('travel.quotation');
     Route::get('/travel-vehicle-info', 'TravelVehicleInfo')->name('travel.vehicle.info');
 
+    Route::post('/travel/vehicle/store', 'TravelVehicleStore')->name('travel.vehicle.store');
 
 
 
