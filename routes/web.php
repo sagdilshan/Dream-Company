@@ -110,12 +110,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
 
+Route::middleware(['auth', 'role:travel'])->group(function () {
 
 Route::controller(TravelController::class)->group(function () {
 
-    // Route::get('/', 'IndexPage')->name('welcome');
-    // Route::post('/inquire/store', 'InquireStore')->name('inquire.store');
-    // Route::get('/it-department/about-us', 'AboutPage')->name('about');
+    Route::get('/travel/logout', 'TravelLogout')->name('travel.logout');
     Route::get('/travel-admin-profile', 'TravelProfile')->name('travel.profile');
     Route::get('/travel-admin-index', 'TravelDashboard')->name('travel.index');
     Route::get('/travel-inquires', 'TravelInquire')->name('travel.inquire');
@@ -126,12 +125,11 @@ Route::controller(TravelController::class)->group(function () {
     Route::post('/travel-update/client/{id}', 'TravelUpdateCustomer')->name('travel.update.client');
 
 
-    // Route::get('/', 'MainIndexPage')->name('welcome');
 
 
 
 });
-
+}); // end group travel admin middlewere
 
 
 
