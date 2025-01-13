@@ -240,4 +240,20 @@ class TravelController extends Controller
     }
 
 
+    public function TravelQuotation()
+    {
+        // $quotation = QuotationModel::orderBy('created_at', 'desc')
+        //     ->get();
+
+        return view('travel.quotation.quotation');
+    }
+
+    public function TravelVehicleInfo()
+    {
+        // $quotation = QuotationModel::orderBy('created_at', 'desc')
+        //     ->get();
+
+        return view('travel.vehicle.vehicle');
+    }
+
 }
