@@ -18,22 +18,20 @@
 
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <h2 style="font-family: Open Sans;">All Quotation</h2>
+                            <h2 style="font-family: Open Sans;">All Vehicles</h2>
 
                             <br>
                             <table id="example3" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Quo Number</th>
-                                        <th>Customer Name</th>
-                                        <th>Phone</th>
                                         <th>Vehicle No</th>
-                                        <th>Destination</th>
-                                        <th>KM</th>
-                                        <th>Date</th>
-                                        <th>No. Nights</th>
-                                        <th>Total Cost</th>
+                                        <th>Vehicle Model</th>
+                                        <th>Owner Name</th>
+                                        <th>Phone</th>
+                                        <th>Address</th>
+                                        <th>No. Seats</th>
+
                                         <th>Action</th>
                                     </tr>
 
