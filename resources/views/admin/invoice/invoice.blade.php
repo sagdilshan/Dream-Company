@@ -189,61 +189,6 @@
 
 
 
-                                    {{-- <div class="row">
-                                        <!-- accepted payments column -->
-                                        <div class="col-6">
-                                            <p class="lead">Payment Methods:</p>
-                                            <b style="color: #b71c1c">Bank Transfer Only</b>
-
-                                            <p class=" well well-sm shadow-none" style="margin-top: 10px;">
-                                                Bank : <b>Commercial Bank </b></Br>
-                                                Branch : <b>Panadura Branch</b></Br>
-                                                Acc. Name : <b>Eversys Lanka (Pvt) Ltd</b></Br>
-                                                Acc. Number : <b>8010223334</b>
-                                            </p>
-
-
-                                        </div>
-                                        <!-- /.col -->
-
-                                        <div class="col-6">
-                                            <p class="lead">Amount Due {{ \Carbon\Carbon::today()->addDays(14)->format('d/m/Y') }}</p>
-
-
-                                            <div class="table-responsive">
-                                                <table class="table">
-                                                    <tr>
-                                                        <th style="width:50%">Subtotal:</th>
-                                                        <td>Rs. {{ number_format($project->p_fee, 2) }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Tax (18%)</th>
-                                                        <td>Rs. {{ number_format($project->p_fee * 0.18, 2) }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Paid</th>
-                                                        <td>Rs. {{ number_format($project->advance_fee, 2) }}
-                                                        </td>
-                                                    </tr>
-                                                    <tr style="background-color: #ca0c0cbf; color: #ffffff">
-                                                        <th>Total Amount:</th>
-                                                        <td>Rs. {{ number_format(($project->p_fee - $project->advance_fee) + (($project->p_fee - $project->advance_fee) * 0.18), 2) }}
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
-                                        <!-- /.col -->
-                                        <div class="notice" style="font-size: 12px; color: rgb(255, 0, 0);padding: 10px;">
-                                            <p>Payment should be made by the due date to avoid any late fees or service disruption. Please ensure that the payment is completed on time. If you have any questions or concerns, feel free to contact our support team.</p>
-                                        </div>
-                                    </div> --}}
-
-
-
-
-
-
 
                                     <div class="row">
                                         <!-- accepted payments column -->
@@ -253,7 +198,7 @@
                                                 <b style="color: #b71c1c">Bank Transfer Only</b>
 
                                                 <p class="well well-sm shadow-none" style="margin-top: 10px;">
-                                                    Acc. Number : <b>80******34</b></Br>
+                                                    Acc. Number : <b style="font-weight: bold; letter-spacing: 0.5px">1000875971</b></Br>
                                                     Acc. Name : <b>Eversys Lanka (Pvt) Ltd</b></Br>
                                                     Branch : <b>Panadura Second Branch</b></Br>
                                                     Bank : <b>Commercial Bank </b>
