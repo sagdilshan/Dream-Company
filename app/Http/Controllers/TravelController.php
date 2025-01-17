@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HireQuotationModel;
 use App\Models\InquireModel;
 use App\Models\TravelCustomerModel;
 use App\Models\User;
@@ -9,6 +10,8 @@ use App\Models\VehicleInfoModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
 
 class TravelController extends Controller
 {
@@ -241,12 +244,15 @@ class TravelController extends Controller
     }
 
 
-    public function TravelQuotation()
+    public function TravelQuotation(Request $request)
     {
-        // $quotation = QuotationModel::orderBy('created_at', 'desc')
-        //     ->get();
+        $hireq = HireQuotationModel::orderBy('created_at', 'desc')
+            ->get();
+        $vehicleData = DB::table('vehicle_info')->get();
+        $travelCustomers = DB::table('travel_customer')->get();
 
-        return view('travel.quotation.quotation');
+
+        return view('travel.quotation.quotation', compact('vehicleData','travelCustomers','hireq'));
     }
 
     public function TravelVehicleInfo()
@@ -352,6 +358,43 @@ class TravelController extends Controller
 
         // return redirect()->back()->with($notification);
         return redirect()->route('travel.vehicle.info')->with($notification);
+    }
+
+
+    public function HireQuotationStore(Request $request)
+    {
+        $hireq = new HireQuotationModel();
+        $hireq->cus_name = trim($request->cus_name);
+        $hireq->phone = trim($request->phone);
+        $hireq->vehicel_model = trim($request->vehicel_model);
+        $hireq->v_number = trim($request->v_number);
+        $hireq->ac_condition = trim($request->ac_condition);
+        $hireq->type = trim($request->type);
+        $hireq->destination = trim($request->destination);
+        $hireq->no_km = trim($request->no_km);
+        $hireq->date_time = trim($request->date_time);
+        $hireq->no_night = trim($request->no_night);
+        // $hireq->need_to_be_night = trim($request->need_to_be_night);
+        $hireq->additional = trim($request->additional);
+        $hireq->km_cost = trim($request->km_cost);
+        $hireq->ac_cost = trim($request->ac_cost);
+        $hireq->n_charges = trim($request->n_charges);
+        $hireq->ave_per_km = trim($request->ave_per_km);
+        $hireq->advance = trim($request->advance);
+        $hireq->total = trim($request->total);
+        $hireq->created_by = Auth::user()->id;
+
+
+        $hireq->save();
+
+        $notification = array(
+            'message' => 'New Quotation Listed',
+            'alert-type' => 'success'
+        );
+
+        // return redirect()->route('admin.project')->with($notification);
+        return redirect()->back()->with($notification);
+
     }
 
 }
