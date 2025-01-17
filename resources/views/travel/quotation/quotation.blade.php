@@ -31,7 +31,7 @@
                                         <th>Vehicle No</th>
                                         <th>Destination</th>
                                         <th>KM</th>
-                                        <th>Date</th>
+                                        <th>Date & Time</th>
                                         <th>No. Nights</th>
                                         <th>Total Cost</th>
                                         <th>Action</th>
@@ -41,16 +41,23 @@
                                 <tbody>
 
 
-                                    {{-- @foreach ($quotation as $key => $item)
+                                    @foreach ($hireq as $key => $item)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
 
 
-                                            <td>ELPL/{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}/Q/{{ str_pad($item->id, 4, '0', STR_PAD_LEFT) }}</td>
+                                            <td>ELPL/{{ \Carbon\Carbon::parse($item->created_at)->format('d-m') }}/TRA/{{ str_pad($item->id, 4, '0', STR_PAD_LEFT) }}</td>
 
                                             <td>{{ $item->cus_name }}</td>
-                                            <td>{{ $item->contact }}</td>
-                                            <td>{{ $item->ser_name_1 }}</td>
+                                            <td>{{ $item->phone }}</td>
+                                            <td>{{ $item->v_number }}</td>
+                                            <td>{{ $item->destination }}</td>
+
+                                            <td>{{ $item->no_km }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($item->date_time)->format('d/m - h:i A') }}</td>
+
+
+                                            <td>{{ $item->no_night }}</td>
                                             <td>{{ $item->total }}</td>
                                             <td>
                                             <a href="{{ route('admin.quotation.view', $item->id) }}" class="btn btn-outline-danger" title="Quotation"><i class='fas fa-file-alt'></i></a>
@@ -61,7 +68,7 @@
 
 
                                         </tr>
-                                    @endforeach --}}
+                                    @endforeach
 
 
                                     </tfoot>
@@ -96,7 +103,7 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{ route('admin.quotation.store') }}"
+                                        <form method="POST" action="{{ route('hire.quotation.store') }}"
                                             class="form-horizontal" enctype="multipart/form-data">
                                             @csrf
 
@@ -140,15 +147,15 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Vehicle Model</label>
                                                             <div class="col-sm-8">
-                                                                {{-- <input type="text" class="form-control" name="contact"
-                                                                    placeholder="Select model"> --}}
-                                                                <select class="form-control" name="vehicel_model" required>
+
+                                                                <select class="form-control" name="vehicel_model"
+                                                                    id="vehicel_model" required>
                                                                     <option value="" disabled selected>Select Model
                                                                     </option>
-                                                                    <option value="caravan">Caravan
-                                                                    </option>
-                                                                    <option value="dolphin">Dolphin
-                                                                    </option>
+                                                                    @foreach ($vehicleData->pluck('v_model')->unique() as $model)
+                                                                        <option value="{{ $model }}">
+                                                                            {{ $model }}</option>
+                                                                    @endforeach
                                                                 </select>
 
                                                             </div>
@@ -160,13 +167,11 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Vehicle Number</label>
                                                             <div class="col-sm-8">
-                                                                <select class="form-control" name="v_number" required>
-                                                                    <option value="" disabled selected>Select Model
-                                                                    </option>
-                                                                    <option value="GB-1383">GB-1383
-                                                                    </option>
-                                                                    <option value="GA-6345">GA-6345
-                                                                    </option>
+
+                                                                <select class="form-control" name="v_number"
+                                                                    id="vehicle_number" required>
+                                                                    <option value="" disabled selected>Select Vehicle
+                                                                        Number</option>
                                                                 </select>
 
                                                             </div>
@@ -182,7 +187,7 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Dual A/C</label>
                                                             <div class="col-sm-8">
-                                                                <select class="form-control" name="condition" required>
+                                                                <select class="form-control" name="ac_condition" required>
                                                                     <option value="" disabled selected>Select
                                                                         Condition</option>
                                                                     <option value="yes">With Dual A/C
@@ -203,10 +208,11 @@
                                                                 <select class="form-control" name="type" required>
                                                                     <option value="" disabled selected>Select Type
                                                                     </option>
-                                                                    <option value="do">Drop Only
-                                                                    </option>
                                                                     <option value="dp">Drop & Pick
                                                                     </option>
+                                                                    <option value="do">Drop Only
+                                                                    </option>
+
                                                                 </select>
 
                                                             </div>
@@ -238,8 +244,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">No of KM</label>
                                                             <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="no_km"
-                                                                    placeholder="Extimate kM">
+                                                                <input type="number" class="form-control" name="no_km"
+                                                                    placeholder="Extimate KM" min="0">
 
 
                                                             </div>
@@ -271,14 +277,14 @@
                                                             <div class="col-sm-8">
                                                                 <input type="number" class="form-control"
                                                                     name="no_night" placeholder="Enter no of nights"
-                                                                    min="0">
+                                                                    min="0" value="0">
 
 
                                                             </div>
                                                         </div>
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox"
-                                                                value="option1" name="option1" id="checkbox1">
+                                                                value="yes" name="need_to_be_night" id="checkbox1">
                                                             <label class="form-check-label text-danger" for="checkbox1">
                                                                 Need to be calculate night charges?
                                                             </label>
@@ -349,7 +355,7 @@
                                             <div class="col-lg-6">
                                                 <div class="form-group row mt-3">
                                                     <label class="col-sm-4 col-form-label"
-                                                        style="font-weight: 600;">Average 1KM</label>
+                                                        style="font-weight: 600;">Average Per KM</label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" name="ave_per_km"
                                                             value="0" required readonly id="ave_per_km">
@@ -360,7 +366,17 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-lg-6" hidden>
+                                        <div class="form-group row mt-3">
+                                            <label class="col-sm-4 col-form-label"
+                                                style="font-weight: 600;">Adavance</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="advance" value="0"
+                                                    required readonly id="advance">
+                                            </div>
+                                        </div>
 
+                                    </div>
 
                                     <div class="form-group row mt-3">
                                         <label class="col-sm-2 col-form-label" style="font-weight: 600;">Total
@@ -452,32 +468,33 @@
 
 
 
-    {{-- <script>
-        function calculateCost() {
-            var prices = [
-                parseFloat(document.querySelector('input[name="ser_price_1"]').value) || 0,
-                parseFloat(document.querySelector('input[name="ser_price_2"]').value) || 0,
-                parseFloat(document.querySelector('input[name="ser_price_3"]').value) || 0,
-                parseFloat(document.querySelector('input[name="ser_price_4"]').value) || 0
-            ];
+    <script>
+        // Pass vehicle data to JavaScript (use the correct field names: v_model and v_number)
+        const vehicleData = @json($vehicleData);
 
-            // Calculate Service Cost (sum of all prices)
-            var serviceCost = prices.reduce(function(total, price) {
-                return total + price;
-            }, 0);
+        document.getElementById('vehicel_model').addEventListener('change', function() {
+            const selectedModel = this.value;
+            const vehicleNumberSelect = document.getElementById('vehicle_number');
 
-            // Calculate Tax (18%)
-            var tax = serviceCost * 0.18;
+            // Clear the current options in the vehicle number dropdown
+            vehicleNumberSelect.innerHTML = '<option value="" disabled selected>Select Vehicle Number</option>';
 
-            // Calculate Total Cost
-            var totalCost = serviceCost + tax;
+            // Filter the vehicle data to match the selected model
+            const filteredVehicles = vehicleData.filter(vehicle => vehicle.v_model === selectedModel);
 
-            // Update the fields with calculated values
-            document.getElementById('service_cost').value = serviceCost.toFixed(2);
-            document.getElementById('tax').value = tax.toFixed(2);
-            document.getElementById('total').value = totalCost.toFixed(2);
-        }
-    </script> --}}
+            // Add filtered vehicle numbers to the dropdown
+            filteredVehicles.forEach(vehicle => {
+                const option = document.createElement('option');
+                option.value = vehicle.v_number; // Use the correct field name for vehicle number
+                option.textContent = vehicle.v_number; // Use the correct field name for vehicle number
+                vehicleNumberSelect.appendChild(option);
+            });
+        });
+    </script>
+
+
+
+
 
     <script>
         // Function to validate the fields dynamically
@@ -526,5 +543,8 @@
             }
         });
     </script>
+
+
+
 
 @endsection
