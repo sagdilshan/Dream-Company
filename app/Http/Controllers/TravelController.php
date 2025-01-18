@@ -7,6 +7,7 @@ use App\Models\InquireModel;
 use App\Models\TravelCustomerModel;
 use App\Models\User;
 use App\Models\VehicleInfoModel;
+use App\Models\VehicleModelsModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -249,11 +250,56 @@ class TravelController extends Controller
         $hireq = HireQuotationModel::orderBy('created_at', 'desc')
             ->get();
         $vehicleData = DB::table('vehicle_info')->get();
-        $travelCustomers = DB::table('travel_customer')->get();
 
+        $vehicleModels = VehicleModelsModel::all();
 
-        return view('travel.quotation.quotation', compact('vehicleData','travelCustomers','hireq'));
+        
+
+        return view('travel.quotation.quotation', compact('vehicleData', 'hireq','vehicleModels'));
     }
+
+
+    public function TravelVehicleModel(Request $request)
+    {
+        $modelname = VehicleModelsModel::orderBy('created_at', 'desc')
+            ->get();
+
+
+
+        return view('travel.vehicle.vehicle_model' , compact('modelname'));
+    }
+
+    public function VehicleModelStore(Request $request)
+    {
+        $validatedData = $request->validate([
+            'model_name' => 'required|string|max:20',
+            'non_ac_price' => 'required|string|max:20',
+            'with_ac_price' => 'required|string|max:20',
+
+        ]);
+
+
+        $models = new VehicleModelsModel();
+        $models->model_name = $validatedData['model_name'];
+        $models->non_ac_price = $validatedData['non_ac_price'];
+        $models->with_ac_price = $validatedData['with_ac_price'];
+
+        $models->created_by = Auth::user()->id;
+
+
+        $models->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'Vehicle Models Listed',
+            'alert-type' => 'success'
+        );
+
+        // return redirect()->back()->with($notification);
+        return redirect()->route('travel.vehicle.model')->with($notification);
+    }
+
+
 
     public function TravelVehicleInfo()
     {
@@ -261,7 +307,7 @@ class TravelController extends Controller
             ->where('status', 'active')
             ->get();
 
-        return view('travel.vehicle.vehicle', compact('vehiview') );
+        return view('travel.vehicle.vehicle', compact('vehiview'));
     }
 
 
