@@ -145,69 +145,61 @@
 
                                             <div class="col-12">
                                                 <div class="row">
-                                                    <div class="col-lg-6">
+                                                    <div class="col-lg-12">
                                                         <div class="form-group row mt-3">
-                                                            <label class="col-sm-4 col-form-label"
+                                                            <label class="col-sm-2 col-form-label"
                                                                 style="font-weight: 600;">Vehicle Model</label>
-                                                            <div class="col-sm-8">
+                                                            <div class="col-sm-10">
 
-                                                                {{-- <select class="form-control" name="vehicel_model"
+                                                                <select class="form-control" name="vehicel_model"
                                                                     id="vehicel_model" required>
                                                                     <option value="" disabled selected>Select Model
                                                                     </option>
-
                                                                     @foreach ($vehicleModels as $model)
-                                                                        <option value="{{ $model->id }}">
-                                                                            {{ $model->model_name }}</option>
+                                                                        <option value="{{ $model->id }}"
+                                                                            data-non-ac-price="{{ $model->non_ac_price }}"
+                                                                            data-with-ac-price="{{ $model->with_ac_price }}">
+                                                                            {{ $model->model_name }}
+                                                                        </option>
                                                                     @endforeach
-
-                                                                </select> --}}
-
-                                                                <select class="form-control" name="vehicel_model" id="vehicel_model" required>
-                                                                    <option value="" disabled selected>Select Model</option>
-                                                                    @foreach ($vehicleModels as $model)
-                                                                    <option value="{{ $model->id }}" data-non-ac-price="{{ $model->non_ac_price }}" data-with-ac-price="{{ $model->with_ac_price }}">
-                                                                        {{ $model->model_name }}
-                                                                    </option>
-                                                                @endforeach
                                                                 </select>
 
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group row mt-3">
-                                                        <label class="col-sm-4 col-form-label" style="font-weight: 600;">Non-AC Price</label>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" class="form-control" name="non_ac_price" id="non_ac_price" readonly />
-                                                        </div>
-                                                    </div>
 
-                                                    <div class="form-group row mt-3">
-                                                        <label class="col-sm-4 col-form-label" style="font-weight: 600;">With AC Price</label>
-                                                        <div class="col-sm-8">
-                                                            <input type="text" class="form-control" name="with_ac_price" id="with_ac_price" readonly />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group row mt-3">
-                                                            <label class="col-sm-4 col-form-label"
-                                                                style="font-weight: 600;">Vehicle Number</label>
-                                                            <div class="col-sm-8">
 
-                                                                <select class="form-control" name="v_number"
-                                                                    id="vehicle_number" required>
-                                                                    <option value="" disabled selected>Select Vehicle
-                                                                        Number</option>
-                                                                </select>
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
 
 
                                                 </div>
                                             </div>
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group row mt-3">
+                                                            <label class="col-sm-4 col-form-label"
+                                                                style="font-weight: 600;">Non-AC Price</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                    name="non_ac_price" id="non_ac_price" readonly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group row mt-3">
+                                                            <label class="col-sm-4 col-form-label"
+                                                                style="font-weight: 600;">With AC Price</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                    name="with_ac_price" id="with_ac_price" readonly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
+                                            </div>
                                             <div class="col-12">
                                                 <div class="row">
                                                     <div class="col-lg-6">
@@ -253,31 +245,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group row mt-3">
-                                                            <label class="col-sm-4 col-form-label"
-                                                                style="font-weight: 600;">Without A/C</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="wo_ac"
-                                                                    id="wo_ac_price">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group row mt-3">
-                                                            <label class="col-sm-4 col-form-label"
-                                                                style="font-weight: 600;">Within A/C</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="wi_ac"
-                                                                    id="wi_ac_price">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                             
 
 
 
@@ -498,7 +466,7 @@
 
 
 
-{{--
+    {{--
     <script>
         // Pass vehicle data to JavaScript (use the correct field names: v_model and v_number)
         const vehicleData = @json($vehicleData);
