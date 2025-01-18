@@ -158,7 +158,9 @@
                                                                     @foreach ($vehicleModels as $model)
                                                                         <option value="{{ $model->id }}"
                                                                             data-non-ac-price="{{ $model->non_ac_price }}"
-                                                                            data-with-ac-price="{{ $model->with_ac_price }}">
+                                                                            data-with-ac-price="{{ $model->with_ac_price }}"
+                                                                            data-drop-without-ac="{{ $model->drop_without_ac }}"
+                                                                            data-drop-with-ac="{{ $model->drop_with_ac }}">
                                                                             {{ $model->model_name }}
                                                                         </option>
                                                                     @endforeach
@@ -175,31 +177,7 @@
 
                                                 </div>
                                             </div>
-                                            <div class="col-12">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group row mt-3">
-                                                            <label class="col-sm-4 col-form-label"
-                                                                style="font-weight: 600;">Non-AC Price</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control"
-                                                                    name="non_ac_price" id="non_ac_price" readonly />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group row mt-3">
-                                                            <label class="col-sm-4 col-form-label"
-                                                                style="font-weight: 600;">With AC Price</label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control"
-                                                                    name="with_ac_price" id="with_ac_price" readonly />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
 
-                                            </div>
                                             <div class="col-12">
                                                 <div class="row">
                                                     <div class="col-lg-6">
@@ -207,7 +185,8 @@
                                                             <label class="col-sm-4 col-form-label"
                                                                 style="font-weight: 600;">Dual A/C</label>
                                                             <div class="col-sm-8">
-                                                                <select class="form-control" name="ac_condition" required>
+                                                                <select class="form-control" name="ac_condition"
+                                                                    id="ac_condition" required>
                                                                     <option value="" disabled selected>Select
                                                                         Condition</option>
                                                                     <option value="yes">With Dual A/C
@@ -230,7 +209,8 @@
                                                                 style="font-weight: 600;">Hire
                                                                 Type</label>
                                                             <div class="col-sm-8">
-                                                                <select class="form-control" name="type" required>
+                                                                <select class="form-control" name="type" id="type"
+                                                                    required>
                                                                     <option value="" disabled selected>Select Type
                                                                     </option>
                                                                     <option value="dp">Drop & Pick
@@ -245,7 +225,63 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                             
+
+                                            <div class="col-12" id="drop-section-row" style="display: none;">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group row mt-3">
+                                                            <label class="col-sm-4 col-form-label"
+                                                                style="font-weight: 600;">Non-AC Price(drop)</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                    style="font-weight: 600;color: red;"
+                                                                    name="drop_without_ac" id="drop_without_ac"
+                                                                    readonly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group row mt-3">
+                                                            <label class="col-sm-4 col-form-label"
+                                                                style="font-weight: 600;">With AC Price(drop)</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                    style="font-weight: 600;color: red;"
+                                                                    name="drop_with_ac" id="drop_with_ac" readonly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-12" id="return-section-row" style="display: none;">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group row mt-3">
+                                                            <label class="col-sm-4 col-form-label"
+                                                                style="font-weight: 600;">Non-AC Price(return)</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                    style="font-weight: 600;color: red;"
+                                                                    name="non_ac_price" id="non_ac_price" readonly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="form-group row mt-3">
+                                                            <label class="col-sm-4 col-form-label"
+                                                                style="font-weight: 600;">With AC Price(return)</label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control"
+                                                                    style="font-weight: 600;color: red;"
+                                                                    name="with_ac_price" id="with_ac_price" readonly />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
 
 
 
@@ -273,7 +309,8 @@
                                                                 KM</label>
                                                             <div class="col-sm-8">
                                                                 <input type="number" class="form-control" name="no_km"
-                                                                    placeholder="Extimate KM" min="0">
+                                                                    id="no_km" placeholder="Extimate KM"
+                                                                    min="0">
 
 
                                                             </div>
@@ -307,7 +344,7 @@
                                                             <div class="col-sm-8">
                                                                 <input type="number" class="form-control"
                                                                     name="no_night" placeholder="Enter no of nights"
-                                                                    min="0" value="0">
+                                                                    min="0" id="no_night">
 
 
                                                             </div>
@@ -375,7 +412,7 @@
                                                     </label>
                                                     <div class="col-sm-8">
                                                         <input type="text" class="form-control" name="n_charges"
-                                                            value="0" required readonly id="n_charges">
+                                                            id="n_charges" required readonly value="0">
 
 
                                                     </div>
@@ -397,7 +434,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6" hidden>
+                                    <div class="col-lg-6">
                                         <div class="form-group row mt-3">
                                             <label class="col-sm-4 col-form-label"
                                                 style="font-weight: 600;">Adavance</label>
@@ -413,7 +450,7 @@
                                         <label class="col-sm-2 col-form-label" style="font-weight: 600;">Total
                                             Hire Price</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="total" name="total"
+                                            <input type="text" class="form-control" name="total" id="total_price"
                                                 value="0" required readonly>
                                         </div>
                                     </div>
@@ -461,35 +498,31 @@
             });
         }
     </script>
-
-
-
-
-
-    {{--
     <script>
-        // Pass vehicle data to JavaScript (use the correct field names: v_model and v_number)
-        const vehicleData = @json($vehicleData);
+        // Listen for changes on the "type" dropdown
+        document.getElementById('type').addEventListener('change', function() {
+            var type = this.value;
 
-        document.getElementById('vehicel_model').addEventListener('change', function() {
-            const selectedModel = this.value;
-            const vehicleNumberSelect = document.getElementById('vehicle_number');
-
-            // Clear the current options in the vehicle number dropdown
-            vehicleNumberSelect.innerHTML = '<option value="" disabled selected>Select Vehicle Number</option>';
-
-            // Filter the vehicle data to match the selected model
-            const filteredVehicles = vehicleData.filter(vehicle => vehicle.v_model === selectedModel);
-
-            // Add filtered vehicle numbers to the dropdown
-            filteredVehicles.forEach(vehicle => {
-                const option = document.createElement('option');
-                option.value = vehicle.v_number; // Use the correct field name for vehicle number
-                option.textContent = vehicle.v_number; // Use the correct field name for vehicle number
-                vehicleNumberSelect.appendChild(option);
-            });
+            // Show or hide rows based on the selected type
+            if (type === 'do') {
+                // Show drop section, hide return section
+                document.getElementById('drop-section-row').style.display = 'block';
+                document.getElementById('return-section-row').style.display = 'none';
+            } else if (type === 'dp') {
+                // Show return section, hide drop section
+                document.getElementById('drop-section-row').style.display = 'none';
+                document.getElementById('return-section-row').style.display = 'block';
+            } else {
+                // Hide both sections if no option is selected
+                document.getElementById('drop-section-row').style.display = 'none';
+                document.getElementById('return-section-row').style.display = 'none';
+            }
         });
-    </script> --}}
+
+        // Trigger the change event to handle default behavior
+        document.getElementById('type').dispatchEvent(new Event('change'));
+    </script>
+
 
     <script>
         document.getElementById('vehicel_model').addEventListener('change', function() {
@@ -497,59 +530,120 @@
             var selectedOption = this.options[this.selectedIndex];
             var nonAcPrice = selectedOption.getAttribute('data-non-ac-price');
             var withAcPrice = selectedOption.getAttribute('data-with-ac-price');
+            var nonAcDropPrice = selectedOption.getAttribute('data-drop-without-ac');
+            var withAcDropPrice = selectedOption.getAttribute('data-drop-with-ac');
 
             // Set the values of the respective price fields
             document.getElementById('non_ac_price').value = nonAcPrice;
             document.getElementById('with_ac_price').value = withAcPrice;
+            document.getElementById('drop_without_ac').value = nonAcDropPrice;
+            document.getElementById('drop_with_ac').value = withAcDropPrice;
         });
     </script>
 
+
+
+   
     <script>
-        // Function to validate the fields dynamically
-        function validateServiceFields() {
-            // Check each service name field and apply validation to the corresponding price field
-            const serviceNames = [{
-                    name: 'ser_name_1',
-                    price: 'ser_price_1'
-                },
-                {
-                    name: 'ser_name_2',
-                    price: 'ser_price_2'
-                },
-                {
-                    name: 'ser_name_3',
-                    price: 'ser_price_3'
-                },
-                {
-                    name: 'ser_name_4',
-                    price: 'ser_price_4'
-                }
-            ];
+        // Function to calculate night charges based on number of nights
+        function calculateNightCharges() {
+            let noOfNights = parseInt(document.getElementById('no_night').value) || 0; // Default to 0
+            let charges = 0;
 
-            let isValid = true;
+            // Calculate charges based on number of nights
+            if (noOfNights >= 1) {
+                charges = 0; // First night free
+            }
+            if (noOfNights >= 2) {
+                charges += 3000; // Second night 3000
+            }
+            if (noOfNights > 2) {
+                charges += (noOfNights - 2) * 2000; // Each additional night 2000
+            }
 
-            // Loop through each service name and price pair
-            serviceNames.forEach(function(service) {
-                const serviceName = document.querySelector('[name="' + service.name + '"]');
-                const servicePrice = document.querySelector('[name="' + service.price + '"]');
-
-                // If service name is filled, check if service price is also filled
-                if (serviceName.value.trim() !== '' && servicePrice.value.trim() === '') {
-                    // Show the custom validation message
-                    isValid = false;
-                    alert("Fill price list. Please enter the price for the filled service name.");
-                }
-            });
-
-            return isValid;
+            // Check if the checkbox is checked to calculate charges
+            if (document.getElementById('checkbox1').checked) {
+                document.getElementById('n_charges').value = charges;
+            } else {
+                document.getElementById('n_charges').value = 0; // If checkbox is not checked, set n_charges to 0
+            }
         }
 
-        // Call the validation function when the form is submitted
-        document.querySelector('form').addEventListener('submit', function(event) {
-            if (!validateServiceFields()) {
-                event.preventDefault(); // Prevent form submission if validation fails
+        // Function to calculate total cost (km_cost + n_charges)
+        function calculateTotal() {
+            let kmCost = parseFloat(document.getElementById('km_cost').value) || 0;
+            let nightCharges = parseFloat(document.getElementById('n_charges').value) || 0;
+            let total = kmCost + nightCharges;
+
+            // If km_cost > 100, add Rs. 1000 and Rs. 3000 to the total
+            if (kmCost > 100) {
+                total += 1000; // Add Rs. 1000 to the total
+                // Add Rs. 3000 to night charges
             }
+
+            // Update the n_charges with the new calculated value
+            document.getElementById('n_charges').value = nightCharges;
+
+            // Update the total price input dynamically
+            document.getElementById('total_price').value = total.toFixed(2); // Dynamically display total price
+        }
+
+        // Function to calculate price based on AC condition, type, and km
+        function calculatePrice() {
+            const acCondition = document.getElementById('ac_condition').value;
+            const type = document.getElementById('type').value;
+            const noKm = parseFloat(document.getElementById('no_km').value) || 0;
+
+            const dropWithoutAc = parseFloat(document.getElementById('drop_without_ac').value) || 0;
+            const dropWithAc = parseFloat(document.getElementById('drop_with_ac').value) || 0;
+            const nonAcPrice = parseFloat(document.getElementById('non_ac_price').value) || 0;
+            const withAcPrice = parseFloat(document.getElementById('with_ac_price').value) || 0;
+
+            let totalPrice = 0;
+            let acCost = 0;
+
+            // Calculate price based on AC condition and vehicle type
+            if (acCondition === 'yes' && type === 'dp') {
+                totalPrice = withAcPrice * noKm;
+                acCost = (withAcPrice - nonAcPrice) * noKm;
+            } else if (acCondition === 'no' && type === 'dp') {
+                totalPrice = nonAcPrice * noKm;
+                acCost = 0; // No A/C cost
+            } else if (acCondition === 'yes' && type === 'do') {
+                totalPrice = dropWithAc * noKm;
+                acCost = (dropWithAc - dropWithoutAc) * noKm;
+            } else if (acCondition === 'no' && type === 'do') {
+                totalPrice = dropWithoutAc * noKm;
+                acCost = 0; // No A/C cost
+            }
+
+            // Set km cost and ac cost
+            document.getElementById('km_cost').value = totalPrice.toFixed(2);
+            document.getElementById('ac_cost').value = acCost.toFixed(2);
+
+            // Call calculateTotal to update the total price
+            calculateTotal();
+        }
+
+        // Initialize default values
+        document.getElementById('no_night').value = 0; // Default number of nights to 0
+        document.getElementById('n_charges').value = 0; // Default night charges to 0
+        document.getElementById('checkbox1').checked = false; // Default checkbox unchecked
+
+        // Event listeners for changes in km_cost, number of nights, AC condition, and type
+        document.getElementById('km_cost').addEventListener('input', calculateTotal);
+        document.getElementById('no_night').addEventListener('input', function() {
+            calculateNightCharges(); // Update night charges when number of nights is changed
+            calculateTotal(); // Update total when number of nights changes
         });
+        document.getElementById('checkbox1').addEventListener('change', function() {
+            calculateNightCharges(); // Update night charges when checkbox is changed
+            calculateTotal(); // Update total when checkbox state changes
+        });
+
+        document.getElementById('ac_condition').addEventListener('change', calculatePrice);
+        document.getElementById('type').addEventListener('change', calculatePrice);
+        document.getElementById('no_km').addEventListener('input', calculatePrice);
     </script>
 
 
