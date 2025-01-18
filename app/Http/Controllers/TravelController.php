@@ -8,6 +8,7 @@ use App\Models\TravelCustomerModel;
 use App\Models\User;
 use App\Models\VehicleInfoModel;
 use App\Models\VehicleModelsModel;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -248,12 +249,13 @@ class TravelController extends Controller
     public function TravelQuotation(Request $request)
     {
         $hireq = HireQuotationModel::orderBy('created_at', 'desc')
+        ->where('date_time', '>=', Carbon::today())
             ->get();
         $vehicleData = DB::table('vehicle_info')->get();
 
         $vehicleModels = VehicleModelsModel::all();
 
-        
+
 
         return view('travel.quotation.quotation', compact('vehicleData', 'hireq','vehicleModels'));
     }
@@ -421,12 +423,14 @@ class TravelController extends Controller
         $hireq->date_time = trim($request->date_time);
         $hireq->no_night = trim($request->no_night);
         // $hireq->need_to_be_night = trim($request->need_to_be_night);
+        $hireq->need_to_be_night = $request->has('need_to_be_night') ? 'yes' : 'no';
+
         $hireq->additional = trim($request->additional);
         $hireq->km_cost = trim($request->km_cost);
         $hireq->ac_cost = trim($request->ac_cost);
         $hireq->n_charges = trim($request->n_charges);
         $hireq->ave_per_km = trim($request->ave_per_km);
-        $hireq->advance = trim($request->advance);
+        // $hireq->advance = trim($request->advance);
         $hireq->total = trim($request->total);
         $hireq->created_by = Auth::user()->id;
 
