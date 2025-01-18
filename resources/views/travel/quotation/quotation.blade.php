@@ -28,7 +28,7 @@
                                         <th>Quo Number</th>
                                         <th>Customer Name</th>
                                         <th>Phone</th>
-                                        <th>Vehicle No</th>
+                                        <th>Vehicle Model</th>
                                         <th>Destination</th>
                                         <th>KM</th>
                                         <th>Date & Time</th>
@@ -51,7 +51,7 @@
 
                                             <td>{{ $item->cus_name }}</td>
                                             <td>{{ $item->phone }}</td>
-                                            <td>{{ $item->v_number }}</td>
+                                            <td>{{ $item->vehicel_model }}</td>
                                             <td>{{ $item->destination }}</td>
 
                                             <td>{{ $item->no_km }}</td>
@@ -156,7 +156,7 @@
                                                                     <option value="" disabled selected>Select Model
                                                                     </option>
                                                                     @foreach ($vehicleModels as $model)
-                                                                        <option value="{{ $model->id }}"
+                                                                        <option value="{{ $model->model_name }}"
                                                                             data-non-ac-price="{{ $model->non_ac_price }}"
                                                                             data-with-ac-price="{{ $model->with_ac_price }}"
                                                                             data-drop-without-ac="{{ $model->drop_without_ac }}"
@@ -344,7 +344,7 @@
                                                             <div class="col-sm-8">
                                                                 <input type="number" class="form-control"
                                                                     name="no_night" placeholder="Enter no of nights"
-                                                                    min="0" id="no_night">
+                                                                    min="0" id="no_night" value="0">
 
 
                                                             </div>
@@ -435,17 +435,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-6">
-                                        <div class="form-group row mt-3">
-                                            <label class="col-sm-4 col-form-label"
-                                                style="font-weight: 600;">Adavance</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" name="advance" value="0"
-                                                    required readonly id="advance">
-                                            </div>
-                                        </div>
 
-                                    </div>
 
                                     <div class="form-group row mt-3">
                                         <label class="col-sm-2 col-form-label" style="font-weight: 600;">Total
@@ -457,8 +447,17 @@
                                     </div>
 
 
+                                    {{-- <div class="col-lg-6">
+                                        <div class="form-group row mt-3">
+                                            <label class="col-sm-4 col-form-label"
+                                                style="font-weight: 600;">Adavance</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="advance" id="advance" value="0"
+                                                    required readonly >
+                                            </div>
+                                        </div>
 
-                                    </label>
+                                    </div> --}}
 
 
 
@@ -544,346 +543,145 @@
 
 
 
-    {{-- <script>
-        // Function to calculate night charges based on number of nights
-        function calculateNightCharges() {
-            let noOfNights = parseInt(document.getElementById('no_night').value) || 0; // Default to 0
-            let charges = 0;
 
-            // Calculate charges based on number of nights
-            if (noOfNights >= 1) {
-                charges = 0; // First night free
-            }
-            if (noOfNights >= 2) {
-                charges += 3000; // Second night 3000
-            }
-            if (noOfNights > 2) {
-                charges += (noOfNights - 2) * 2000; // Each additional night 2000
-            }
 
-            // Check if the checkbox is checked to calculate charges
-            if (document.getElementById('checkbox1').checked) {
-                document.getElementById('n_charges').value = charges;
-            } else {
-                document.getElementById('n_charges').value = 0; // If checkbox is not checked, set n_charges to 0
-            }
+
+<script>
+    // Function to calculate night charges based on number of nights
+    function calculateNightCharges() {
+        let noOfNights = parseInt(document.getElementById('no_night').value) || 0;
+        let charges = 0;
+
+        // Calculate night charges
+        if (noOfNights >= 1) {
+            charges = 0; // First night free
+        }
+        if (noOfNights >= 2) {
+            charges += 3000; // Second night 3000
+        }
+        if (noOfNights > 2) {
+            charges += (noOfNights - 2) * 2000; // Each additional night 2000
         }
 
-        // Function to calculate total cost (km_cost + n_charges)
-        function calculateTotal() {
-            let kmCost = parseFloat(document.getElementById('km_cost').value) || 0;
-            let nightCharges = parseFloat(document.getElementById('n_charges').value) || 0;
-            let total = kmCost + nightCharges;
-
-            // If km_cost > 100, add Rs. 1000 and Rs. 3000 to the total
-            if (kmCost > 100) {
-                total += 1000; // Add Rs. 1000 to the total
-            }
-
-            // Update the n_charges with the new calculated value
-            document.getElementById('n_charges').value = nightCharges;
-
-            // Update the total price input dynamically
-            document.getElementById('total_price').value = total.toFixed(2); // Dynamically display total price
+        // Set the night charges based on checkbox selection
+        if (document.getElementById('checkbox1').checked) {
+            document.getElementById('n_charges').value = charges;
+        } else {
+            document.getElementById('n_charges').value = 0;
         }
 
-        // Function to calculate price based on AC condition, type, and km
-        function calculatePrice() {
-            const acCondition = document.getElementById('ac_condition').value;
-            const type = document.getElementById('type').value;
-            const noKm = parseFloat(document.getElementById('no_km').value) || 0;
+        return charges; // Return night charges
+    }
 
-            const dropWithoutAc = parseFloat(document.getElementById('drop_without_ac').value) || 0;
-            const dropWithAc = parseFloat(document.getElementById('drop_with_ac').value) || 0;
-            const nonAcPrice = parseFloat(document.getElementById('non_ac_price').value) || 0;
-            const withAcPrice = parseFloat(document.getElementById('with_ac_price').value) || 0;
+    // Function to calculate total cost (km_cost + n_charges)
+    function calculateTotal() {
+        let kmCost = parseFloat(document.getElementById('km_cost').value) || 0;
+        let nightCharges = parseFloat(document.getElementById('n_charges').value) || 0;
+        let total = kmCost + nightCharges;
 
-            let totalPrice = 0;
-            let acCost = 0;
+        // Get the number of kilometers (no_km)
+        let noKm = parseFloat(document.getElementById('no_km').value) || 0;
+        let hireType = document.getElementById('type').value;
 
-            // Calculate price based on AC condition and vehicle type
-            if (acCondition === 'yes' && type === 'dp') {
-                totalPrice = withAcPrice * noKm;
-                acCost = (withAcPrice - nonAcPrice) * noKm;
-            } else if (acCondition === 'no' && type === 'dp') {
-                totalPrice = nonAcPrice * noKm;
-                acCost = 0; // No A/C cost
-            } else if (acCondition === 'yes' && type === 'do') {
-                totalPrice = dropWithAc * noKm;
-                acCost = (dropWithAc - dropWithoutAc) * noKm;
-            } else if (acCondition === 'no' && type === 'do') {
-                totalPrice = dropWithoutAc * noKm;
-                acCost = 0; // No A/C cost
-            }
-
-            // Set km cost and ac cost
-            document.getElementById('km_cost').value = totalPrice.toFixed(2);
-            document.getElementById('ac_cost').value = acCost.toFixed(2);
-
-            // Call calculateTotal to update the total price
-            calculateTotal();
+        // Add Rs. 1000 to total price if no_km <= 100 and type is 'dp'
+        if (noKm <= 100 && hireType === 'dp') {
+            total += 1000; // Add Rs. 1000 if km <= 100 and hire type is 'dp'
+            //nightCharges += 3000; // Add Rs. 3000 to night charges if km <= 100
         }
 
-        // Initialize default values
-        document.getElementById('no_night').value = 0; // Default number of nights to 0
-        document.getElementById('n_charges').value = 0; // Default night charges to 0
-        document.getElementById('checkbox1').checked = false; // Default checkbox unchecked
+        // Update the night charges with the new value
+        document.getElementById('n_charges').value = nightCharges;
 
-        // Event listeners for changes in km_cost, number of nights, AC condition, and type
-        document.getElementById('km_cost').addEventListener('input', calculateTotal);
-        document.getElementById('no_night').addEventListener('input', function() {
-            calculateNightCharges(); // Update night charges when number of nights is changed
-            calculateTotal(); // Update total when number of nights changes
-        });
-        document.getElementById('checkbox1').addEventListener('change', function() {
-            calculateNightCharges(); // Update night charges when checkbox is changed
-            calculateTotal(); // Update total when checkbox state changes
-        });
+        // Update the total price field
+        document.getElementById('total_price').value = total.toFixed(2);
 
-        document.getElementById('ac_condition').addEventListener('change', calculatePrice);
-        document.getElementById('type').addEventListener('change', calculatePrice);
-        document.getElementById('no_km').addEventListener('input', calculatePrice);
-    </script> --}}
-    {{-- <script>
-        // Function to calculate night charges based on number of nights
-        function calculateNightCharges() {
-            let noOfNights = parseInt(document.getElementById('no_night').value) || 0;
-            let charges = 0;
+        // Update average price per km field
+        calculateAveragePerKm();
+    }
 
-            if (noOfNights >= 1) {
-                charges = 0; // First night free
-            }
-            if (noOfNights >= 2) {
-                charges += 3000; // Second night 3000
-            }
-            if (noOfNights > 2) {
-                charges += (noOfNights - 2) * 2000; // Each additional night 2000
-            }
+    // Function to calculate average price per km (total_price / no_km)
+    function calculateAveragePerKm() {
+        let totalPrice = parseFloat(document.getElementById('total_price').value) || 0;
+        let noKm = parseFloat(document.getElementById('no_km').value) || 0;
 
-            // Set the night charges based on checkbox selection
-            if (document.getElementById('checkbox1').checked) {
-                document.getElementById('n_charges').value = charges;
-            } else {
-                document.getElementById('n_charges').value = 0;
-            }
+        if (noKm > 0) {
+            let avePerKm = totalPrice / noKm;
+            document.getElementById('ave_per_km').value = avePerKm.toFixed(2); // Display average per km
+        } else {
+            document.getElementById('ave_per_km').value = 0; // If no km, set to 0
+        }
+    }
+
+    // Function to calculate price based on AC condition, type, and km
+    function calculatePrice() {
+        const acCondition = document.getElementById('ac_condition').value;
+        const type = document.getElementById('type').value;
+        const noKm = parseFloat(document.getElementById('no_km').value) || 0;
+
+        const dropWithoutAc = parseFloat(document.getElementById('drop_without_ac').value) || 0;
+        const dropWithAc = parseFloat(document.getElementById('drop_with_ac').value) || 0;
+        const nonAcPrice = parseFloat(document.getElementById('non_ac_price').value) || 0;
+        const withAcPrice = parseFloat(document.getElementById('with_ac_price').value) || 0;
+
+        let totalPrice = 0;
+        let acCost = 0;
+
+        // Calculate price based on AC condition and vehicle type
+        if (acCondition === 'yes' && type === 'dp') {
+            totalPrice = withAcPrice * noKm;
+            acCost = (withAcPrice - nonAcPrice) * noKm;
+        } else if (acCondition === 'no' && type === 'dp') {
+            totalPrice = nonAcPrice * noKm;
+            acCost = 0; // No A/C cost
+        } else if (acCondition === 'yes' && type === 'do') {
+            totalPrice = dropWithAc * noKm;
+            acCost = (dropWithAc - dropWithoutAc) * noKm;
+        } else if (acCondition === 'no' && type === 'do') {
+            totalPrice = dropWithoutAc * noKm;
+            acCost = 0; // No A/C cost
         }
 
-        // Function to calculate total cost (km_cost + n_charges)
-        function calculateTotal() {
-            let kmCost = parseFloat(document.getElementById('km_cost').value) || 0;
-            let nightCharges = parseFloat(document.getElementById('n_charges').value) || 0;
-            let total = kmCost + nightCharges;
+        // Set km cost and ac cost
+        document.getElementById('km_cost').value = totalPrice.toFixed(2);
+        document.getElementById('ac_cost').value = acCost.toFixed(2);
 
-            // If no_km > 100, add Rs. 1000 and Rs. 3000 to the total
-            let noKm = parseFloat(document.getElementById('no_km').value) || 0;
-            if (noKm > 100) {
-                total += 1000; // Add Rs. 1000 to the total for km > 100
-                //nightCharges += 3000; // Add Rs. 3000 to night charges
-            }
+        // Call calculateTotal to update the total price
+        calculateTotal();
+    }
 
-            // Update the night charges with the new calculated value
-            document.getElementById('n_charges').value = nightCharges;
+    function calculateAdvance() {
+        let totalPrice = parseFloat(document.getElementById('total_price').value) || 0;
 
-            // Update the total price input dynamically
-            document.getElementById('total_price').value = total.toFixed(2);
+        // Calculate 25% of total price
+        let advance = totalPrice * 0.25;
 
-            // Call the function to calculate average price per km
-            calculateAveragePerKm();
-        }
+        // Round to nearest largest thousand (round up)
+        let roundedAdvance = Math.ceil(advance / 1000) * 1000;
 
-        // Function to calculate price based on AC condition, type, and km
-        function calculatePrice() {
-            const acCondition = document.getElementById('ac_condition').value;
-            const type = document.getElementById('type').value;
-            const noKm = parseFloat(document.getElementById('no_km').value) || 0;
+        // Set the advance value in the advance input field
+        document.getElementById('advance').value = roundedAdvance;
+    }
 
-            const dropWithoutAc = parseFloat(document.getElementById('drop_without_ac').value) || 0;
-            const dropWithAc = parseFloat(document.getElementById('drop_with_ac').value) || 0;
-            const nonAcPrice = parseFloat(document.getElementById('non_ac_price').value) || 0;
-            const withAcPrice = parseFloat(document.getElementById('with_ac_price').value) || 0;
+    // Event listeners to trigger calculations
+    document.getElementById('total_price').addEventListener('input', function () {
+        calculateAdvance();
+    });
 
-            let totalPrice = 0;
-            let acCost = 0;
+    // Event listeners for changes in km_cost, number of nights, AC condition, and type
+    document.getElementById('km_cost').addEventListener('input', calculateTotal);
+    document.getElementById('no_night').addEventListener('input', function () {
+        calculateNightCharges(); // Update night charges when number of nights is changed
+        calculateTotal(); // Update total when number of nights changes
+    });
+    document.getElementById('checkbox1').addEventListener('change', function () {
+        calculateNightCharges(); // Update night charges when checkbox is changed
+        calculateTotal(); // Update total when checkbox state changes
+    });
 
-            // Calculate price based on AC condition and vehicle type
-            if (acCondition === 'yes' && type === 'dp') {
-                totalPrice = withAcPrice * noKm;
-                acCost = (withAcPrice - nonAcPrice) * noKm;
-            } else if (acCondition === 'no' && type === 'dp') {
-                totalPrice = nonAcPrice * noKm;
-                acCost = 0; // No A/C cost
-            } else if (acCondition === 'yes' && type === 'do') {
-                totalPrice = dropWithAc * noKm;
-                acCost = (dropWithAc - dropWithoutAc) * noKm;
-            } else if (acCondition === 'no' && type === 'do') {
-                totalPrice = dropWithoutAc * noKm;
-                acCost = 0; // No A/C cost
-            }
-
-            // Set km cost and ac cost
-            document.getElementById('km_cost').value = totalPrice.toFixed(2);
-            document.getElementById('ac_cost').value = acCost.toFixed(2);
-
-            // Call calculateTotal to update the total price
-            calculateTotal();
-        }
-
-        // Function to calculate the average price per km (total_price / no_km)
-        function calculateAveragePerKm() {
-            let totalPrice = parseFloat(document.getElementById('total_price').value) || 0;
-            let noKm = parseFloat(document.getElementById('no_km').value) || 0;
-
-            if (noKm > 0) {
-                let avePerKm = totalPrice / noKm;
-                document.getElementById('ave_per_km').value = avePerKm.toFixed(2); // Display average per km
-            } else {
-                document.getElementById('ave_per_km').value = 0; // If no km, set to 0
-            }
-        }
-
-        // Initialize default values
-        document.getElementById('no_night').value = 0; // Default number of nights to 0
-        document.getElementById('n_charges').value = 0; // Default night charges to 0
-        document.getElementById('checkbox1').checked = false; // Default checkbox unchecked
-
-        // Event listeners for changes in km_cost, number of nights, AC condition, and type
-        document.getElementById('km_cost').addEventListener('input', calculateTotal);
-        document.getElementById('no_night').addEventListener('input', function() {
-            calculateNightCharges(); // Update night charges when number of nights is changed
-            calculateTotal(); // Update total when number of nights changes
-        });
-        document.getElementById('checkbox1').addEventListener('change', function() {
-            calculateNightCharges(); // Update night charges when checkbox is changed
-            calculateTotal(); // Update total when checkbox state changes
-        });
-
-        document.getElementById('ac_condition').addEventListener('change', calculatePrice);
-        document.getElementById('type').addEventListener('change', calculatePrice);
-        document.getElementById('no_km').addEventListener('input', calculatePrice);
-    </script> --}}
-
-    <script>
-        // Function to calculate night charges based on number of nights
-        function calculateNightCharges() {
-            let noOfNights = parseInt(document.getElementById('no_night').value) || 0;
-            let charges = 0;
-
-            // Calculate night charges
-            if (noOfNights >= 1) {
-                charges = 0; // First night free
-            }
-            if (noOfNights >= 2) {
-                charges += 3000; // Second night 3000
-            }
-            if (noOfNights > 2) {
-                charges += (noOfNights - 2) * 2000; // Each additional night 2000
-            }
-
-            // Set the night charges based on checkbox selection
-            if (document.getElementById('checkbox1').checked) {
-                document.getElementById('n_charges').value = charges;
-            } else {
-                document.getElementById('n_charges').value = 0;
-            }
-
-            return charges; // Return night charges
-        }
-
-        // Function to calculate total cost (km_cost + n_charges)
-        function calculateTotal() {
-            let kmCost = parseFloat(document.getElementById('km_cost').value) || 0;
-            let nightCharges = parseFloat(document.getElementById('n_charges').value) || 0;
-            let total = kmCost + nightCharges;
-
-            // Get the number of kilometers (no_km)
-            let noKm = parseFloat(document.getElementById('no_km').value) || 0;
-
-            // Add Rs. 1000 to total price if no_km is <= 100
-            if (noKm <= 100) {
-                total += 1000; // Add Rs. 1000 if km <= 100
-               // nightCharges += 3000; // Add Rs. 3000 to night charges if km <= 100
-            }
-
-            // Update the night charges with the new value
-            document.getElementById('n_charges').value = nightCharges;
-
-            // Update the total price field
-            document.getElementById('total_price').value = total.toFixed(2);
-
-            // Update average price per km field
-            calculateAveragePerKm();
-        }
-
-        // Function to calculate average price per km (total_price / no_km)
-        function calculateAveragePerKm() {
-            let totalPrice = parseFloat(document.getElementById('total_price').value) || 0;
-            let noKm = parseFloat(document.getElementById('no_km').value) || 0;
-
-            if (noKm > 0) {
-                let avePerKm = totalPrice / noKm;
-                document.getElementById('ave_per_km').value = avePerKm.toFixed(2); // Display average per km
-            } else {
-                document.getElementById('ave_per_km').value = 0; // If no km, set to 0
-            }
-        }
-
-        // Function to calculate price based on AC condition, type, and km
-        function calculatePrice() {
-            const acCondition = document.getElementById('ac_condition').value;
-            const type = document.getElementById('type').value;
-            const noKm = parseFloat(document.getElementById('no_km').value) || 0;
-
-            const dropWithoutAc = parseFloat(document.getElementById('drop_without_ac').value) || 0;
-            const dropWithAc = parseFloat(document.getElementById('drop_with_ac').value) || 0;
-            const nonAcPrice = parseFloat(document.getElementById('non_ac_price').value) || 0;
-            const withAcPrice = parseFloat(document.getElementById('with_ac_price').value) || 0;
-
-            let totalPrice = 0;
-            let acCost = 0;
-
-            // Calculate price based on AC condition and vehicle type
-            if (acCondition === 'yes' && type === 'dp') {
-                totalPrice = withAcPrice * noKm;
-                acCost = (withAcPrice - nonAcPrice) * noKm;
-            } else if (acCondition === 'no' && type === 'dp') {
-                totalPrice = nonAcPrice * noKm;
-                acCost = 0; // No A/C cost
-            } else if (acCondition === 'yes' && type === 'do') {
-                totalPrice = dropWithAc * noKm;
-                acCost = (dropWithAc - dropWithoutAc) * noKm;
-            } else if (acCondition === 'no' && type === 'do') {
-                totalPrice = dropWithoutAc * noKm;
-                acCost = 0; // No A/C cost
-            }
-
-            // Set km cost and ac cost
-            document.getElementById('km_cost').value = totalPrice.toFixed(2);
-            document.getElementById('ac_cost').value = acCost.toFixed(2);
-
-            // Call calculateTotal to update the total price
-            calculateTotal();
-        }
-
-        // Initialize default values
-        document.getElementById('no_night').value = 0; // Default number of nights to 0
-        document.getElementById('n_charges').value = 0; // Default night charges to 0
-        document.getElementById('checkbox1').checked = false; // Default checkbox unchecked
-
-        // Event listeners for changes in km_cost, number of nights, AC condition, and type
-        document.getElementById('km_cost').addEventListener('input', calculateTotal);
-        document.getElementById('no_night').addEventListener('input', function() {
-            calculateNightCharges(); // Update night charges when number of nights is changed
-            calculateTotal(); // Update total when number of nights changes
-        });
-        document.getElementById('checkbox1').addEventListener('change', function() {
-            calculateNightCharges(); // Update night charges when checkbox is changed
-            calculateTotal(); // Update total when checkbox state changes
-        });
-
-        document.getElementById('ac_condition').addEventListener('change', calculatePrice);
-        document.getElementById('type').addEventListener('change', calculatePrice);
-        document.getElementById('no_km').addEventListener('input', calculatePrice);
-    </script>
+    document.getElementById('ac_condition').addEventListener('change', calculatePrice);
+    document.getElementById('type').addEventListener('change', calculatePrice);
+    document.getElementById('no_km').addEventListener('input', calculatePrice);
+</script>
 
 
 
