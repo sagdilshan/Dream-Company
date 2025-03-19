@@ -37,7 +37,7 @@ require __DIR__ . '/auth.php';
 // Route::get('/', 'welcome')->name('welcome');
 Route::view('/it-department/contact-us', 'contact')->name('contact');
 Route::view('/it-department/service', 'service')->name('service');
-Route::view('/it-department/portfolio', 'portfolio')->name('portfolio');
+// Route::view('/it-department/portfolio', 'portfolio')->name('portfolio');
 
 
 // Route::view('/login','login')->name('login');
@@ -48,6 +48,8 @@ Route::controller(OtherController::class)->group(function () {
     // Route::get('/', 'IndexPage')->name('welcome');
     Route::post('/inquire/store', 'InquireStore')->name('inquire.store');
     Route::get('/it-department/about-us', 'AboutPage')->name('about');
+    Route::get('/it-department/portfolio', 'PortfolioPage')->name('portfolio');
+
     Route::get('/it-department', 'IndexPage')->name('software');
     Route::get('/travel-department', 'TravelPage')->name('travel');
     Route::get('/', 'MainIndexPage')->name('welcome');
