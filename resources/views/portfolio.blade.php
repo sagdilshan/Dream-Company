@@ -29,42 +29,23 @@
                 <h1 class="display-5 mb-5">We Have Completed Latest Projects</h1>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
+
+
+
+                @foreach ($projectsviews as $projectsview)
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-1.jpg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
+                        <img class="img-fluid rounded" src="{{ !empty($projectsview->thumb) ? url('upload/project_images/' . $projectsview->thumb) : url('upload/no_staff.jpg') }}" alt="{{ $projectsview->p_name }}" title="{{ $projectsview->p_name }}">
+                        <a href="{{ Str::startsWith($projectsview->p_link, 'http') ? $projectsview->p_link : 'https://' . $projectsview->p_link }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-link fa-3x text-danger"></i></a>
                     </div>
                     <div class="project-title">
-                        <h4 class="mb-0">E-Commerce Website</h4>
+                        <h4 class="mb-0">{{ $projectsview->p_name }}</h4>
                     </div>
                 </div>
-                <div class="project-item pe-5 pb-5">
-                    <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-2.jpg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
-                    </div>
-                    <div class="project-title">
-                        <h4 class="mb-0">Woodify Web Portal</h4>
-                    </div>
-                </div>
-                <div class="project-item pe-5 pb-5">
-                    <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-3.jpg" alt="">
-                        <a href=""><i class="fa fa-link fa-3x text-danger"></i></a>
-                    </div>
-                    <div class="project-title">
-                        <h4 class="mb-0">InnovateHub Portal</h4>
-                    </div>
-                </div>
-                <div class="project-item pe-5 pb-5">
-                    <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="../assets/img/service-4.jpg" alt="">
-                        <a href="https://gridspro.tech/" target="_blank"><i class="fa fa-link fa-3x text-danger"></i></a>
-                    </div>
-                    <div class="project-title">
-                        <h4 class="mb-0">Grids Pro Website</h4>
-                    </div>
-                </div>
+                @endforeach
+
+
+
             </div>
         </div>
     </div>
