@@ -111,6 +111,18 @@ class OtherController extends Controller
         }
     }
 
+    public function PortfolioPage()
+    {
+
+
+        $projectsviews = ProjectModel::where('project_status', 'completed')
+        ->orderBy('id', 'desc')
+            ->get();
+
+
+        return view('portfolio', compact('projectsviews'));
+
+    }
 
 
 
