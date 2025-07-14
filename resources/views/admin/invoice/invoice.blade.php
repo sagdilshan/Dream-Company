@@ -208,7 +208,7 @@
                                                 </div>
                                             </div>
                                         @endif
-                                        <!-- /.col -->
+                                        <!-- /.col bn-->
 
                                         <div class="col-6">
                                             @if ($project->project_status == 'completed')
