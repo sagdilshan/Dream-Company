@@ -65,7 +65,7 @@
                                     </tfoot>
                             </table>
                         </div>
-                        <!-- /.card-body -->
+                        <!-- /.carjhid-body -->
                     </div>
 
 
