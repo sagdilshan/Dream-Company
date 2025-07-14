@@ -77,7 +77,7 @@
             <div class="container-fluid ">
                 <div class="row">
 
-                    <!-- /.col -->
+                    <!-- /.jbjcol -->
                     <div class="col-lg-12">
                         <div class="card">
 
