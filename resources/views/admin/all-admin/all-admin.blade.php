@@ -61,7 +61,7 @@
                                             </td>
                                             <td>
                                                 <a href="{{ route('edit.admin', $item->id) }}" class="btn btn-outline-danger">Edit</a>
-                                                {{-- <a href="" class="btn btn-outline-danger">Delete</a> --}}
+                                                {{-- <a href="" clasbbjbs="btn btn-outline-danger">Delete</a> --}}
                                             </td>
 
                                         </tr>
