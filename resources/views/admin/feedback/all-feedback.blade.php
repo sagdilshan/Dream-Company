@@ -66,7 +66,7 @@
                                     </tfoot>
                             </table>
                         </div>
-                        <!-- /.card-body -->
+                        <!-- /.cardjb-body -->
                     </div>
 
 
