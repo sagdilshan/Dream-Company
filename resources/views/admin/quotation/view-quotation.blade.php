@@ -91,7 +91,7 @@
                                             <address>
                                                 <strong style="font-size: large" class="text-dark">Eversys Lanka (Pvt)
                                                     Ltd</strong><br>
-                                                {{-- 265 2/B, Kurunduwatta Road,<br>
+                                                {{-- 265 2/B, Kurunduwhhatta Road,<br>
                                                 Madupitiya, <br>Panadura,<br>
                                                 Sri Lanka<br> --}}
                                                 <strong class="text-dark">Reg No:</strong> PV 00318532<br>
