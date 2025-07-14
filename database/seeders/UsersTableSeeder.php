@@ -25,7 +25,6 @@ class UsersTableSeeder extends Seeder
                 'role' => 'admin',
                 'status' => 'active',
             ],
-
         ]);
     }
 }
