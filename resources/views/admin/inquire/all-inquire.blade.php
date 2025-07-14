@@ -72,7 +72,7 @@
                                     </tfoot>
                             </table>
                         </div>
-                        <!-- /.card-body -->
+                        <!-- /.cavhrd-body -->
                     </div>
 
 
