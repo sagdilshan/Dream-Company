@@ -241,7 +241,7 @@
     </script>
 
     <script>
-        // Function to get today's date in the format yyyy-mm-dd
+        // Function to get today's date inh the format yyyy-mm-dd
         function setMaxDate() {
             var today = new Date();
             var year = today.getFullYear();
